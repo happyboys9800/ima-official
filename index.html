@@ -43,7 +43,7 @@
         nav a {
             color: #ddd;
             text-decoration: none;
-            margin-left: 30px;
+            margin-left: 25px;
             font-weight: 500;
             transition: color 0.3s;
         }
@@ -187,7 +187,7 @@
             <a href="#history">历史档案</a>
             <a href="#mission">使命与精神</a>
             <a href="#recruit">招募英才</a>
-            <a href="#" onclick="alert('内部系统登录入口（演示）')">员工登录</a>
+            <a href="login.html" class="btn" style="padding:10px 24px; font-size:1rem;">员工登录</a>
         </nav>
     </header>
 
@@ -197,7 +197,7 @@
             <h1>为星海，为家园</h1>
             <p>寰宇矿物资源联合开发局（IMA）<br>守护人类文明的星际命脉</p>
             <a href="#recruit" class="btn btn-primary">加入 IMA · 成为星海开拓者</a>
-            <a href="#" onclick="alert('内部系统登录入口（演示）')" class="btn">员工登录</a>
+            <a href="login.html" class="btn">员工登录</a>
         </div>
     </section>
 
@@ -305,7 +305,7 @@
     </footer>
 
     <script>
-        // 谷神星纪念日倒计时（每年10月17日）
+        // 谷神星纪念日倒计时
         function countdown() {
             const now = new Date();
             let target = new Date(now.getFullYear(), 9, 17); // 10月17日
