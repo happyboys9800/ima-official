@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 O-2068-MIS-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《重返希望谷行动报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>O-2068-MIS-001</div>
+            <div><strong>档案类型：</strong>行动任务报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年10月17日</div>
+            <div><strong>发布机构：</strong>IMA 深空开采总局 第一矿区管理办公室</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">任务报告：重返希望谷</div>
+            <div class="doc-subtitle">—— IMA成立后首次重大行动记录</div>
+            <div class="doc-ref">文件编号：IMA/OP/2068/10/17/RETURN</div>
+            <div class="doc-ref">致：IMA 理事会</div>
+            <div class="doc-ref">发件人：深空开采总局 第一矿区 首席行政官 安德烈·科瓦连科</div>
+
+            <h3>一、 任务概述</h3>
+            <p><strong>1.1 任务名称：</strong>“重返希望谷”行动（Operation Return to Hope Valley）</p>
+            <p><strong>1.2 任务时间：</strong>2068年10月10日 - 2068年10月17日</p>
+            <p><strong>1.3 任务地点：</strong>谷神星，希望谷矿区</p>
+            <p><strong>1.4 任务性质：</strong>人道主义与秩序重建行动</p>
+
+            <p><strong>1.5 任务目标：</strong></p>
+            <ul>
+                <li>对希望谷惨案现场进行最后的清理与调查取证；</li>
+                <li>收殓并安葬仍散落于矿区的遇难者遗骸；</li>
+                <li>正式宣布希望谷矿区纳入IMA统一管理；</li>
+                <li>建立“希望谷烈士陵园”，作为对遇难者的永久纪念；</li>
+                <li>启动矿区基础设施重建的初步勘察与规划。</li>
+            </ul>
+
+            <p><strong>1.6 执行单位：</strong></p>
+            <ul>
+                <li>IMA 深空开采总局（任务主导）</li>
+                <li>IMA 星际联合守备部队（安全保障）</li>
+                <li>IMA 矿工权益保障办公室（人道主义监督）</li>
+                <li>联合国希望谷惨案调查委员会（取证协助）</li>
+            </ul>
+
+            <h3>二、 任务背景</h3>
+            <p>2068年10月1日，IMA在日内瓦正式挂牌成立。按照理事会的要求，IMA必须在成立后尽快以实际行动证明其存在的意义与能力。</p>
+            <p>选择希望谷作为首次行动的地点，具有深刻的象征意义：这里是IMA诞生的导火索，是太空淘金热最血腥的伤疤，也是IMA必须首先治愈的地方。</p>
+            <p><strong>行动日期选定为10月17日——希望谷惨案一周年纪念日——以表达对遇难者的最大尊重。</strong></p>
+
+            <h3>三、 行动执行经过</h3>
+
+            <h4>3.1 第一阶段：出发（10月10日 - 10月12日）</h4>
+            <p>10月10日，由三艘“开拓者”级运输舰和两艘“守望者”级巡逻舰组成的任务编队，从IMA月球轨道中转站出发，前往谷神星。</p>
+            <p>编队共搭载人员327人，包括：</p>
+            <ul>
+                <li>深空开采总局工程师与技术人员：87人</li>
+                <li>星际联合守备部队安保人员：120人</li>
+                <li>矿工权益保障办公室观察员：12人</li>
+                <li>联合国调查委员会取证专家：23人</li>
+                <li>医疗与后勤人员：85人</li>
+            </ul>
+            <p>编队于10月12日抵达谷神星轨道，并开始下降准备。</p>
+
+            <h4>3.2 第二阶段：降落与现场封锁（10月13日）</h4>
+            <p>10月13日，当地时间08:00，编队首批人员成功降落在希望谷矿区外围的临时着陆点。</p>
+            <p>降落时，任务指挥官通过全频段通讯频道发布以下声明：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我是IMA深空开采总局特派任务指挥官。从此刻起，希望谷矿区及周边区域，正式纳入寰宇矿物资源联合开发局的管辖范围。所有未经IMA授权的个人或团体，须在24小时内撤离本区域。逾期未撤离者，将被视为非法滞留，并依法处置。”
+            </blockquote>
+            <p>声明发布后，任务编队对矿区进行了全面封锁。守备部队迅速部署，在矿区主要入口及外围建立了16个检查站与警戒哨。</p>
+
+            <h4>3.3 第三阶段：现场清理与遗骸收殓（10月14日 - 10月16日）</h4>
+            <p>10月14日，清理与收殓工作正式启动。</p>
+            <p>这是任务中最沉重、最艰难的一环。希望谷矿区在惨案发生后，已在真空中暴露了整整一年。由于缺乏生命维持系统，大部分遇难者的遗骸已严重脱水、碳化或部分解体。</p>
+            <p>清理工作由工程技术人员与联合国取证专家联合进行。每发现一具遇难者遗骸，都由取证专家进行编号、拍照、记录位置，然后由清理小组装入专用密封袋，运往临时设立的“遗骸收殓中心”。</p>
+            <p>截至10月16日，共收殓：</p>
+            <ul>
+                <li>完整遗骸：432具</li>
+                <li>部分遗骸：591具</li>
+                <li>身份标识物（戒指、工牌、私人物品等）：1,247件</li>
+            </ul>
+
+            <h4>3.4 第四阶段：安葬仪式（10月17日）</h4>
+            <p>10月17日，当地时间10:00，希望谷矿区中央广场举行了隆重的安葬仪式。</p>
+            <p>仪式由IMA第一任局长托马斯·米勒亲自主持。他通过全太阳系广播系统，发表了以下讲话：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “一年前的今天，就在我们脚下的这片土地上，1247名矿工失去了生命。他们不是死于天灾，不是死于意外。他们死于贪婪，死于无序，死于一个将利润置于生命之上的荒唐制度。<br /><br />
+                今天，我们站在这里，以IMA之名，以全人类之名，为这些遇难者安葬。<br /><br />
+                我们不会忘记他们。我们不会让他们的死白费。<br /><br />
+                从今天起，希望谷将不再是混乱的代名词。它将是我们的起点——一个秩序、安全与尊严的新起点。<br /><br />
+                愿他们的灵魂，在这片他们为之付出生命的星空下，安息。”
+            </blockquote>
+            <p>仪式上，1247名遇难者的姓名被逐一宣读。IMA守备部队鸣枪21响，以最高军礼致敬。</p>
+            <p>随后，遇难者的遗骸被安葬在矿区北侧的一片高地。这片高地被正式命名为 <strong>“希望谷烈士陵园”</strong>。</p>
+
+            <h3>四、 希望谷烈士陵园</h3>
+            <p>希望谷烈士陵园占地约2.5平方公里，背靠一片低矮的环形山，面向广阔的谷神星平原。</p>
+            <p>陵园的入口处，立有一块黑色的玄武岩纪念碑，高约5米。碑上刻有1247名遇难者的全部姓名，按国别分类排列。</p>
+            <p>纪念碑正面刻有一行字：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <strong>“他们用生命，为人类敲响了秩序的第一声警钟。” </strong>
+            </blockquote>
+            <p>陵园中央，有一座小型纪念堂，内设遇难者照片墙、生平简介展板，以及一个永久性的“希望谷惨案”历史档案陈列室。</p>
+            <p>纪念堂的墙壁上，刻着一段话：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <strong>“我们开采的不是冰冷的矿石，是140亿人的温饱，是孩子的笑容，是母亲的安心。” </strong>
+            </blockquote>
+            <p>这段话，后来成为了IMA全机构的精神训词之一。</p>
+
+            <h3>五、 重建规划</h3>
+            <p>在收殓与安葬工作完成后，IMA工程师团队对希望谷矿区的基础设施进行了初步勘察。</p>
+            <p>勘察结果如下：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>基础设施</th><th>损毁程度</th><th>初步重建建议</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>矿井主体结构</td><td>严重损毁，约70%的巷道已坍塌</td><td>建议在旧址侧翼重新开凿新矿井</td></tr>
+                    <tr><td>生活舱及营地</td><td>完全毁坏</td><td>建议新建标准化的居住区，可容纳约2,000人</td></tr>
+                    <tr><td>燃料与能源设施</td><td>严重损毁，储罐及管道破裂</td><td>建议铺设新的能源管线，优先保障氦-3供应</td></tr>
+                    <tr><td>通讯与导航设备</td><td>完全毁坏</td><td>建议建设新的通讯塔及导航信标系统</td></tr>
+                    <tr><td>运输道路及轨道</td><td>部分损毁，可修复</td><td>建议先进行路基修复，再铺设新的硬化路面</td></tr>
+                </tbody>
+            </table>
+            <p>预计重建工期为18个月。重建完成后，希望谷将恢复成为IMA在谷神星上的核心作业基地之一。</p>
+
+            <h3>六、 任务总结</h3>
+            <p>“重返希望谷”行动的圆满完成，具有多重意义：</p>
+
+            <h4>6.1 象征意义</h4>
+            <ul>
+                <li>这是IMA成立后的第一次重大行动，向全人类展示了IMA的能力与决心。</li>
+                <li>选择在希望谷惨案一周年纪念日完成遗骸安葬，是对遇难者的最大尊重，也体现了IMA对自身使命的郑重承诺。</li>
+            </ul>
+
+            <h4>6.2 历史意义</h4>
+            <ul>
+                <li>希望谷惨案是IMA诞生的直接原因。重返希望谷并在此建立秩序，意味着一个旧时代的彻底终结，和一个新时代的正式开始。</li>
+                <li>希望谷烈士陵园的存在，将永远提醒每一个IMA人：他们的工作，是为了让更多人可以活着回家。</li>
+            </ul>
+
+            <h4>6.3 操作意义</h4>
+            <ul>
+                <li>本次行动验证了IMA在深空作业、安全管控及人道主义救援等方面的初步能力。</li>
+                <li>行动中积累的经验与教训，为后续更大规模的矿区清理与重建工作，提供了宝贵的参考。</li>
+            </ul>
+
+            <div class="signature">
+                任务指挥官：<br />
+                （签字：深空开采总局 第一矿区首席行政官 安德烈·科瓦连科）<br />
+                任务副指挥官：<br />
+                （签字：星际联合守备部队 第1特遣队指挥官 陈世杰）<br />
+                矿工权益保障办公室观察员：<br />
+                （签字：矿工权益保障办公室 特派专员 玛丽亚·洛佩兹）<br />
+                签发日期：2068年10月17日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

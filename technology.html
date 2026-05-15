@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IMA 技术与装备</title>
+<style>
+body, html{margin:0;padding:0;font-family:"PingFang SC",sans-serif;background:#000;color:#fff;}
+header{padding:20px;text-align:center;background:#111;border-bottom:2px solid #4A90E2;display:flex;justify-content:space-between;align-items:center;}
+a{color:#4A90E2;}
+#langSelect{padding:5px;border-radius:5px;background:#1A1F2B;border:2px solid #4A90E2;color:#E0E0E0;cursor:pointer;}
+section{padding:50px;}
+</style>
+</head>
+<body>
+<header>
+<h1 data-translate="pageTitle">IMA 技术与装备</h1>
+<div>
+<a href="index.html" data-translate="homeLink">返回首页</a>
+<select id="langSelect">
+<option value="zh">中文</option>
+<option value="en">English</option>
+<option value="fr">Français</option>
+<option value="es">Español</option>
+<option value="ar">العربية</option>
+<option value="ru">Русский</option>
+</select>
+</div>
+</header>
+<section>
+<h2 data-translate="tech1Title">采矿母舰</h2>
+<p data-translate="tech1Text">噬星者级采矿母舰，可一次性吞噬小行星完成开采冶炼。</p>
+<h2 data-translate="tech2Title">机甲系统</h2>
+<p data-translate="tech2Text">拓荒者系列工程机甲，百夫长系列作战机甲，保障作业和安全。</p>
+<h2 data-translate="tech3Title">能源站</h2>
+<p data-translate="tech3Text">喷射熔炉能源站、全域聚变能源供应系统，支撑太阳系工业运转。</p>
+</section>
+
+<script>
+const translations={
+pageTitle:{zh:"IMA 技术与装备",en:"IMA Technology & Equipment",fr:"Technologie et équipements IMA",es:"Tecnología y Equipos IMA",ar:"تكنولوجيا ومعدات IMA",ru:"Технологии и оборудование IMA"},
+homeLink:{zh:"返回首页",en:"Back Home",fr:"Retour Accueil",es:"Volver al Inicio",ar:"العودة للصفحة الرئيسية",ru:"Вернуться домой"},
+tech1Title:{zh:"采矿母舰",en:"Mining Mothership",fr:"Vaisseau Mère Minier",es:"Nave Madre Minera",ar:"سفينة التعدين الأم",ru:"Горная Мать-корабль"},
+tech1Text:{zh:"噬星者级采矿母舰，可一次性吞噬小行星完成开采冶炼。",en:"Ceres-class mining mothership, can consume an asteroid in one go for mining and refining.",fr:"Vaisseau mère minier de classe Cérès, peut consommer un astéroïde en un seul coup pour l'extraction et le raffinage.",es:"Nave madre minera clase Ceres, puede consumir un asteroide de una vez para minería y refinado.",ar:"سفينة التعدين من فئة سيريس، يمكنها استهلاك كويكب دفعة واحدة للتعدين والتكرير.",ru:"Горная материнская корабль класса Церера, может поглотить астероид за один раз для добычи и переработки."},
+tech2Title:{zh:"机甲系统",en:"Mecha Systems",fr:"Systèmes Mecha",es:"Sistemas Mecha",ar:"أنظمة الميكا",ru:"Системы Меха"},
+tech2Text:{zh:"拓荒者系列工程机甲，百夫长系列作战机甲，保障作业和安全。",en:"Pioneer and Centurion mechas for construction and security.",fr:"Mechas Pioneer et Centurion pour la construction et la sécurité.",es:"Mechas Pioneer y Centurion para construcción y seguridad.",ar:"ميكا بايونير وسنتوريون للبناء والأمن.",ru:"Пионер и Центурион мехи для строительства и безопасности."},
+tech3Title:{zh:"能源站",en:"Energy Stations",fr:"Stations Énergétiques",es:"Estaciones de Energía",ar:"محطات الطاقة",ru:"Энергетические станции"},
+tech3Text:{zh:"喷射熔炉能源站、全域聚变能源供应系统，支撑太阳系工业运转。",en:"Jet furnace energy stations, full-scale fusion energy system supporting solar system industry.",fr:"Stations énergétiques à four à jet, système d'énergie de fusion à grande échelle soutenant l'industrie du système solaire.",es:"Estaciones de energía de horno a chorro, sistema de energía de fusión a gran escala que apoya la industria del sistema solar.",ar:"محطات طاقة الفرن النفاث، نظام طاقة اندماج كامل يدعم الصناعة في النظام الشمسي.",ru:"Энергетические станции с реактивной печью, система термоядерной энергии в полном масштабе, поддерживающая промышленность Солнечной системы."}
+};
+document.getElementById("langSelect").addEventListener("change",function(){
+  const lang=this.value;
+  document.querySelectorAll("[data-translate]").forEach(el=>{
+    const key=el.dataset.translate;
+    if(translations[key] && translations[key][lang]) el.innerText=translations[key][lang];
+  });
+});
+</script>
+
+</body>
+</html>

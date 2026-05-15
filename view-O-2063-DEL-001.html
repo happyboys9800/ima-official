@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 O-2063-DEL-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《关于谷神星首批矿产资源运抵地球的正式报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>O-2063-DEL-001</div>
+            <div><strong>档案类型：</strong>资源交付正式报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2063年11月28日</div>
+            <div><strong>发布机构：</strong>全球星际资源探索特别委员会（GIRS）</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">关于谷神星首批矿产资源运抵地球的正式报告</div>
+            <div class="doc-subtitle">文件编号：GIRS/LOG/2063/11/28/DELIVERY</div>
+            <div class="doc-ref">致：联合国秘书长、联合国安理会、地球联合理事会</div>
+            <div class="doc-ref">事由：就首批从谷神星开采并成功运抵地球的矿产资源情况，提交正式报告</div>
+
+            <h3>一、 事件概述</h3>
+            <p><strong>1.1 交付时间：</strong>2063年11月27日，格林威治标准时间 14:32</p>
+            <p><strong>1.2 交付地点：</strong>地球近地轨道，联合国第7号太空港（原“赤道轨道货运枢纽”）</p>
+            <p><strong>1.3 运输方：</strong>“星途探索”公司，货运飞船“希望号”</p>
+            <p><strong>1.4 货物来源：</strong>谷神星“希望谷”矿区（开采时间：2063年4月-10月）</p>
+            <p><strong>1.5 货物内容：</strong>高纯度氦-3同位素浓缩物（约120吨）；铂族金属粗炼锭（约45吨）；稀有稀土矿物混合物（约80吨）</p>
+            <p><strong>1.6 估值：</strong>约180亿新联合国元（以2063年国际定价估算）</p>
+
+            <h3>二、 交付过程详述</h3>
+
+            <h4>2.1 启航与航行</h4>
+            <p>“希望号”于2063年10月15日从谷神星轨道启航。这是一艘由退役的月球运输船改装而成的货运飞船，全长约120米，载重能力约500吨。</p>
+            <p>改装后的“希望号”配备了加固的货舱外壳、改进型推进器及一套应急生命维持系统，但缺乏远程通讯中继站及深空导航冗余。据星途探索公司内部文件显示，该船在启航前仅通过了“最低安全标准”的检查，其设计航程比实际航行距离短约15%。</p>
+            <p>航行过程中，“希望号”遭遇了两次小行星碎片的轻微撞击，导致船体隔热层局部破损，但未造成货物损失。经过约43天的航行，飞船于11月26日抵达地球近地轨道。</p>
+
+            <h4>2.2 抵达与卸载</h4>
+            <p>11月27日，“希望号”与联合国第7号太空港完成对接。联合国环境规划署及GIRS的联合核查小组登船，对货物进行了清点、取样及成分分析。</p>
+            <p>核实工作耗时约4小时。最终确认：本次交付的氦-3同位素浓度达到98.7%，符合核聚变燃料的标准；铂族金属及稀土矿物的初步纯度亦达到工业冶炼标准。</p>
+            <p><strong>14:32，GIRS秘书长在太空港货运控制中心正式签署《货物接收确认单》。</strong>这标志着人类历史上第一批从太阳系深空开采并运回地球的矿产资源，正式被纳入全球资源储备。</p>
+
+            <h4>2.3 接收仪式</h4>
+            <p>在确认单签署后，太空港举行了一场简短的、不对外公开的接收仪式。现场仅有GIRS及联合国工作人员约30人出席。无媒体参与。</p>
+            <p>GIRS秘书长在仪式上发表了简短讲话，他说：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “今天，我们接收的不是一船矿石。我们接收的是希望。这是人类文明在绝境中迈出的第一步。虽然这条路上充满了鲜血和混乱，但今天的成果证明：我们的方向是正确的。星空，确实是我们唯一的出路。”
+            </blockquote>
+
+            <h3>三、 货物详细清单</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>货物类别</th><th>重量（吨）</th><th>预估价值（亿新联合国元）</th><th>主要用途</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>氦-3同位素浓缩物</td><td>120</td><td>90</td><td>核聚变燃料、高能物理研究</td></tr>
+                    <tr><td>铂族金属粗炼锭</td><td>45</td><td>55</td><td>高端电子、催化、航天合金</td></tr>
+                    <tr><td>稀土矿物混合物</td><td>80</td><td>35</td><td>激光、导弹制导、超导材料</td></tr>
+                </tbody>
+            </table>
+            <p><strong>总计：</strong>245吨，价值约180亿新联合国元。</p>
+
+            <h3>四、 全球反响与影响</h3>
+
+            <h4>4.1 能源市场反应</h4>
+            <p>在“希望号”抵达消息公布后的24小时内，全球能源市场的期货价格出现了剧烈波动。氦-3期货价格单日下跌约17%，受此影响，全球电价预期的相关衍生品交易量暴增。</p>
+            <p>然而，由于本次交付的氦-3总量相对较小（仅相当于全球年需量的约0.3%），其对实际电价的影响微乎其微。GIRS的初步评估认为，在谷神星达到规模化开采之前，深空资源尚无法显著缓解地球的能源困境。但本次交付仍然证明了“深空能源供应”的可能性，具有重大的战略象征意义。</p>
+
+            <h4>4.2 工业界反响</h4>
+            <p>航天工业界对本次交付反应热烈。多家主要航天公司公开表示，将加大对深空采矿技术的研发投入。</p>
+            <p>据GIRS的数据，在“希望号”抵达后的三个月内，全球私人航天公司的深空勘探项目申请数量激增了约400%。太空淘金热的高潮，正是在此基础上迅速形成的。</p>
+
+            <h4>4.3 公众反响</h4>
+            <p>本次交付在全球公众中引发了广泛的关注与讨论。媒体报道以“来自星星的礼物”为标题，高度渲染了谷神星资源为人类文明注入新希望的叙事。然而，随着后续报道的深入，公众也逐渐了解到了深空采矿所伴随的残酷现实。一份独立的调查显示，仍有约67%的公众对“太空淘金热”的安全性表示担忧。</p>
+
+            <h3>五、 报告编者的附注</h3>
+            <p><strong>（由GIRS档案管理员于报告签发当日添加）</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <p>本次交付的意义，无论如何评价都不为过。它是人类在“大枯竭时代”最绝望的时刻，从星空中捞起的第一根救命稻草。</p>
+                <p>然而，我们必须在欢庆之余，保持清醒。</p>
+                <p>“希望号”的成功，并不能掩盖太空淘金热中正在发生的混乱与流血。当我们接收这船矿石时，谷神星的矿工们仍在以平均每月超过200人的速度死亡。当我们庆祝这180亿的财富时，数千名矿工的生命正在被计作“运营成本”。</p>
+                <p>这份报告记录的是希望，但这份希望，是用沉重得让人无法直视的代价换来的。</p>
+                <p>我们只有一个愿望：未来的每一批“希望号”，都能承载更少的鲜血，和更多的希望。</p>
+            </blockquote>
+
+            <div class="signature">
+                GIRS秘书长：<br />
+                （签字：罗伯特·卡恩）<br />
+                联合国环境规划署署长：<br />
+                （签字：朱莉娅·埃斯皮诺萨）<br />
+                签发日期：2063年11月28日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

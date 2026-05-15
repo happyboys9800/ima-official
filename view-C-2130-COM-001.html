@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2130-COM-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body .dialog-block {
+            margin: 16px 0;
+            padding: 12px 16px;
+            background: rgba(74, 144, 226, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid #4A90E2;
+        }
+        .archive-body .dialog-block .speaker {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .archive-body .dialog-block .speaker::after {
+            content: "：";
+        }
+        .archive-body .dialog-block .timestamp {
+            font-size: 12px;
+            color: #888;
+            margin-left: 12px;
+        }
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空自治派■■■■■■"■■■■"对话记录》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2130-COM-001</div>
+            <div><strong>档案类型：</strong>内部通讯记录（截获/解密）</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2130年5月7日（截获时间） / 2135年11月2日（解密时间）</div>
+            <div><strong>发布机构：</strong>内部安全监察局 通讯监控处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空自治派加密群组"第三星"对话记录</div>
+            <div class="doc-subtitle">—— 内部安全监察局截获通讯记录</div>
+            <div class="doc-ref">群组名称："第三星"（Third Star）</div>
+            <div class="doc-ref">群组类型：加密通讯群组（非官方，双向验证加密）</div>
+
+            <h3>参与者（以代号标识）：</h3>
+            <ul>
+                <li><strong>"谷神星"</strong>：刘远航，谷神星第一矿区副主管，38岁，深空出生（火星）</li>
+                <li><strong>"木卫二"</strong>：林小禾，木卫二前哨站设施管理部主任，35岁，深空出生（月球）</li>
+                <li><strong>"土卫六"</strong>：江海，土卫六新城副执行长官，40岁，深空出生（火星）</li>
+                <li><strong>"曙光城"</strong>：陈昭阳，火星曙光城管理委员会干事，32岁，深空出生（谷神星）</li>
+                <li><strong>"深红城"</strong>：赵晚舟，深红城科研中心主任，36岁，深空出生（地球移民第一代，但5岁时随父母迁至火星）</li>
+            </ul>
+
+            <p><strong>对话时间范围：</strong>2130年3月 - 2130年5月</p>
+
+            <div class="footnote" style="margin-bottom:20px;">
+                <strong>解密说明：</strong>本记录由内部安全监察局在2135年11月2日通过技术手段从破损的加密存储介质中恢复。由于数据不完整，部分对话内容存在跳跃或缺失。
+            </div>
+
+            <h3>2130年3月12日</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">08:23</span>
+                <p>听说这次的资源分配会议又吵了。地球派的人说我们"已经拿得够多了"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">08:25</span>
+                <p>我们拿得够多？我们拿的是30%，我们产的是70%。这叫够多？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">08:28</span>
+                <p>30%是指定配额，是我们合法的份额。但合法的份额不等于合理的份额。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">08:30</span>
+                <p>@谷神星 你们谷神星今年的氦-3产量又涨了？我看到数据了，破纪录。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">08:32</span>
+                <p>涨了。但涨的部分全进了"全球储备池"，我们连多拿一个百分点的自主分配权都没有。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">08:35</span>
+                <p>储备池是用于应急的。理论上说，我们也可以从中调配。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">08:38</span>
+                <p>理论上说。但实际上呢？每次调配申请都要经过地球联合理事会那边的"评估委员会"。你猜他们多久能批下来？上次我申请增加医疗物资配额，批了八个月。八个月。中间有三批物资都到了，医疗队还在等。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">08:42</span>
+                <p>这不只是效率问题。这是权力结构的问题。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">08:45</span>
+                <p>我同意。我们为什么需要地球联合理事会来批我们的物资？我们住在深空，我们在深空工作，我们在深空养孩子。深空的管理权，为什么要把控在地球手里？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">08:50</span>
+                <p>因为宪章是五十年前签的。那时候深空只有几百万人。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">08:52</span>
+                <p>那时候我们还没有木卫二前哨。没有土卫六新城。没有深红城。现在我们有五千万人了。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">08:55</span>
+                <p>五千万人。年产70%的能源和矿产。手里捏着全太阳系的经济命脉。但分配权在别人手里。你说这合理吗？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">08:58</span>
+                <p>不合理。但我不建议直接挑战宪章。挑战宪章，等于挑战IMA的根本逻辑。那会让我们站在所有人的对立面。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">09:02</span>
+                <p>那怎么办？继续等？等到什么时候？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">09:05</span>
+                <p>有一个办法。我们不直接挑战宪章。我们重建一个"宪法"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">09:08</span>
+                <p>你认真的？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">09:10</span>
+                <p>认真的。不是推翻。是"补充"。宪章没有规定的一切事务——深空定居点内部的社会治理、资源调配、文化政策——可以独立制定管理法规。只要不触碰宪章的核心原则，我们就可以在这些灰色地带里，建立属于深空自己的法律体系。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">09:14</span>
+                <p>这个办法可行。但这需要时间。需要人。需要一批懂得起草法律的人。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">09:18</span>
+                <p>我可以。我的团队里有两个法律专业的。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">09:20</span>
+                <p>我也有人。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">09:22</span>
+                <p>那就开始吧。</p>
+            </div>
+
+            <h3>2130年4月5日</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">14:12</span>
+                <p>有一个问题。我们现在做的这些事，怎么定义？如果用地球派的语言来解释，这就是"分裂"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">14:15</span>
+                <p>不。这不是分裂。这是"自治"的正常发展。所有成形的文明都有自治的需求。这不是分裂，这是成长。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">14:18</span>
+                <p>地球派会怎么看？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">14:20</span>
+                <p>他们不会喜欢。但也没法阻止。因为我们在做的是在"补充"而非"推翻"。只要我们的行动没有直接违反宪章条文，他们就没法起诉我们。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">14:25</span>
+                <p>有没有办法让他们"接受"？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">14:28</span>
+                <p>有。我们需要让他们"看到"好处。如果我们能证明，深空自治之后，深空的生产效率更高、资源利用率更好、对地球的供应更稳定——他们就没有理由反对。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">14:32</span>
+                <p>这需要数据。需要系统性的论证。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">14:35</span>
+                <p>那就做数据。我们有的是数据。从谷神星到木卫二到土卫六，我们的生产效率数据、供应链数据、人口结构数据——都是现成的。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">14:38</span>
+                <p>那就做一个报告。一版给地球派看的、温和的、技术性的、论证充分的报告。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">14:42</span>
+                <p>还有一版——给深空自己看的。</p>
+            </div>
+
+            <h3>2130年5月1日</h3>
+            <p><strong>（此段对话标记为"群组语音会议记录，仅存文字转录"）</strong></p>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">20:03</span>
+                <p>有件事，我需要确认一下。我们做的这一切，最终的目标是什么？是"自治"，还是"独立"？</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（约15秒沉默）</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">20:05</span>
+                <p>我先说吧。我是矿工的儿子。我在火星出生，在谷神星长大。我从来没有去过地球。我可以告诉你，地球上那些政客、那些代表、那些坐在理事会里决定我们配额的人——他们对我而言，是"别人"。不是"我们"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">20:08</span>
+                <p>我同意。我甚至不觉得"独立"是一个需要回避的词。它只是一个中性词。意思是"不再需要由别人来替你决定你的事"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">20:12</span>
+                <p>但"独立"意味着什么？意味着我们不再受IMA管辖？那不可能。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">20:15</span>
+                <p>我同意。独立的不是"深空"。独立的是"深空的决策权"。我们可以继续接受IMA的统一战略、统一安全标准、统一资源统计——但我们也需要一套独立的、由深空人自己制定的决策机制。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">20:18</span>
+                <p>这个框架，叫什么？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">20:22</span>
+                <p>我称之为"星海宪章"。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（约30秒沉默）</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">20:25</span>
+                <p>我喜欢这个名字。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">20:27</span>
+                <p>我也喜欢。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">20:28</span>
+                <p>我也喜欢。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">20:30</span>
+                <p>"星海宪章"。好，就这么叫。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（语音会议记录结束）</p>
+            </div>
+
+            <h3>2130年5月7日</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">22:15</span>
+                <p>@所有人 我有一件事需要说一下。我最近感觉，我们的通讯可能被内部安全监察局的部分人员注意到了。我建议我们暂停群组活动至少三个月，把所有文件资料转移到离线存储设备。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span><span class="timestamp">22:18</span>
+                <p>同意。我会处理我这边的手持设备数据。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span><span class="timestamp">22:20</span>
+                <p>我建议重建一个新的群组。使用不同的加密协议。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span><span class="timestamp">22:22</span>
+                <p>我同意重建。但这次要更小，只限我们五个人。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span><span class="timestamp">22:25</span>
+                <p>同意。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span><span class="timestamp">22:28</span>
+                <p>那好，就到这里。记住：我们不是在推翻任何人。我们是在为自己的"出生地"争取一个合理的位置。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（群组静默）</p>
+            </div>
+
+            <div class="signature">
+                内部安全监察局 通讯监控处<br />
+                （解密日期：2135年11月2日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

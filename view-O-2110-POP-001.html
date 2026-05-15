@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 O-2110-POP-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空定居点人口突破3000万报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>O-2110-POP-001</div>
+            <div><strong>档案类型：</strong>人口统计报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2110年11月15日</div>
+            <div><strong>发布机构：</strong>IMA 资源统计总署</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空定居点人口突破3000万报告</div>
+            <div class="doc-subtitle">文件编号：IMA/POP/2110/11/15/30M</div>
+            <div class="doc-ref">致：IMA 寰宇总局理事会</div>
+            <div class="doc-ref">发件人：资源统计总署 署长 赵明远</div>
+            <div class="doc-ref">主题：关于深空定居点总人口突破3000万的统计报告及趋势分析</div>
+
+            <h3>一、 数据概要</h3>
+            <p><strong>1.1 关键数据</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>指标</th><th>数据</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>深空定居点总人口</td><td><strong>30,127,843人</strong>（截至2110年11月1日）</td></tr>
+                    <tr><td>较上年增长</td><td>+2,843,217人（+10.4%）</td></tr>
+                    <tr><td>较IMA成立时（2068年）增长</td><td>+2,988%</td></tr>
+                    <tr><td>深空公民人数</td><td>8,742,316人（占总人口29.0%）</td></tr>
+                    <tr><td>地球移民占比</td><td>67.3%</td></tr>
+                    <tr><td>深空出生占比</td><td>32.7%</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>1.2 历史增长曲线</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>年份</th><th>人口</th><th>年增长率</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2068年（IMA成立）</td><td>98万</td><td>—</td></tr>
+                    <tr><td>2080年</td><td>520万</td><td>+7.2%（年均）</td></tr>
+                    <tr><td>2090年</td><td>1,200万</td><td>+8.7%（年均）</td></tr>
+                    <tr><td>2100年</td><td>2,050万</td><td>+5.5%（年均）</td></tr>
+                    <tr><td>2110年</td><td>3,013万</td><td>+10.4%（当年）</td></tr>
+                </tbody>
+            </table>
+
+            <h3>二、 区域分布</h3>
+            <p><strong>2.1 按定居点区域划分</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>区域</th><th>人口</th><th>占比</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>月球</td><td>7,821,542</td><td>26.0%</td></tr>
+                    <tr><td>火星</td><td>11,947,688</td><td>39.7%</td></tr>
+                    <tr><td>谷神星及小行星带</td><td>3,842,176</td><td>12.8%</td></tr>
+                    <tr><td>木星卫星</td><td>2,815,633</td><td>9.3%</td></tr>
+                    <tr><td>土星卫星</td><td>1,743,211</td><td>5.8%</td></tr>
+                    <tr><td>其他深空基地</td><td>1,957,593</td><td>6.5%</td></tr>
+                    <tr><td><strong>总计</strong></td><td><strong>30,127,843</strong></td><td><strong>100%</strong></td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>2.2 主要定居点人口排行</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>排名</th><th>定居点名称</th><th>区域</th><th>人口</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1</td><td>曙光城</td><td>火星</td><td>3,842,177</td></tr>
+                    <tr><td>2</td><td>新黎明城</td><td>火星</td><td>2,117,843</td></tr>
+                    <tr><td>3</td><td>静海基地</td><td>月球</td><td>2,015,672</td></tr>
+                    <tr><td>4</td><td>风暴港</td><td>月球</td><td>1,543,288</td></tr>
+                    <tr><td>5</td><td>谷神星第一矿区</td><td>谷神星</td><td>1,187,422</td></tr>
+                    <tr><td>6</td><td>木卫二前哨</td><td>木星</td><td>942,177</td></tr>
+                    <tr><td>7</td><td>土卫六新城</td><td>土星</td><td>817,344</td></tr>
+                    <tr><td>8</td><td>火星第三定居点</td><td>火星</td><td>713,266</td></tr>
+                    <tr><td>9</td><td>月球高地城</td><td>月球</td><td>701,455</td></tr>
+                    <tr><td>10</td><td>火星第四定居点</td><td>火星</td><td>641,288</td></tr>
+                </tbody>
+            </table>
+
+            <h3>三、 人口结构分析</h3>
+            <p><strong>3.1 年龄结构</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>年龄段</th><th>人口</th><th>占比</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0-14岁</td><td>6,892,177</td><td>22.9%</td></tr>
+                    <tr><td>15-29岁</td><td>7,843,211</td><td>26.0%</td></tr>
+                    <tr><td>30-44岁</td><td>8,112,844</td><td>26.9%</td></tr>
+                    <tr><td>45-59岁</td><td>4,732,881</td><td>15.7%</td></tr>
+                    <tr><td>60岁以上</td><td>2,546,730</td><td>8.5%</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>3.2 深空出生人口占比</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>年龄组</th><th>深空出生占比</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>0-14岁</td><td>87.3%</td><td>这一代几乎全部在深空出生长大</td></tr>
+                    <tr><td>15-29岁</td><td>41.2%</td><td>第一批深空出生者已成年</td></tr>
+                    <tr><td>30-44岁</td><td>12.7%</td><td>第一批深空儿童比例尚低</td></tr>
+                    <tr><td>45-59岁</td><td>2.1%</td><td>仅限极少数早期移民子女</td></tr>
+                    <tr><td>60岁以上</td><td>0.3%</td><td>基本为零</td></tr>
+                </tbody>
+            </table>
+
+            <h3>四、 增长趋势分析</h3>
+
+            <h4>4.1 增长驱动力</h4>
+            <ol>
+                <li><strong>木星卫星定居点的高速增长：</strong>木星卫星区域（木卫二、木卫三、木卫四）在2110年的人口增长率为<strong>24.7%</strong>，为全太阳系最高。主要驱动力来自普罗米修斯计划二期工程（2109年竣工）带来的能源供应增长，以及木星卫星科学考察站的大规模扩建。</li>
+                <li><strong>火星人口的持续扩张：</strong>火星区域人口增长率为<strong>11.2%</strong>，略高于全太阳系平均水平。新黎明城的满负荷运营以及第三、第四定居点的建设，是火星人口持续增长的主要动力。</li>
+                <li><strong>深空出生人口的代际增长：</strong>深空出生的第二代人口正在进入生育年龄，形成了自然的代际增长循环。2110年，深空出生婴儿占全年新出生人口的<strong>91.3%</strong>，地球移民的生育率已不再是深空人口增长的主要来源。</li>
+            </ol>
+
+            <h4>4.2 增长预测</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>年份</th><th>预计人口</th><th>预测依据</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2115年</td><td>4,200万</td><td>按年均8%增长预测</td></tr>
+                    <tr><td>2120年</td><td>5,800万</td><td>按年均7%增长预测</td></tr>
+                    <tr><td>2125年</td><td>7,500万</td><td>按年均5.5%增长预测</td></tr>
+                    <tr><td>2130年</td><td>9,200万</td><td>按年均4.5%增长预测</td></tr>
+                </tbody>
+            </table>
+
+            <h3>五、 结论与展望</h3>
+            <p><strong>5.1 核心结论</strong></p>
+            <ol>
+                <li>深空定居点人口突破3000万，是人类文明在深空定居史上的一个里程碑。它标志着深空定居点已从"前哨"演变为"社会"，从"临时居住"走向"永久家园"。</li>
+                <li>火星已成为深空人口第一大区域，月球次之。木星与土星区域正在快速崛起，外太阳系的定居点格局正在形成。</li>
+                <li>深空出生人口占比已超过30%，且年轻一代几乎全部在深空出生长大。这意味着"星海之民"正在成为深空人口的主体，其文化认同、政治诉求与社会需求将与地球移民显著不同。</li>
+            </ol>
+
+            <div class="signature">
+                资源统计总署署长：<br />
+                （签字：赵明远）<br />
+                IMA第二任局长：<br />
+                （签字：陈世杰）<br />
+                签发日期：2110年11月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

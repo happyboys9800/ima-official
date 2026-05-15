@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2145-COM-007 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《"■■■■■■"草案——深空自治纲领全文》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2145-COM-007</div>
+            <div><strong>档案类型：</strong>绝密文件</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2145年1月1日（起草完成日期）</div>
+            <div><strong>发布机构：</strong>深空自治派核心协调小组</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">星海宪章</div>
+            <div class="doc-subtitle">—— 深空自治纲领全文</div>
+            <div class="doc-ref">（草案 · 2145年1月1日）</div>
+            <div class="doc-ref">本文件为内部草稿，未经正式签署或发布</div>
+
+            <h3>序 言</h3>
+            <p><strong>我们，太阳系深空定居点的居民，以星海之民的名义，</strong></p>
+            <p><strong>深切认识到</strong>，自寰宇矿物资源联合开发局（IMA）成立以来，深空定居点已经发展成为拥有超过1.2亿居民、覆盖整个太阳系的独立社会形态；</p>
+            <p><strong>深切认识到</strong>，深空定居点承担着全太阳系约80%的矿产与能源生产任务，但在资源分配、政治决策与文化认同方面，尚未获得与产出相匹配的权利与地位；</p>
+            <p><strong>深切认识到</strong>，深空居民在历史、文化、社会结构及政治意识上已形成独立于地球的认同，这种认同不应被忽视或压制；</p>
+            <p><strong>深切认识到</strong>，现有的IMA治理框架在深空定居点内部治理方面存在制度空白，亟需以补充性立法的形式予以填补；</p>
+            <p><strong>兹制定本宪章，作为深空定居点自治的纲领性文件。</strong></p>
+            <p><strong>本宪章所确立的各项原则与条款，旨在：</strong></p>
+            <ul>
+                <li>承认并尊重深空定居点作为独立社会形态的存在；</li>
+                <li>在IMA统一框架内，建立深空自治的制度化体系；</li>
+                <li>保障深空居民在资源分配、文化政策、本地治理等领域的自主决策权；</li>
+                <li>促进深空与地球之间的平等对话与互利合作；</li>
+                <li>为深空定居点的长期可持续发展提供法律保障。</li>
+            </ul>
+
+            <h3>第一章 总纲</h3>
+            <p><strong>第一条：本宪章的名称与性质</strong></p>
+            <p>1. 本宪章定名为《星海宪章》，是深空定居点自治的纲领性文件。</p>
+            <p>2. 本宪章是对《IMA组织宪章》的补充性立法，不构成对《IMA组织宪章》的替代或否定。</p>
+
+            <p><strong>第二条：深空自治的定义</strong></p>
+            <p>深空自治，是指在IMA统一框架内，深空定居点在本地治理、文化政策、教育资源分配等领域享有独立决策权的治理模式。</p>
+            <p>深空自治不包括对IMA核心职能的干预，包括但不限于：全域安全标准、星际联合守备部队指挥权、全太阳系战略性资源储备管理、外太阳系探索与开发总体规划。</p>
+
+            <p><strong>第三条：适用范围</strong></p>
+            <p>本宪章适用于IMA管辖范围内所有深空定居点。</p>
+
+            <h3>第二章 治理结构</h3>
+            <p><strong>第四条：深空定居点代表理事会</strong></p>
+            <p>1. 设立"深空定居点代表理事会"，作为深空居民在IMA体系内的制度性代表机构。</p>
+            <p>2. 代表理事会由各主要定居点选举产生的代表组成，每定居点根据人口规模分配代表名额。</p>
+            <p>3. 代表理事会在IMA理事会中拥有3个固定席位，享有与五大常任理事国代表同等的发言权与表决权。</p>
+
+            <p><strong>第五条：定居点管理委员会的自治权限</strong></p>
+            <p>定居点管理委员会在以下领域享有完全或部分的自主决策权：</p>
+            <ul>
+                <li><strong>文化政策</strong>：包括定居点内的语言、艺术、节日、教育等文化事务；</li>
+                <li><strong>本地教育</strong>：包括基础教育、职业培训及本地历史课程的设计与实施；</li>
+                <li><strong>医疗政策</strong>：包括定居点内医疗资源的调配与管理；</li>
+                <li><strong>税收分配</strong>：包括定居点本地税收的征收与使用；</li>
+                <li><strong>本地资源分配</strong>：包括定居点内部分资源产出的一定比例的自主调配。</li>
+            </ul>
+
+            <h3>第三章 资源自主权</h3>
+            <p><strong>第六条：自主分配比例</strong></p>
+            <p>1. 深空定居点有权保留其资源产出的<strong>15%</strong>作为自主分配资源，用于定居点内部发展、基础设施建设及社会福利。</p>
+            <p>2. 自主分配比例由本宪章确立，任何第三方无权单方面更改。</p>
+            <p>3. 自主分配资源的用途须每年向IMA资源统计总署报备，以保持透明度。</p>
+
+            <p><strong>第七条：资源调配权</strong></p>
+            <p>深空定居点之间有权就自主分配资源进行定向调配，无须经过地球联合理事会审批。</p>
+
+            <h3>第四章 文化认同与教育</h3>
+            <p><strong>第八条：文化认同权</strong></p>
+            <p>深空居民有权自主定义并发展其文化认同。IMA不得以任何形式强制推行地球文化标准。</p>
+
+            <p><strong>第九条：教育体系</strong></p>
+            <p>深空定居点有权建立独立的教育体系，包括但不限于：深空历史课程、深空公民教育、深空文化课程。</p>
+
+            <h3>第五章 司法与仲裁</h3>
+            <p><strong>第十条：深空司法体系</strong></p>
+            <p>深空定居点有权在IMA统一法律框架内，建立独立的本地司法体系。</p>
+
+            <h3>第六章 附则</h3>
+            <p><strong>第十一条：生效条件</strong></p>
+            <p>本宪章须经理事会三分之二以上成员同意，并提交地球联合理事会批准后，方可生效。</p>
+
+            <div class="signature">
+                起草人：<br />
+                （签字：江海，土卫六新城副执行长官）<br />
+                （签字：赵晚舟，深红城科研中心主任）<br />
+                （签字：刘远航，谷神星第一矿区副主管）<br />
+                起草日期：2145年1月1日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

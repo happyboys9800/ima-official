@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 D-2122-PRO-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body ol {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ol li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《关于启动"■■■■"深空探测项目的绝密决议》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>D-2122-PRO-001</div>
+            <div><strong>档案类型：</strong>重大工程项目启动决议</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2122年1月12日</div>
+            <div><strong>发布机构：</strong>IMA 寰宇总局理事会（闭门会议记录）</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">关于启动"天籁"深空探测项目的绝密决议</div>
+            <div class="doc-subtitle">文件编号：IMA/CLASSIFIED/2122/01/12/AURA</div>
+            <div class="doc-ref">决议类型：理事会闭门会议决议（仅限主席及常务理事签署）</div>
+            <div class="doc-ref">会议时间：2122年1月10日，14:00-18:00</div>
+            <div class="doc-ref">会议地点：IMA总部，第7层绝密会议室</div>
+
+            <h3>一、 背景与依据</h3>
+
+            <h4>1.1 信号监测的后续进展</h4>
+            <p>自2115年7月首次探测到太阳系外异常信号以来，代号"信标"的专项研究组对目标天区进行了持续7年的监测。</p>
+            <p>截至2121年12月，研究组累计记录了<strong>47次</strong>异常信号事件。信号特征高度一致：频率稳定、调制模式相同、方向来源不变。研究组在绝密报告中确认：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                "该信号的来源，具有明确的、非自然的人工属性。它不是一个孤立的信号事件，而是一个持续的、有规律的发射源。其方向指向太阳系外约6.2光年处的一个未命名天区。"
+            </blockquote>
+
+            <h4>1.2 现有探测能力的局限</h4>
+            <p>当前IMA的深空探测能力，最远仅覆盖至土星轨道。柯伊伯带以外的区域，人类的探测器尚未涉足。要到达信号来源区域，需要一艘具备超长续航能力、可自主运行数十年的深空探测器。</p>
+
+            <h4>1.3 必要性论证</h4>
+            <p>理事会闭门会议经过充分讨论，一致认为：</p>
+            <ul>
+                <li>该信号具有极高的科学价值与潜在的战略意义；</li>
+                <li>如果该信号确实源于地外智慧文明，那么人类文明的未来将面临一个全新的、不可预测的变量；</li>
+                <li>面对这一变量，单纯等待或被动观测是不够的。人类必须主动派出探测器，前往信号源头进行实地勘测；</li>
+                <li>这项任务极具风险，耗时极长。因此必须建立一个独立的、具备长期深空航行能力的探测体系。</li>
+            </ul>
+
+            <h3>二、 项目概述</h3>
+            <p><strong>2.1 项目代号：</strong><strong>"天籁"（AURA）</strong></p>
+
+            <p><strong>2.2 项目目标：</strong></p>
+            <p>设计并建造一艘能够抵达信号源天区（距太阳系约6.2光年）进行实地勘测的深空探测器，并建立一套能够与探测器进行超远程通信的深空网络系统。</p>
+
+            <p><strong>2.3 核心设计指标（初步）：</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>指标</th><th>参数</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>目标距离</td><td>约6.2光年</td></tr>
+                    <tr><td>航程</td><td>约7.5光年（含冗余）</td></tr>
+                    <tr><td>巡航速度</td><td>目标：0.2倍光速（设计上限）</td></tr>
+                    <tr><td>任务时长</td><td>约35年（单程）至70年（往返，视情况而定）</td></tr>
+                    <tr><td>核心载荷</td><td>高分辨率遥感系统、样本采集与分析实验室、人工智能自主决策系统、量子通讯中继装置</td></tr>
+                </tbody>
+            </table>
+
+            <h3>三、 技术路线</h3>
+
+            <h4>3.1 推进系统</h4>
+            <p>目前已知的化学推进或聚变推进技术，无法在合理时间内将探测器送至6光年外的目标。</p>
+            <p>预研阶段的重点，将放在新型推进技术的开发上：</p>
+            <ul>
+                <li><strong>同位素脉冲核裂变推进：</strong>基础理论已在实验室验证，但尚未进行过空间实验；</li>
+                <li><strong>惯性约束聚变推进：</strong>在聚变反应堆技术基础上，利用反应产物的定向喷射产生推力；</li>
+                <li><strong>太阳帆与激光推进：</strong>利用超级激光阵列在远距离上对探测器施加推力，该方案依赖建设一个超大型激光发射设施。</li>
+            </ul>
+
+            <h4>3.2 超远程通信</h4>
+            <ul>
+                <li><strong>量子通信中继站：</strong>在深空中部署多个量子通信中继站，形成一条"通信链"，以解决远距离传输中的信号衰减问题；</li>
+                <li><strong>自主决策系统：</strong>探测器配备具有高度自主决策能力的AI系统，以应对在超长通信延时下的实时决策需求。</li>
+            </ul>
+
+            <h3>四、 核心疑问</h3>
+            <p><strong>（以下问题仅在闭门会议中进行了讨论，未形成最终结论）</strong></p>
+            <ol>
+                <li><strong>信号的性质：</strong>该信号是"问候"、是"信标"、还是"警告"？如果是后者，那么传递信息的速度极为重要。目前以0.2倍光速推进的探测器，需要约35年才能抵达信号源。</li>
+                <li><strong>回应的方式：</strong>如果我们发送了一个探测器，那么我们将如何回应可能收到的"回复"？我们需要建立一个"接触协议框架"，以应对与地外文明的首次接触。</li>
+                <li><strong>保密与公众知情权：</strong>本决议目前列在绝密级别下。但检测到太阳系外异常信号这一事件，在未来的某一天必须向公众公布。选择一个合适的时机与方式，将成为理事会未来面临的重要政治决策之一。</li>
+            </ol>
+
+            <h3>五、 决议条款</h3>
+            <p><strong>决议第一条：</strong>批准启动"天籁"深空探测项目的预研阶段（2122-2125年），拨款<span class="redacted">████████</span>亿新联合国元用于关键技术研究。</p>
+            <p><strong>决议第二条：</strong>成立"天籁项目特别行动组"，隶属IMA星际勘探总院，由首席科学家埃琳娜·沃罗诺娃担任项目负责人，直接向理事会报告。</p>
+            <p><strong>决议第三条：</strong>本项目所有的技术研究成果与发现数据，在得到地球联合理事会及IMA理事会联合授权之前，均列为绝密级，不得向任何第三方机构或个人披露。</p>
+            <p><strong>决议第四条：</strong>项目执行过程中，若发现明确的、高置信度的地外智慧文明活动证据，项目组应立即采取最高级的安全协议，并启动"接触协议框架"的预案。</p>
+            <p><strong>决议第五条：</strong>本决议自签署之日起生效。</p>
+
+            <div class="signature">
+                IMA寰宇总局理事会主席：<br />
+                （签字：刘远征，IMA第三任局长）<br />
+                常务理事：<br />
+                （签字：华夏人民共和国代表）<br />
+                （签字：美利坚合众国代表）<br />
+                （签字：俄罗斯联邦代表）<br />
+                （签字：法兰西共和国代表）<br />
+                （签字：联合王国代表）<br />
+                绝密等级确认人：<br />
+                （签字：地球联合理事会 特派保密官）<br />
+                签发日期：2122年1月12日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

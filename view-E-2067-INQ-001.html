@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2067-INQ-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《关于“希望谷惨案”的独立调查委员会最终报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2067-INQ-001</div>
+            <div><strong>档案类型：</strong>独立调查委员会最终报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年2月14日</div>
+            <div><strong>发布机构：</strong>联合国“谷神星惨案”独立调查委员会</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">关于“希望谷惨案”的独立调查委员会最终报告</div>
+            <div class="doc-subtitle">文件编号：UN/IC/2068/02/14/FINAL</div>
+            <div class="doc-ref">致：联合国秘书长、地球联合理事会、全球公众</div>
+            <div class="doc-ref">事由：就2067年10月17日发生于谷神星“希望谷”矿区的大规模暴力冲突及人员伤亡事件，提交最终调查结论与责任认定</div>
+
+            <h3>一、 事件概述</h3>
+            <p><strong>1.1 事件名称：</strong>“希望谷惨案”（Hope Valley Massacre）</p>
+            <p><strong>1.2 事件时间：</strong>2067年10月17日，谷神星当地时间 00:00 - 10月20日 06:00（持续约78小时）</p>
+            <p><strong>1.3 事件地点：</strong>谷神星“希望谷”矿区主矿脉区域</p>
+            <p><strong>1.4 事件性质：</strong>三家私人矿业公司为争夺“希望谷”主矿脉控制权，动用炸药、导弹及小型核装置，引发的武装冲突与平民屠杀事件</p>
+            <p><strong>1.5 确认死亡人数：</strong>1,247人</p>
+            <p><strong>1.6 失踪人数：</strong>386人（推定死亡）</p>
+            <p><strong>1.7 受伤人数：</strong>312人</p>
+            <p><strong>1.8 财产损失：</strong>希望谷矿区约70%的地表设施被毁，总损失估值约18亿新联合国元</p>
+
+            <h3>二、 背景与前提</h3>
+            <p><strong>2.1 太空淘金热的顶峰</strong></p>
+            <p>自2061年谷神星超级矿脉被发现以来，超过3000家私人公司、120万亡命之徒涌入小行星带及谷神星轨道。至2067年，谷神星表面已建立了超过200个采矿据点，其中最大、最富饶的矿区，即为“希望谷”。</p>
+            <p>“希望谷”得名于第一批抵达此地的矿工。他们在地表插下一块简陋的木牌，上面写着：“这里是最后的希望。”但讽刺的是，这里最终变成了人间地狱。</p>
+
+            <p><strong>2.2 三家公司的冲突</strong></p>
+            <p>至2067年10月，希望谷主矿脉的控制权，主要由三家公司争夺：</p>
+            <ul>
+                <li><strong>“深空重工”：</strong>第一批进入谷神星的公司之一，拥有约3500名员工，运营7座矿井。以手段强硬、不惜使用暴力著称。</li>
+                <li><strong>“星途探索”：</strong>最早发现谷神星矿藏的公司，拥有最先进的勘探技术，但在大规模采矿能力上落后于前两者。</li>
+                <li><strong>“泛亚矿业”：</strong>由东亚及东南亚资本联合组建，拥有约2800名员工，运营5座矿井。以高薪吸引矿工著称。</li>
+            </ul>
+            <p>自2066年以来，三家公司已发生超过40次小规模武装冲突，累计造成约200人死亡。联合国及地球联合理事会曾多次呼吁停火，但均未得到响应。</p>
+
+            <h3>三、 事件详细经过</h3>
+            <p><strong>（根据幸存者证言、现场残骸分析、截获通讯记录及卫星影像资料还原）</strong></p>
+
+            <h4>3.1 冲突爆发</h4>
+            <p><strong>2067年10月17日，00:00：</strong></p>
+            <p>深空重工公司以“保护本公司资产及员工安全”为名，出动约200名武装安保人员，对位于希望谷中段的“星途探索”公司作业区发动突袭。这是三家公司中，第一次正式动用“军事级别的”武装力量对矿区发动进攻。</p>
+            <p>幸存者、星途探索公司现场工程师 陈明 在事后证言中说道：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “那一天晚上，我们听到了引擎的声音。不是运输船的引擎，是武装突击艇的引擎。我们还没反应过来，爆炸就开始了。他们炸毁了我们两个生活舱和一个燃料仓库。我当时正在值班，从窗户里看到外面到处都是火光和枪声，有人躺在血里，像垃圾一样被抛弃在地上。”
+            </blockquote>
+
+            <h4>3.2 局势扩大化</h4>
+            <p><strong>10月17日，06:00 - 10月18日，22:00：</strong></p>
+            <p>星途探索公司在遭受袭击后，立即向“泛亚矿业”求援。泛亚矿业出于自身战略考虑——避免深空重工公司一家独大——决定介入冲突。三方势力在希望谷主矿脉区域形成了三条对峙线，并在数十个作业点展开拉锯战。交火中，双方动用了大量炸药及燃烧装置，导致矿区内多处矿井和基础设施严重受损。</p>
+
+            <h4>3.3 小型核装置的使用</h4>
+            <p><strong>10月19日，14:00：</strong></p>
+            <p>在交战持续约62小时后，深空重工公司为彻底摧毁星途探索公司与泛亚矿业在希望谷东段的防御工事，动用了“特制工业钻探核弹头”——一种原本用于在小行星上进行深层钻探与爆破的非标准武器。</p>
+            <p>该核弹头当量约为0.5吨TNT，虽未达到“战术核武器”级别，但其产生的热辐射与冲击波，仍足以摧毁半径约300米范围内的所有地表设施和生物。</p>
+            <p><strong>爆炸发生于希望谷东段12号矿区。</strong>爆炸瞬间，约200名矿工及工作人员被直接杀死。另有约300人因爆炸引发的矿井塌方与内部空气污染，被困于地下。</p>
+            <p>幸存者、泛亚矿业矿工 李秀英 在事后证言中说道：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “那一声爆炸，是我一辈子忘不掉的声音。我以为是天塌了。矿里的灯全灭了，到处都是灰尘和惨叫声。我用安全帽上的头灯，看到身边的人倒在地上，动都不动。我抱着他的头，感觉他的脸皮已经烧焦了，像一张纸一样，一碰就掉。”
+            </blockquote>
+
+            <h4>3.4 救援与撤退的全面失败</h4>
+            <p><strong>10月19日，18:00 - 10月20日，06:00：</strong></p>
+            <p>爆炸发生后，三家公司均未组织有效救援。深空重工公司高层在通讯中声称“该区域的伤亡系敌对势力的攻击所致，本公司不承担救援责任”。星途探索公司与泛亚矿业则因自身阵地受损严重，无力组织大规模救援行动。</p>
+            <p>在各方互相推诿的过程中，大量被困矿工因缺氧、中毒及高温，在地下逐步死亡。</p>
+
+            <h3>四、 遇难者构成分析</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>类别</th><th>人数</th><th>占比</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>中国籍</td><td>327人</td><td>26.2%</td></tr>
+                    <tr><td>非洲籍（含刚果、尼日利亚、南非等）</td><td>219人</td><td>17.6%</td></tr>
+                    <tr><td>美国籍</td><td>186人</td><td>14.9%</td></tr>
+                    <tr><td>东南亚籍（含印尼、菲律宾、越南等）</td><td>154人</td><td>12.3%</td></tr>
+                    <tr><td>欧洲籍</td><td>112人</td><td>9.0%</td></tr>
+                    <tr><td>南亚籍（含印度、巴基斯坦、孟加拉等）</td><td>98人</td><td>7.9%</td></tr>
+                    <tr><td>拉丁美洲籍</td><td>76人</td><td>6.1%</td></tr>
+                    <tr><td>其他籍及未知身份</td><td>75人</td><td>6.0%</td></tr>
+                </tbody>
+            </table>
+            <p><strong>总计：</strong>1,247人（确认死亡）</p>
+            <p>遇难者中，96%为矿工、工程师、技术人员及后勤人员，即“普通劳动者”。他们是为了赚取一份高薪，养活地球上的家人而来到这片星空的。但他们最终，死在了同胞的子弹和核弹下。</p>
+
+            <h3>五、 责任认定</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>责任方</th><th>责任认定</th><th>建议处罚</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>深空重工公司 董事会</td><td>策划并下令发动对民用矿区的武装袭击，使用违禁武器（工业核弹头）扩大冲突规模，对1247名遇难者的死亡负有首要刑事责任</td><td>建议将董事会全体成员列为战争罪犯，提起国际刑事法庭起诉，并没收全部公司资产</td></tr>
+                    <tr><td>星途探索公司 董事会</td><td>在冲突爆发前，为争夺矿脉，大量囤积军事装备，与深空重工公司形成敌对态势，对冲突升级负有同等责任</td><td>建议提起国际刑事法庭起诉，并没收公司全部资产</td></tr>
+                    <tr><td>泛亚矿业 董事会</td><td>主动介入他方冲突，将矿区推向三方混战，对伤亡人数的扩大负有重要责任</td><td>建议提起国际刑事法庭起诉，并没收公司全部资产</td></tr>
+                    <tr><td>联合国安理会</td><td>在冲突爆发前、爆发期间，未能采取任何有效措施阻止暴力升级，对救援失败负有间接责任</td><td>建议改组安理会，并建立针对深空作业冲突的快速反应机制</td></tr>
+                    <tr><td>地球联合理事会</td><td>未能及时建立有效的深空执法体系与安全监管机制，对太空淘金热的无序状态负有监管责任</td><td>建议尽快通过新的星际资源管理立法，并成立统一的执法机构</td></tr>
+                </tbody>
+            </table>
+
+            <h3>六、 调查委员会最终意见</h3>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <p>我们以联合国之名，在此郑重宣布：希望谷惨案，是自二战结束以来，人类文明遭遇的最触目惊心的一场由资本贪婪与制度无能共同制造的大屠杀。</p>
+                <p>这1247名死者，不是死于战争，不是死于天灾，而是死于一种系统性的人性丧失——当一个行业将矿工视为“会呼吸的钻头”，当一家公司将利润置于生命之上，当一个世界将无序视为常态，事故和屠杀，便只是时间的问题。</p>
+                <p>希望谷惨案，不仅仅是一场悲剧。它是一记响亮的耳光，打在整个人类文明的面孔上。</p>
+                <p>但我们相信，任何悲剧，都不应被白费。它的意义，在于唤醒人类的集体良知，在于推动一场彻底的、全面的制度变革。</p>
+                <p>我们呼吁：<strong>解散所有私人矿业公司。建立一个统一的、代表全人类利益的、具有强制执法权的星际资源开发机构。</strong></p>
+                <p>这1247条生命，必须换回一个秩序的新时代。</p>
+            </blockquote>
+
+            <div class="signature">
+                独立调查委员会主席：<br />
+                （签字：海伦·奥尔森，前国际刑事法院法官）<br />
+                调查委员会成员：<br />
+                （签字：刘志远，中国工程院院士；詹姆斯·哈里森，美国地质调查局前局长；阿克巴·汗，巴基斯坦太空与高层大气研究委员会前主席；维拉·柯瓦连科，俄罗斯联邦航天局顾问）<br />
+                签发日期：2068年2月14日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

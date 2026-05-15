@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 F-2068-CHA-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《寰宇矿物资源联合开发局组织宪章签署记录》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>F-2068-CHA-001</div>
+            <div><strong>档案类型：</strong>组织章程签署记录</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年9月30日</div>
+            <div><strong>发布机构：</strong>寰宇矿物资源联合开发局筹备委员会</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">寰宇矿物资源联合开发局组织宪章签署记录</div>
+            <div class="doc-subtitle">文件编号：IMA/CHTR/2068/09/30/SIGN</div>
+            <div class="doc-ref">签署地点：瑞士日内瓦，万国宫</div>
+            <div class="doc-ref">签署时间：2068年9月30日，14:00 - 16:30</div>
+
+            <h3>一、 签署仪式背景</h3>
+            <p>根据联合国安理会第4127号决议，寰宇矿物资源联合开发局（IMA）须于2068年10月1日前完成组建并正式挂牌运作。</p>
+            <p>为达成这一目标，筹备委员会于2068年4月1日正式成立，并在接下来的六个月内完成了以下工作：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>时间</th><th>工作内容</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>2068年4月</td><td>起草《组织宪章》初稿，提交各创始成员审议</td></tr>
+                    <tr><td>2068年5月-6月</td><td>各创始成员就宪章条款进行多轮磋商与修改</td></tr>
+                    <tr><td>2068年7月</td><td>完成对全球约3000家私人矿业公司的资产清查与收购评估</td></tr>
+                    <tr><td>2068年8月</td><td>确定各创始成员的出资比例与股权结构</td></tr>
+                    <tr><td>2068年9月1日-15日</td><td>完成全部资产收购与人员移交</td></tr>
+                    <tr><td>2068年9月16日-29日</td><td>完成宪章最终审定与签署准备</td></tr>
+                </tbody>
+            </table>
+            <p><strong>2068年9月30日，签署仪式正式举行。</strong></p>
+
+            <h3>二、 签署仪式现场记录</h3>
+            <p><strong>14:00</strong></p>
+            <p>签署仪式在万国宫的联合国大厅举行。出席者包括各创始成员代表、联合国秘书长、地球联合理事会主席及筹备委员会全体成员。</p>
+            <p>大厅中央设有一张长桌，桌上摆放着用六种语言印制、以红色绒布封面的宪章正本。</p>
+
+            <p><strong>14:15</strong></p>
+            <p>联合国秘书长发表致辞：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “各位代表，今天，我们站在一个历史性的门槛上。
+                <br /><br />
+                六年前，我们的地球还笼罩在资源枯竭的阴影之下；四年前，谷神星的矿藏为我们打开了新世界的大门；两年前，希望谷的血腥屠杀让我们在巨大的痛苦中看清了道路。
+                <br /><br />
+                今天，我们以团结的姿态，以全人类的名义，签署这份宪章。
+                <br /><br />
+                这不仅是一份组织的章程。这是一份承诺：我们不会让人类文明再一次因为贪婪和短视而陷入混乱。从今天起，深空不再是‘法外之地’，而是‘秩序之地’。
+                <br /><br />
+                我在此宣布：<strong>寰宇矿物资源联合开发局，今天正式诞生。</strong>”
+            </blockquote>
+
+            <p><strong>14:30 - 16:00</strong></p>
+            <p>各创始成员代表依次上前，在宪章正本上签字。</p>
+
+            <h3>三、 签署方代表名单</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>签署方</th><th>代表姓名</th><th>职务</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>地球联合理事会</td><td>托马斯·米勒</td><td>主席</td></tr>
+                    <tr><td>华夏人民共和国</td><td>李华远</td><td>常驻联合国代表</td></tr>
+                    <tr><td>法兰西共和国</td><td>克洛德·贝尔纳</td><td>外交部长</td></tr>
+                    <tr><td>俄罗斯联邦</td><td>谢尔盖·科罗廖夫</td><td>联邦航天局局长</td></tr>
+                    <tr><td>联合王国</td><td>安妮·格林</td><td>太空事务大臣</td></tr>
+                    <tr><td>美利坚合众国</td><td>詹姆斯·沃克</td><td>国务卿</td></tr>
+                    <tr><td>航天财团联合体</td><td>维克托·李</td><td>星途探索公司前CEO</td></tr>
+                    <tr><td>科研机构联盟</td><td>张韵秋</td><td>国际航天科学院主席</td></tr>
+                    <tr><td>发展中国家航天合作组织</td><td>阿卜杜勒·拉赫曼</td><td>秘书长</td></tr>
+                </tbody>
+            </table>
+
+            <h3>四、 宪章全文保存说明</h3>
+            <p>宪章正本共印制六份，分别以中文、英文、法文、俄文、阿拉伯文及西班牙文书写。</p>
+            <p>六份正本中：</p>
+            <ul>
+                <li>一份存放于IMA总部（日内瓦）的“宪章特藏室”，作为机构最高历史档案；</li>
+                <li>一份存放于联合国总部（纽约）的秘书长办公室；</li>
+                <li>四份分别存放于五大常任理事国的国家档案馆。</li>
+            </ul>
+
+            <div class="signature">
+                见证人：联合国秘书长（签字）<br />
+                签署日期：2068年9月30日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

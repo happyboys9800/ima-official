@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 L-2107-CIT-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空公民身份认定实施细则》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>L-2107-CIT-001</div>
+            <div><strong>档案类型：</strong>法规实施细则</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2107年3月15日</div>
+            <div><strong>发布机构：</strong>IMA 法规管控部 / 人事编制部</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空公民身份认定实施细则</div>
+            <div class="doc-subtitle">（2107年3月15日经IMA寰宇总局理事会审议通过，自2107年5月1日起施行）</div>
+            <div class="doc-ref">文件编号：IMA/LAW/2107/03/15/CITIZENSHIP</div>
+
+            <h3>第一章 总则</h3>
+            <p><strong>第一条：制定依据</strong></p>
+            <p>本细则依据《地外人口迁移法案》第十三条至第十七条之规定制定，旨在明确深空公民身份的认定标准、申请程序、权利与义务及丧失条件。</p>
+
+            <p><strong>第二条：适用范围</strong></p>
+            <p>本细则适用于在IMA管辖范围内合法定居的深空居民。</p>
+
+            <p><strong>第三条：基本定义</strong></p>
+            <ul>
+                <li>“深空公民”指在深空定居点连续居住满5年，经定居点管理委员会审核确认，由IMA统一签发《深空公民身份证明》的人员。</li>
+                <li>“深空定居点”指依据《深空殖民定居管理条例》合法设立的、具备完整生命维持系统的人工聚落。</li>
+                <li>“连续居住”指在深空定居点内不间断居住，单次离开定居点的时间不超过30日。</li>
+            </ul>
+
+            <h3>第二章 认定标准</h3>
+            <p><strong>第四条：基本条件</strong></p>
+            <p>申请深空公民身份的人员，须同时满足以下条件：</p>
+            <ul>
+                <li>年满16周岁；</li>
+                <li>在深空定居点连续居住满5年；</li>
+                <li>通过IMA规定的深空公民基本知识测试（含IMA历史、安全法规、深空生存技能）；</li>
+                <li>无严重违法犯罪记录；</li>
+                <li>接受并宣誓遵守IMA各项法律、法规及条例。</li>
+            </ul>
+
+            <p><strong>第五条：居住年限的计算</strong></p>
+            <ul>
+                <li>居住年限自申请人首次在深空定居点登记之日起计算。</li>
+                <li>因公出差、休假或培训而短期离开定居点的，不计入中断。</li>
+                <li>因医疗原因被迫返回地球接受治疗的，治疗期间不计入中断，但单次治疗时间不得超过180日。</li>
+            </ul>
+
+            <p><strong>第六条：未成年人认定</strong></p>
+            <ul>
+                <li>未满16周岁的人员，不得申请深空公民身份。</li>
+                <li>在深空定居点出生且连续居住满5年的未成年人，年满16周岁后自动获得深空公民身份，无需另行申请。</li>
+            </ul>
+
+            <h3>第三章 申请与审批程序</h3>
+            <p><strong>第八条：申请材料</strong></p>
+            <p>申请深空公民身份的人员，须向居住地定居点管理委员会提交以下材料：</p>
+            <ul>
+                <li>深空公民身份申请表（统一格式）；</li>
+                <li>居住证明（由定居点管理委员会出具）；</li>
+                <li>基本知识测试合格证明；</li>
+                <li>无犯罪记录证明；</li>
+                <li>个人身份证明文件（地球护照或IMA深空身份证）。</li>
+            </ul>
+
+            <p><strong>第九条：审批流程</strong></p>
+            <ul>
+                <li>定居点管理委员会在收到申请后30日内完成初审。</li>
+                <li>初审通过后，报IMA人事编制部复审，复审时限为15日。</li>
+                <li>复审通过后，由IMA统一签发《深空公民身份证明》。</li>
+                <li>审批过程中，任何环节发现申请人不符合条件的，须书面通知申请人并说明理由。</li>
+            </ul>
+
+            <h3>第四章 深空公民的权利</h3>
+            <p><strong>第十一条：政治权利</strong></p>
+            <p>深空公民享有以下政治权利：</p>
+            <ul>
+                <li>在居住地定居点管理委员会选举中享有投票权与被选举权；</li>
+                <li>作为定居点居民代表参与IMA理事会会议的资格；</li>
+                <li>参与定居点重大事项的公共讨论与决策咨询。</li>
+            </ul>
+
+            <p><strong>第十二条：社会权利</strong></p>
+            <p>深空公民享有以下社会权利：</p>
+            <ul>
+                <li>在IMA体系内的职务晋升中享有优先资格；</li>
+                <li>优先享有定居点的公共资源分配权（如住房、教育、医疗等）；</li>
+                <li>优先获得IMA发放的深空教育奖学金及职业技能培训名额。</li>
+            </ul>
+
+            <h3>第五章 深空公民的义务</h3>
+            <p><strong>第十五条：基本义务</strong></p>
+            <p>深空公民须履行以下基本义务：</p>
+            <ul>
+                <li>遵守IMA各项法律、法规及条例；</li>
+                <li>维护IMA的统一管理与管辖权威；</li>
+                <li>按时缴纳定居点规定的各项税费及公共服务费用；</li>
+                <li>接受定期的健康检查与安全培训；</li>
+                <li>在紧急状态下，接受IMA征召参与应急救援工作。</li>
+            </ul>
+
+            <h3>第六章 身份的丧失</h3>
+            <p><strong>第二十一条：主动放弃</strong></p>
+            <p>深空公民有权主动放弃深空公民身份。主动放弃者须向居住地定居点管理委员会提交书面声明，并交回《深空公民身份证明》。</p>
+
+            <p><strong>第二十二条：丧失情形</strong></p>
+            <p>深空公民身份在以下情形下自动丧失：</p>
+            <ul>
+                <li>连续离开深空定居点超过2年，且未办理保留手续的；</li>
+                <li>因严重违法犯罪行为被定居点管理委员会剥夺公民身份的；</li>
+                <li>本人去世的。</li>
+            </ul>
+
+            <h3>第七章 附则</h3>
+            <p><strong>第二十七条：解释权</strong></p>
+            <p>本细则的解释权归IMA寰宇总局理事会。</p>
+
+            <p><strong>第二十八条：生效</strong></p>
+            <p>本细则自2107年5月1日起施行。</p>
+
+            <div class="signature">
+                IMA寰宇总局理事会主席：<br />
+                （签字：陈世杰）<br />
+                IMA人事编制部部长：<br />
+                （签字：刘敏）<br />
+                签署日期：2107年3月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

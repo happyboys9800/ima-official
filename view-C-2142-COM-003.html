@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2142-COM-003 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《局长办公室加密备忘录——关于■■■■■■的评估》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2142-COM-003</div>
+            <div><strong>档案类型：</strong>局长办公室加密备忘录</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2142年3月12日</div>
+            <div><strong>发布机构：</strong>IMA 局长办公室</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">局长办公室加密备忘录</div>
+            <div class="doc-subtitle">—— 关于当前局势的评估与应对建议</div>
+            <div class="doc-ref">文件编号：IMA/OFFICE/2142/03/12/PRIVATE</div>
+            <div class="doc-ref">致：周明远局长（亲启）</div>
+            <div class="doc-ref">发件人：局长特别顾问 陈远山</div>
+            <div class="doc-ref">主题：关于当前内部派系动态、深空自治派诉求及应对策略的私人评估</div>
+
+            <h3>一、 背景概述</h3>
+            <p>局长阁下：</p>
+            <p>您就职已近四年。在公开场合，我们维持着"延续与稳定"的叙事。但根据我所掌握的信息，深空自治派在过去四年中，已从"松散的思想联盟"进化为一个"具备明确组织形态的政治派系"。</p>
+            <p>虽然尚未公开挑战IMA的权威，但其组织体系已日趋成熟。若再不加以引导或干预，裂痕可能演变为一道不可逆的断层。</p>
+
+            <h3>二、 深空自治派现状</h3>
+
+            <h4>2.1 组织形态</h4>
+            <ul>
+                <li>已形成<strong>核心协调小组</strong>，约12-15人，分布于谷神星、火星、木卫二、土卫六等主要定居点；</li>
+                <li>拥有<strong>非正式的加密通讯网络</strong>，独立于IMANet运行，据推测至少已有两年历史；</li>
+                <li>制定了名为<strong>"星海宪章"</strong>的内部文件，内容涵盖深空自治权的理论框架与实施细则。虽然尚未公开，但据信已在小范围内传阅；</li>
+                <li>成员以<strong>深空出生的中高层管理人员</strong>为主，年龄集中在30-45岁之间，多拥有技术背景。</li>
+            </ul>
+
+            <h4>2.2 核心诉求</h4>
+            <ul>
+                <li><strong>资源分配自主权</strong>：要求深空定居点获得一定比例的资源自主调配权，不再完全依赖地球联合理事会的统一分配；</li>
+                <li><strong>自治权限扩展</strong>：要求定居点管理委员会在本地教育、医疗、税收及文化政策领域获得更大的决策权；</li>
+                <li><strong>深空代表权</strong>：要求在IMA理事会中设立专门的深空定居点联合代表席位。</li>
+            </ul>
+
+            <h4>2.3 关键人物</h4>
+            <p>据内部安全监察局的不完全情报，以下人员被视为深空自治派的核心人物：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>姓名</th><th>职位</th><th>区域</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>刘远航</td><td>谷神星第一矿区副主管</td><td>谷神星</td><td>"第三星"群组的原始成员</td></tr>
+                    <tr><td>林小禾</td><td>木卫二前哨站设施管理部主任</td><td>木卫二</td><td>协调能力极强，是深空自治派在木星区域的核心联络人</td></tr>
+                    <tr><td>江海</td><td>土卫六新城副执行长官</td><td>土卫六</td><td>"星海宪章"的主要起草者之一</td></tr>
+                    <tr><td>赵晚舟</td><td>深红城科研中心主任</td><td>火星</td><td>在深空技术官僚中具有较高的声望</td></tr>
+                </tbody>
+            </table>
+
+            <h3>三、 当前态势评估</h3>
+
+            <h4>3.1 利空因素</h4>
+            <ul>
+                <li>深空自治派的组织化程度在过去四年中显著提升，其成员已渗透至IMA的多个核心部门；</li>
+                <li>深空公民人数已突破<strong>2,200万</strong>，占深空总人口约22%，他们的政治诉求与自治派高度重合，形成了广泛的社会基础；</li>
+                <li>地球派在理事会中的影响力正在被削弱——部分原来立场中立的成员国代表，在深空经济产出持续扩大的背景下，开始倾向于支持深空自治派的部分诉求。</li>
+            </ul>
+
+            <h4>3.2 利多因素</h4>
+            <ul>
+                <li>深空自治派尚未形成统一的行动纲领，其内部在"终极目标"上仍存在分歧：一部分人主张的是<strong>职能分权</strong>（即在IMA框架内争取更多自主权），另一部分人的立场则更接近<strong>深空独立</strong>；</li>
+                <li>地球联合理事会在资源分配问题上仍掌握最终审批权，这意味着深空自治派的所有主张，理论上仍可以在地球派的否决权之下被冻结；</li>
+                <li>星际联合守备部队的指挥权仍牢牢掌握在IMA理事会手中，尚未出现深空自治派渗透的迹象。</li>
+            </ul>
+
+            <h3>四、 应对建议</h3>
+
+            <h4>4.1 短期措施（6-12个月）</h4>
+            <ol>
+                <li>在明年的理事会会议上，主动提出一项温和的<strong>"资源分配权重调整议案"</strong>，将深空定居点的自主分配比例从当前的0%提升至3%-5%。此举既可回应深空自治派的合理诉求，又不会对地球的供应体系造成实质性冲击；</li>
+                <li>由局长办公室牵头，定期与深空定居点管理委员会代表举行非正式对话，建立一条"非对抗性沟通渠道"；</li>
+                <li>指示内部安全监察局对深空自治派的通讯网络实施技术监控，但<strong>暂不采取行动</strong>，仅保持信息收集。</li>
+            </ol>
+
+            <h4>4.2 长期策略（2-5年）</h4>
+            <ol>
+                <li>推动成立正式的<strong>"深空定居点代表理事会"</strong>，作为在IMA理事会体系内的制度性代表机构。此举可以将深空自治派的诉求纳入制度化的表达渠道；</li>
+                <li>逐步推进深空定居点的教育体系改革，将IMA的统一价值观与深空文化特色相结合，从根本上防止文化疏离的加剧；</li>
+                <li>在未来两到三年内，考虑将部分<strong>非核心职能</strong>（如深空定居点的本地教育政策、文化政策、医疗政策等）下放给定居点管理委员会，以降低派系对抗的烈度。</li>
+            </ol>
+
+            <h3>五、 结语</h3>
+            <p>局长阁下，您接手的是一个"表面平静、暗流涌动"的IMA。</p>
+            <p>您的前任刘远征局长用二十年的时间，将IMA建设成了一台运转高效的工业机器。但他留下了一个未解的问题：这台机器的主人是地球人，还是深空人？</p>
+            <p>这个问题在您的任期内可能不会得到彻底解决。但您有机会——让这台机器在不失控的前提下，逐步适应这个新的时代。</p>
+            <p><strong>我建议您：不要回避，但要慢行。不要对抗，但要导流。</strong></p>
+            <p>我随时待命。</p>
+
+            <div class="signature">
+                局长特别顾问<br />
+                （签字：陈远山）<br />
+                签发日期：2142年3月12日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 O-2138-ENG-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《普罗米修斯计划全面竣工报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>O-2138-ENG-001</div>
+            <div><strong>档案类型：</strong>重大工程竣工报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2138年9月15日</div>
+            <div><strong>发布机构：</strong>IMA 聚变能源供给部</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">普罗米修斯计划全面竣工报告</div>
+            <div class="doc-subtitle">文件编号：IMA/ENG/2138/09/15/PROMETHEUS-COMPLETE</div>
+            <div class="doc-ref">致：IMA 寰宇总局理事会</div>
+            <div class="doc-ref">发件人：聚变能源供给部 部长 谢尔盖·科罗廖夫</div>
+            <div class="doc-ref">主题：关于普罗米修斯计划全部100座"喷射熔炉"空间站建成并网及全面运营的报告</div>
+
+            <h3>一、 项目概述</h3>
+            <p><strong>1.1 项目名称：</strong>普罗米修斯计划</p>
+            <p><strong>1.2 项目定位：</strong>在木星轨道建设100座"喷射熔炉"聚变能源站，直接从木星大气层中提取氢与氦-3，通过核聚变反应发电，以微波能量传输系统向全太阳系供应能源。</p>
+            <p><strong>1.3 建设周期：</strong>2103年4月 - 2138年8月（历时35年4个月）</p>
+            <p><strong>1.4 总投资：</strong>约12,000亿新联合国元（分五期投入，实际支出约11,780亿）</p>
+
+            <p><strong>1.5 核心指标：</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>指标</th><th>参数</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>空间站总数</td><td>100座</td></tr>
+                    <tr><td>单座发电能力</td><td>500兆瓦</td></tr>
+                    <tr><td>总发电能力</td><td>50,000兆瓦（50吉瓦）</td></tr>
+                    <tr><td>年发电量</td><td>约4,000亿度</td></tr>
+                    <tr><td>能量传输覆盖范围</td><td>全太阳系（直径约120亿公里）</td></tr>
+                    <tr><td>设计寿命</td><td>50年</td></tr>
+                </tbody>
+            </table>
+
+            <h3>二、 建设历程回顾</h3>
+
+            <h4>2.1 分阶段建设</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>批次</th><th>数量</th><th>建设周期</th><th>累计发电能力</th><th>状态</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>一期</td><td>5座</td><td>2103年4月-2106年12月</td><td>2.5吉瓦</td><td>✅ 竣工</td></tr>
+                    <tr><td>二期</td><td>15座</td><td>2106年9月-2109年6月</td><td>10吉瓦</td><td>✅ 竣工</td></tr>
+                    <tr><td>三期</td><td>25座</td><td>2109年1月-2117年9月</td><td>22.5吉瓦</td><td>✅ 竣工</td></tr>
+                    <tr><td>四期</td><td>30座</td><td>2113年1月-2125年12月</td><td>37.5吉瓦</td><td>✅ 竣工</td></tr>
+                    <tr><td>五期</td><td>25座</td><td>2117年1月-2138年8月</td><td>50吉瓦</td><td>✅ 竣工</td></tr>
+                </tbody>
+            </table>
+
+            <h4>2.2 关键节点</h4>
+            <ul>
+                <li><strong>2106年12月：</strong>一期5座竣工，首座喷射熔炉"火种-1号"并网发电。</li>
+                <li><strong>2117年9月：</strong>三期完成，总发电能力突破22.5吉瓦，向火星及谷神星实现稳定供电。</li>
+                <li><strong>2125年12月：</strong>四期完成，总发电能力突破37.5吉瓦，能量传输覆盖范围扩展至土星轨道。</li>
+                <li><strong>2138年8月15日：</strong>最后一座喷射熔炉"火种-100号"完成并网测试，100座空间站全部投入运营。</li>
+            </ul>
+
+            <h3>三、 运营数据</h3>
+
+            <h4>3.1 当前运行状态（截至2138年8月）</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>指标</th><th>数据</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>空间站平均运行时间</td><td>16.2年</td></tr>
+                    <tr><td>累计发电量</td><td>约52,000亿度</td></tr>
+                    <tr><td>累计采集氦-3</td><td>约820万吨</td></tr>
+                    <tr><td>能量传输平均效率</td><td>74.3%</td></tr>
+                    <tr><td>重大事故</td><td>0起</td></tr>
+                    <tr><td>日常故障率</td><td>0.12%</td></tr>
+                </tbody>
+            </table>
+
+            <h4>3.2 能源供应分布（2137年度）</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>接收区域</th><th>接收能量占比</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>地球</td><td>42%</td><td>地球联合理事会统一定额分配</td></tr>
+                    <tr><td>火星</td><td>22%</td><td>火星三城及周边工业区</td></tr>
+                    <tr><td>谷神星及小行星带</td><td>12%</td><td>采矿基地及运输枢纽</td></tr>
+                    <tr><td>木星卫星</td><td>10%</td><td>木卫二前哨及科研站</td></tr>
+                    <tr><td>土星卫星</td><td>8%</td><td>土卫六新城及周边设施</td></tr>
+                    <tr><td>其他深空基地</td><td>6%</td><td>柯伊伯带前哨及深空探测器</td></tr>
+                </tbody>
+            </table>
+
+            <h3>四、 工程意义</h3>
+
+            <h4>4.1 能源自主</h4>
+            <p>普罗米修斯计划的全面竣工，标志着人类文明正式告别"能源短缺"的时代。木星大气层中的氦-3储量足以支撑人类文明至少10万年的能源需求，能源将不再成为制约文明发展的因素。</p>
+
+            <h4>4.2 产业升级</h4>
+            <p>无限能源的供应，为深空工业的全面升级提供了基础保障。高耗能产业得以在深空中大规模部署，进一步推动深空定居点的经济自给能力。</p>
+
+            <h4>4.3 战略格局</h4>
+            <p>IMA掌握了全太阳系约85%的能源供应，其战略地位进一步巩固。100座喷射熔炉空间站不仅是能源设施，更是IMA在全太阳系投射影响力的核心资产。</p>
+
+            <h3>五、 竣工仪式</h3>
+            <p><strong>5.1 仪式时间：</strong>2138年9月15日，格林威治标准时间 10:00</p>
+            <p><strong>5.2 仪式地点：</strong>木星轨道"火种-100号"空间站（主会场），日内瓦IMA总部（分会场）</p>
+
+            <p><strong>5.3 刘远征局长致辞摘要：</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                "普罗米修斯计划的全面竣工，是人类能源史上的一座里程碑。<br /><br />
+                35年前，我们开始从木星的火海中窃取火焰。今天，我们点亮了全太阳系。从地球到土星，从月球到谷神星，每一盏灯、每一台机器、每一座城市，都流淌着来自木星的能源。<br /><br />
+                我们建造的不是电站，我们建造的是人类文明的'心脏'——一座足够强大、足够稳定的心脏，能够将生命的血液输送到太阳系的每一个角落。<br /><br />
+                今天，100座喷射熔炉全部点亮。在这束光里，我看到了一条路——一条通向更远深空的路。"
+            </blockquote>
+            <p>在致辞的最后，刘远征局长宣布了一个消息：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <strong>"两个月后，我将卸任IMA局长职务。这是我任期内完成的最后一项工程。我将它留给我的继任者，留给全太阳系的人类。"</strong>
+            </blockquote>
+
+            <div class="signature">
+                聚变能源供给部部长：<br />
+                （签字：谢尔盖·科罗廖夫）<br />
+                IMA第三任局长：<br />
+                （签字：刘远征）<br />
+                签发日期：2138年9月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

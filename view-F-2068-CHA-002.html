@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 F-2068-CHA-002 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《寰宇矿物资源联合开发局组织宪章》全文</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>F-2068-CHA-002</div>
+            <div><strong>档案类型：</strong>组织宪章全文</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年9月30日</div>
+            <div><strong>发布机构：</strong>寰宇矿物资源联合开发局筹备委员会</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">寰宇矿物资源联合开发局组织宪章</div>
+            <div class="doc-subtitle">（2068年9月30日签署于瑞士日内瓦）</div>
+            <div class="doc-ref">—— 全文正式版 ——</div>
+
+            <h3>序言</h3>
+            <p><strong>我们，地球联合理事会、五大常任理事国、全球主要航天财团、顶尖科研机构及发展中国家航天合作组织的代表，</strong></p>
+            <p><strong>鉴于</strong>地球不可再生矿产资源已进入全面枯竭阶段，人类文明赖以生存的工业基础面临崩溃的威胁；</p>
+            <p><strong>鉴于</strong>地外矿产资源的发现为人类文明的延续提供了新的希望；</p>
+            <p><strong>鉴于</strong>私人资本主导的“太空淘金热”已导致深空作业陷入无序、混乱与暴力，造成大量人员伤亡与资源浪费，尤以“希望谷惨案”为甚；</p>
+            <p><strong>鉴于</strong>人类文明若要在深空中实现可持续发展，必须建立一个统一的、公正的、具有强制执法权的全球性星际资源管理机制；</p>
+            <p><strong>兹决定</strong>成立“寰宇矿物资源联合开发局”，并制定本宪章，作为其组织与运作的根本法律依据。</p>
+            <p><strong>本宪章所确立的各项原则与条款，旨在：</strong></p>
+            <ul>
+                <li>终结深空作业的无序状态，建立统一的秩序与标准；</li>
+                <li>确保地外资源为全人类共同所有，公平分配，不为一国或少数利益集团所垄断；</li>
+                <li>保障深空作业人员的生命安全与基本权益；</li>
+                <li>推动人类文明从地球走向深空的可持续发展。</li>
+            </ul>
+            <p><strong>愿本宪章成为人类文明星际时代的基石。</strong></p>
+
+            <h3>第一章 总则</h3>
+            <p><strong>第一条：名称与简称</strong></p>
+            <p>1. 本机构正式定名为“寰宇矿物资源联合开发局”，英文全称为“Interstellar Mining Authority”，英文简称为“IMA”。</p>
+            <p>2. 本机构的中文简称亦为“寰宇矿物局”或“IMA”。</p>
+
+            <p><strong>第二条：法律地位</strong></p>
+            <p>1. 本机构为具有独立法人资格的国际组织，具有行使本宪章所赋予的各项权力的能力。</p>
+            <p>2. 本机构在行使权力时，不受任何国家、企业或个人意志的干涉。</p>
+
+            <p><strong>第三条：宗旨</strong></p>
+            <p>本机构的宗旨为：以安全、高效、公平的方式，开发太阳系矿产资源，服务于全人类的生存与发展。</p>
+
+            <p><strong>第四条：管辖范围</strong></p>
+            <p>1. 本机构的管辖范围覆盖以下区域：</p>
+            <ul>
+                <li>地月系统（含地球轨道、月球及地月拉格朗日点）</li>
+                <li>火星空域（含火星轨道及火卫一、火卫二）</li>
+                <li>主小行星带（含谷神星及所有已命名与未命名小行星）</li>
+                <li>木星轨道空域（含木星大气层、各卫星及木星环）</li>
+                <li>土星环矿区（含土星环、土卫六等主要卫星）</li>
+                <li>外太阳系近域开发带（含天王星及海王星轨道区域）</li>
+            </ul>
+            <p>2. 上述管辖范围可根据需要，经理事会三分之二以上成员同意后，予以扩展。</p>
+
+            <p><strong>第五条：官方语言</strong></p>
+            <p>本机构的官方语言为：中文、英文、法文、俄文、阿拉伯文、西班牙文。</p>
+            <p>六种语言版本具有同等法律效力。若存在解释分歧，以地球联合理事会确认的版本为准。</p>
+
+            <p><strong>第六条：总部所在地</strong></p>
+            <p>本机构总部设于瑞士日内瓦。经理事会决议，可在其他地点设立地区分部或联络处。</p>
+
+            <h3>第二章 资源所有权与分配原则</h3>
+            <p><strong>第七条：全人类共同所有权</strong></p>
+            <p>1. 太阳系内的所有矿产资源，属于“全人类共同所有”。</p>
+            <p>2. 任何个人、企业、国家或其他实体，不得以任何理由私自占有地外资源。</p>
+            <p>3. 违反本条规定者，将受到本机构的法律制裁，包括但不限于资产没收、人员拘留及驱逐出管辖区域。</p>
+
+            <p><strong>第八条：统一开发权</strong></p>
+            <p>1. 本机构是太阳系内唯一具有矿产开发权的机构。</p>
+            <p>2. 任何私人实体或国家机构欲进行地外资源开发，须向本机构提出申请，并接受本机构的统一管理与监督。</p>
+            <p>3. 未经本机构授权而进行的采矿活动，均视为非法盗采。</p>
+
+            <p><strong>第九条：公平分配原则</strong></p>
+            <p>1. 本机构所开采的全部资源，将按照地球联合理事会确定的人口比例，公平分配给所有成员国及人类聚居地。</p>
+            <p>2. 任何国家或地区不得以任何理由获得超额分配。</p>
+            <p>3. 分配方案每五年由“资源统计总署”重新核算一次，报理事会批准后执行。</p>
+
+            <h3>第三章 组织架构与治理体系</h3>
+            <p><strong>第十一条：最高决策机构</strong></p>
+            <p>本机构的最高决策机构为“寰宇总局理事会”（以下简称“理事会”）。</p>
+
+            <p><strong>第十二条：理事会组成</strong></p>
+            <p>1. 理事会由以下成员组成：</p>
+            <ul>
+                <li>地球联合理事会特派执行官一名（任理事会主席）</li>
+                <li>五大常任理事国各派一名代表（任常务理事）</li>
+                <li>航天财团联合体代表三名</li>
+                <li>科研机构联盟代表三名</li>
+                <li>发展中国家航天合作组织代表三名</li>
+            </ul>
+            <p>2. 理事会主席任期五年，由地球联合理事会任命，不得连任超过两届。</p>
+            <p>3. 常务理事的任期由各派出国自行决定。</p>
+
+            <p><strong>第十三条：理事会的权力与职责</strong></p>
+            <p>理事会拥有以下权力与职责：</p>
+            <ul>
+                <li>审议并批准本机构的年度工作计划与预算；</li>
+                <li>决定重大项目的立项与终止；</li>
+                <li>审议通过各项内部法规与标准；</li>
+                <li>任免各部门主要负责人；</li>
+                <li>审议资源分配方案并提交地球联合理事会批准；</li>
+                <li>决定本机构管辖范围的扩展或收缩；</li>
+                <li>审议并批准本宪章的修改提案。</li>
+            </ul>
+
+            <p><strong>第十五条：执行机构</strong></p>
+            <p>本机构设以下核心执行部门：</p>
+            <ul>
+                <li><strong>星际勘探总院</strong>：负责星域地质探测、矿脉定位、资源普查与深空环境测绘。</li>
+                <li><strong>深空开采总局</strong>：负责小行星采掘、行星地表采矿、气态行星能源收集及矿石粗炼加工。</li>
+                <li><strong>星际重工工程部</strong>：负责深空基地建造、工业母舰制造、机甲研发及星际设施搭建。</li>
+                <li><strong>全域运输调度署</strong>：负责跨轨道物资输送、航线规划、货运编队管理及物资补给配送。</li>
+                <li><strong>聚变能源供给部</strong>：负责氦-3采集、星际聚变发电、空间站能源供给及殖民区电力保障。</li>
+                <li><strong>星际联合守备部队</strong>：负责矿区安防、航线护航、驱逐非法盗采者及应对深空灾害。</li>
+            </ul>
+
+            <p><strong>第十六条：独立监督机构</strong></p>
+            <p>1. 设立“矿工权益保障办公室”，作为独立监督机构，直接向理事会报告。</p>
+            <p>2. 该办公室负责受理矿工投诉、监督安全标准执行、保障劳动者合法权益。</p>
+            <p>3. 该办公室的调查与裁决不受任何部门或个人的干涉。</p>
+
+            <h3>第四章 经费与资产</h3>
+            <p><strong>第十八条：初始资金来源</strong></p>
+            <p>1. 本机构的初始资金由各创始成员按以下比例出资：</p>
+            <ul>
+                <li>五大常任理事国：各出资12%，合计60%</li>
+                <li>地球联合理事会：10%</li>
+                <li>航天财团联合体：15%</li>
+                <li>科研机构联盟：8%</li>
+                <li>发展中国家航天合作组织：7%</li>
+            </ul>
+            <p>2. 上述出资应在签署本宪章后的90天内到位。</p>
+
+            <p><strong>第二十条：运营收入</strong></p>
+            <p>1. 本机构的运营收入主要来源于资源销售收益及服务收费。</p>
+            <p>2. 所有收入，扣除运营成本后，须全部用于以下用途：</p>
+            <ul>
+                <li>资源勘探与开发技术研发；</li>
+                <li>安全设施改善与人员培训；</li>
+                <li>地球环境治理与扶贫事业；</li>
+                <li>全球公共卫生与教育支持；</li>
+                <li>本机构员工的福利与保障。</li>
+            </ul>
+            <p>3. 任何个人、团体或国家，不得从本机构的收入中牟取私利。</p>
+
+            <h3>第五章 安全标准与劳动法规</h3>
+            <p><strong>第二十二条：《星际作业安全法》</strong></p>
+            <p>1. 本机构须在成立后六个月内，制定并发布《星际作业安全法》，作为全太阳系统一的作业安全标准。</p>
+            <p>2. 该法律应涵盖以下领域：</p>
+            <ul>
+                <li>矿井通风与有害气体监测标准；</li>
+                <li>机械设备安全认证与定期检测规范；</li>
+                <li>生命维持系统的设计与运行标准；</li>
+                <li>应急响应与救援程序；</li>
+                <li>深空作业人员健康监护规范。</li>
+            </ul>
+
+            <p><strong>第二十三条：矿工装备标准</strong></p>
+            <p>所有从事深空采矿作业的人员，必须配备全封闭式外骨骼，以保障其在真空、低重力及极端温度环境下的生命安全。</p>
+
+            <p><strong>第二十四条：工作时间与休息</strong></p>
+            <p>深空作业人员每日工作时间不得超过8小时，每周工作时间不得超过48小时。</p>
+            <p>每连续工作20天后，须安排至少48小时的连续休息时间。</p>
+
+            <h3>第六章 武装力量</h3>
+            <p><strong>第二十八条：星际联合守备部队</strong></p>
+            <p>1. 设立“星际联合守备部队”，作为本机构的武装执法力量。</p>
+            <p>2. 守备部队的职责包括：</p>
+            <ul>
+                <li>矿区安防与巡逻；</li>
+                <li>航线护航与运输安全保障；</li>
+                <li>驱逐非法盗采者与武装海盗；</li>
+                <li>应对深空灾害与紧急救援；</li>
+                <li>执行理事会指定的其他安全任务。</li>
+            </ul>
+
+            <p><strong>第三十条：装备与武力使用</strong></p>
+            <p>1. 守备部队配备以下装备：</p>
+            <ul>
+                <li>百夫长系列作战机甲；</li>
+                <li>深空巡逻舰；</li>
+                <li>轨道防御武器系统；</li>
+                <li>轻型突击艇及单兵武器。</li>
+            </ul>
+            <p>2. 守备部队使用武力的权限与边界，由《星际作业安全法》及其他配套法规详细规定。</p>
+
+            <h3>第七章 附则</h3>
+            <p><strong>第三十二条：本宪章的生效</strong></p>
+            <p>本宪章自签署之日起生效。有效期为无限期。</p>
+
+            <p><strong>第三十三条：宪章的修改</strong></p>
+            <p>本宪章的修改，须经理事会三分之二以上成员同意，并提交地球联合理事会最终批准。</p>
+
+            <div class="signature">
+                签署日：公元2068年9月30日<br />
+                签署地点：瑞士日内瓦 万国宫<br />
+                见证人：联合国秘书长（签字）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

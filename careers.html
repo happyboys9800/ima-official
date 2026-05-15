@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>加入 IMA | 寰宇矿物资源联合开发局</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body, html {font-family:"PingFang SC",sans-serif;background:#000;color:#fff;overflow-x:hidden;}
+a {color:inherit;text-decoration:none;}
+ul {list-style:none;}
+header{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.7);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:1000;}
+.logo{display:flex;align-items:center;cursor:pointer;transition:0.3s;}
+.logo img{height:50px;margin-right:10px;}
+.logo span{font-size:18px;font-weight:bold;letter-spacing:1px;}
+.logo:hover{transform:scale(1.05);}
+nav ul{display:flex;gap:20px;align-items:center;}
+nav ul li{cursor:pointer;transition:0.3s;color:#fff;}
+nav ul li:hover{color:#4A90E2;}
+#langSelect{padding:5px;border-radius:5px;background:#1A1F2B;border:2px solid #4A90E2;color:#E0E0E0;cursor:pointer;}
+section{padding:100px 50px 50px 50px;background:#010101;margin-top:70px;}
+section h2{font-size:36px;margin-bottom:20px;border-bottom:2px solid #4A90E2;display:inline-block;padding-bottom:5px;}
+section h3{font-size:24px;margin:20px 0 10px 0;color:#4A90E2;}
+section p{font-size:18px;line-height:1.8;margin-bottom:20px;}
+.job-card{background:rgba(255,255,255,0.05);padding:20px;margin:20px 0;border-left:4px solid #4A90E2;}
+.job-card h4{font-size:20px;color:#fff;margin-bottom:5px;}
+.job-card .location{color:#888;font-size:14px;margin-bottom:10px;}
+.job-card p{font-size:16px;line-height:1.6;}
+.cta-btn{padding:12px 30px;font-size:16px;font-weight:bold;color:#E0E0E0;border:2px solid #4A90E2;background:#1A1F2B;cursor:pointer;transition:0.3s;border-radius:5px;display:inline-block;}
+.cta-btn:hover{background:#4A90E2;color:#000;box-shadow:0 0 10px #4A90E2;}
+#footer-links{background:#010101;padding:50px;color:#E0E0E0;}
+#footer-links .link-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+#footer-links .link-card{flex:1 1 200px;background:#1A1F2B;padding:20px;border-radius:10px;border:2px solid #4A90E2;cursor:pointer;transition:0.3s;}
+#footer-links .link-card:hover{box-shadow:0 0 15px #4A90E2;transform:translateY(-3px);}
+@media (max-width: 768px) {
+  section{padding:80px 20px 30px 20px;}
+  header{padding:0 20px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="goHome()"><img src="logo.png" alt="IMA Logo"><span>IMA</span></div>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='index.html#history'">IMA成立编年史</li>
+      <li onclick="window.location.href='index.html#news'">新闻发布</li>
+      <li onclick="window.location.href='index.html#memorial'">纪念</li>
+      <li onclick="openLogin()">登录</li>
+      <li>
+        <select id="langSelect">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+          <option value="ru">Русский</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section>
+  <h2>加入 IMA</h2>
+  <p>寰宇矿物资源联合开发局（IMA）是人类在太阳系中最大的资源开发与能源管理机构。我们负责从深空开采矿物、运营聚变能源站，并守护星海秩序。如果你也向往深空，欢迎加入我们。</p>
+
+  <h3>当前招聘岗位</h3>
+
+  <div class="job-card">
+    <h4>深空采矿工程师</h4>
+    <div class="location">📍 谷神星第一矿区 | 小行星带</div>
+    <p>负责小行星带采矿作业的规划、执行与安全监管。需熟悉深空作业环境，具备自动化采矿设备操作经验。</p>
+  </div>
+
+  <div class="job-card">
+    <h4>聚变能源站技术员</h4>
+    <div class="location">📍 木星轨道 · 普罗米修斯计划</div>
+    <p>负责木星轨道“喷射熔炉”能源站的日常运行与维护。需具备聚变物理或高温等离子体相关技术背景。</p>
+  </div>
+
+  <div class="job-card">
+    <h4>深空物流调度员</h4>
+    <div class="location">📍 星际干线运输通道 · 火星-谷神星段</div>
+    <p>负责跨轨道资源运输的航线规划、调度与应急响应。需熟悉深空导航与物流管理系统。</p>
+  </div>
+
+  <div class="job-card">
+    <h4>机甲操作师（拓荒者/百夫长系列）</h4>
+    <div class="location">📍 火星 · 深红城 / 土卫六新城</div>
+    <p>负责工程机甲及作战机甲的驾驶、维护与任务执行。需通过IMA机甲操作认证考核。</p>
+  </div>
+
+  <div class="job-card">
+    <h4>深空信号分析师</h4>
+    <div class="location">📍 土星轨道 · 深空信号监测中心</div>
+    <p>负责深空无线电信号的分析、识别与归档，协助“天籁”项目进行深空探测数据处理。</p>
+  </div>
+
+  <div class="job-card">
+    <h4>广域安防巡查员</h4>
+    <div class="location">📍 星际联合守备部队 · 各主要航线</div>
+    <p>负责深空航线护航、矿区安防及反盗采巡逻。需具备军事或安保背景，适应长期深空执勤。</p>
+  </div>
+
+  <br>
+  <a href="index.html" class="cta-btn">← 返回首页</a>
+  <span style="display:inline-block;margin-left:15px;color:#888;font-size:14px;">更多岗位陆续开放，敬请关注。</span>
+</section>
+
+<section id="footer-links">
+  <div class="link-grid">
+    <div class="link-card">
+      <h3>帮助中心</h3>
+      <p>招聘流程 & 常见问题</p>
+    </div>
+    <div class="link-card">
+      <h3>合作 & 服务</h3>
+      <p>与IMA建立合作</p>
+    </div>
+    <div class="link-card">
+      <h3>举报中心</h3>
+      <p>违规行为举报</p>
+    </div>
+    <div class="link-card">
+      <h3>关于我们</h3>
+      <p>IMA组织介绍</p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:30px;">&copy; 2138 IMA INTERSTELLAR MINING AUTHORITY</p>
+</section>
+
+<script>
+// 页面滚动函数
+function goHome(){ window.location.href='index.html'; }
+function openLogin(){ alert('IMA登录系统（待开发）'); }
+</script>
+
+</body>
+</html>

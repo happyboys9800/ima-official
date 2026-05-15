@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 R-2118-REP-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <div class="view-header">
+            <h1>《第二任局长陈世杰任期总结报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>R-2118-REP-001</div>
+            <div><strong>档案类型：</strong>任期总结报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2118年10月1日</div>
+            <div><strong>发布机构：</strong>IMA 局长办公室</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <div class="archive-body">
+            <div class="doc-title">任期总结报告</div>
+            <div class="doc-subtitle">——IMA第二任局长陈世杰，2106-2118</div>
+            <div class="doc-ref">文件编号：IMA/REP/2118/10/01/TERM-END</div>
+            <div class="doc-ref">致：IMA 寰宇总局理事会、地球联合理事会</div>
+            <div class="doc-ref">发件人：陈世杰，IMA第二任局长</div>
+
+            <h3>一、 任期内核心成就</h3>
+
+            <h4>1.1 普罗米修斯计划的全面推进</h4>
+            <p>至2118年，木星轨道已建成45座“喷射熔炉”聚变能源站，总发电能力达到22.5吉瓦，占全太阳系总发电量的约35%。</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>批次</th><th>计划数量</th><th>建成数量</th><th>并网时间</th><th>累计发电能力</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>一期</td><td>5座</td><td>5座</td><td>2106年12月</td><td>2.5吉瓦</td></tr>
+                    <tr><td>二期</td><td>15座</td><td>15座</td><td>2109年6月</td><td>10吉瓦</td></tr>
+                    <tr><td>三期</td><td>25座</td><td>25座</td><td>2117年9月</td><td>22.5吉瓦</td></tr>
+                </tbody>
+            </table>
+
+            <h4>1.2 深空殖民体系的成熟</h4>
+            <p>在本任期内，深空定居点的人口从约2000万增长至约5200万，增长超过一倍。</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>定居点区域</th><th>2110年人口</th><th>2118年人口</th><th>增长率</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>月球</td><td>800万</td><td>1,200万</td><td>+50%</td></tr>
+                    <tr><td>火星</td><td>600万</td><td>1,300万</td><td>+117%</td></tr>
+                    <tr><td>谷神星及小行星带</td><td>300万</td><td>700万</td><td>+133%</td></tr>
+                    <tr><td>木星卫星</td><td>100万</td><td>800万</td><td>+700%</td></tr>
+                    <tr><td>土星卫星</td><td>50万</td><td>400万</td><td>+700%</td></tr>
+                    <tr><td>其他深空基地</td><td>150万</td><td>800万</td><td>+433%</td></tr>
+                    <tr><td><strong>总计</strong></td><td><strong>2,000万</strong></td><td><strong>5,200万</strong></td><td><strong>+160%</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h4>1.3 深空公民身份的正式确立</h4>
+            <p>2112年，IMA理事会通过了《深空公民身份认定实施细则》，正式确立了深空公民的法律地位。2113年，第一届深空定居点居民委员会选举在全太阳系范围内举行。</p>
+
+            <h3>二、 任期内面临的挑战与矛盾</h3>
+            <ul>
+                <li><strong>资源分配的紧张：</strong>地球人口仍占全太阳系总人口的约70%，深空定居点承担着全太阳系约80%的采矿与能源生产任务，但获得的资源回报与产出不成正比。</li>
+                <li><strong>派系林立的萌芽：</strong>IMA内部开始出现明显的派系分化，包括地球派、深空自治派、技术官僚派与改革派。</li>
+                <li><strong>深空与地球的文化张力：</strong>深空居民开始形成独特的“星海文化”，与地球文化之间的疏离感日益明显。</li>
+            </ul>
+
+            <h3>三、 结语</h3>
+            <p>12年前，我以深空第一代居民的身份，接过了IMA局长的火炬。12年后，我将火炬交还给理事会。交出去的，不是一片安静祥和的世界，而是一个充满张力、充满矛盾、但同样充满希望的世界。</p>
+            <p>我选择相信，我们将在团结中走向一个更广阔的未来。</p>
+
+            <div class="signature">
+                IMA第二任局长<br />
+                陈世杰<br />
+                （签字日期：2118年10月1日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

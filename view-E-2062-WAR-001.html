@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2062-WAR-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《第3947次紧急会议记录摘要（关于刚果钴矿冲突）》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2062-WAR-001</div>
+            <div><strong>档案类型：</strong>联合国安理会紧急会议记录</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2062年7月15日</div>
+            <div><strong>发布机构：</strong>联合国安理会秘书处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">联合国安理会第3947次紧急会议记录摘要</div>
+            <div class="doc-subtitle">议题：刚果（金）基伍省钴矿冲突升级及区域人道主义危机</div>
+            <div class="doc-ref">会议时间：2062年6月28日，10:00 - 16:30</div>
+            <div class="doc-ref">地点：纽约联合国总部，安理会会议厅</div>
+
+            <h3>一、 会议背景</h3>
+            <p>自2055年全球三大稀土矿——中国白云鄂博、美国芒廷帕斯、澳大利亚奥林匹克坝——同时宣布可开采储量归零以来，全球高科技产业所需的稀土原料及关键合金金属（钴、镍、钽等）供应已极度紧张。</p>
+            <p>刚果（金）基伍省作为地球上最后一处拥有经济可采钴矿脉的地区，自2058年起便成为各方势力暗中角逐的焦点。自2061年1月始，当地武装冲突迅速升级，至2062年6月，已演变为一场由至少四个武装派系、部分外国雇佣兵及私人矿业公司安保力量卷入的区域性战争。</p>
+            <p>截至本次会议召开，冲突已持续18个月，造成约270万人流离失所，直接死亡人数估计超过28万人。</p>
+
+            <h3>二、 各方代表发言摘要</h3>
+
+            <h4>2.1 联合国秘书长代表（开场发言）</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “各位代表，我不得不以最沉重的语气向安理会通报：基伍省的局势已经彻底失控。<br /><br />
+                上周，联合国驻刚果（金）维和部队的一支补给车队在距离矿区15公里处遭到伏击。12名维和士兵阵亡。据情报显示，至少有三个国家支持的私人武装正在为争夺最后的钴矿脉进行着日以继夜的厮杀。那里的每一寸土地，都沾满了血。<br /><br />
+                但我们必须正视一个残酷的事实：基伍省的地质勘探数据已经确认，即使以目前的疯狂开采速度，该矿脉的剩余可采储量，也仅能维持全球高端制造业——特别是航空航天和军工产业——<strong>不足两年的需求</strong>。<br /><br />
+                我们正在为一块即将枯竭的骨头，撕碎整个区域的和平。”
+            </blockquote>
+
+            <h4>2.2 华夏人民共和国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我国一贯主张，资源争夺不应通过武力解决。刚果（金）的局势，是地球资源全面枯竭背景下最触目惊心的悲剧之一。<br /><br />
+                但我们不得不指出：基伍省的钴矿，并非任何一国的私产。它属于全人类。然而，目前的混乱局面，却正在让这块最后的资源变成战争的导火索。<br /><br />
+                我呼吁各方立即停火，并敦促安理会考虑建立一个国际监督机制，对基伍省的剩余钴矿资源进行统一调度、公平分配。否则，即便打到最后，也不会产生真正的胜利者。”
+            </blockquote>
+
+            <h4>2.3 美利坚合众国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我们必须现实一些。国际监督机制在目前的地缘政治环境下难以落实。<br /><br />
+                我国在基伍省有重要的战略利益。我们有超过700家军工企业和航天公司的供应链，依赖于钴矿供应的稳定性。我们不会坐视关键资源落入可能会切断我国供应链的势力手中。<br /><br />
+                我建议：安理会应当授权组建一支‘资源保护区多国部队’，由有能力的大国提供兵力，在基伍省建立安全区，确保剩余矿脉的开采和运输不受干扰。这是保护供应链安全的必要措施。”
+            </blockquote>
+
+            <h4>2.4 俄罗斯联邦代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我们都在为一堆即将变成废墟的矿脉争吵。基伍省能挖出多少钴？一年？两年？这场战争结束后，我们都会输。<br /><br />
+                但我想提醒各位：2055年，我们说稀土矿没了；2058年，我们说钴矿还能撑十年；现在，我们在为一个最多撑到2064年的矿脉屠杀同胞。人类在地球上已经挖到了尽头。<br /><br />
+                各位，我们是不是该把目光，从基伍省的血泥里，抬起来，看看头顶的星星？那里，有足够我们开采一万年的资源。”
+            </blockquote>
+
+            <h4>2.5 法兰西共和国代表（作为刚果（金）前宗主国代表发言）</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我以最沉痛的心情，转述刚果（金）政府今天早晨发给我国外交部的请求：他们请求安理会，立即授权联合国维和部队介入矿区，执行强制停火。<br /><br />
+                刚果（金）政府已经失去了对基伍省局势的控制。他们警告说，如果冲突持续到今年年底，该省将有超过500万人面临饥荒威胁。这已不是一场局部冲突，这是一场大规模的人道主义灾难。<br /><br />
+                我们必须行动。即使行动是有限的，也比什么都不做要好。”
+            </blockquote>
+
+            <h4>2.6 印度共和国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我想提醒安理会：稀土战争并非只是大国之间的博弈。像我国这样的发展中国家，在这场资源争夺战中受到的打击最为严重。<br /><br />
+                我国正在建设中的5G通讯网络、电动汽车产业、太空计划，都因关键金属的短缺而严重受阻。然而，我们既没有能力派遣军队介入非洲，也无法参与大国之间的资源分配谈判。<br /><br />
+                我们呼吁建立一套全球性的资源分配机制，确保所有国家，无论大小强弱，都能在资源枯竭的时代中获得公平的生存机会。”
+            </blockquote>
+
+            <h3>三、 会议关键分歧与停滞</h3>
+            <p>在经历了长达六个小时的辩论后，安理会未能就任何实质性决议达成共识。主要分歧集中在以下三点：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>分歧点</th><th>美、欧阵营立场</th><th>中、俄、印等阵营立场</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>是否应授权多国部队介入</td><td>支持授权，以“保护供应链安全”为名，实质旨在抢占剩余矿脉控制权</td><td>反对，认为此举将导致冲突进一步国际化、扩大化，造成更严重的人道主义灾难</td></tr>
+                    <tr><td>剩余钴矿的分配方案</td><td>主张“按现有供应链需求比例分配”，实质上维护既得利益大国</td><td>主张“联合国统一托管、公平分配”，符合发展中国家诉求</td></tr>
+                    <tr><td>是否应开始讨论地外资源开发</td><td>持保留态度，认为技术尚未成熟，应优先解决眼前危机</td><td>持积极态度，认为地球已无出路，必须将资源战略重心转移至太空</td></tr>
+                </tbody>
+            </table>
+            <p><strong>会议最终结果：</strong>未通过任何决议。安理会宣布暂时休会，将在三周后再次讨论。对于刚果（金）的人道主义危机，仅发表了一份措辞含糊的“主席声明”，对冲突双方表示了“强烈关切”，但未提出任何具体行动方案。</p>
+
+            <h3>四、 会议期间收到的重要情报</h3>
+            <p><strong>（此部分内容由联合国情报部门于会议期间提交，标注为“机密”）</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <strong>来源：</strong>UN情报局 刚果（金）前线小组<br />
+                <strong>主题：</strong>基伍省第7号矿区近期动向<br /><br />
+                据截获的加密通讯记录显示，至少两个主要武装派系——据信分别获得某南方财团和某北方工业集团的支持——已秘密达成一项口头协议：在未来三周内，对第7号矿区发动“联合清场行动”，肃清矿区内所有小规模采矿者和居民。<br /><br />
+                该行动预计将导致至少2000名平民伤亡。第7号矿区是目前基伍省剩余钴矿储量最丰富的一块区域，约占全省剩余储量的40%。
+            </blockquote>
+
+            <h3>五、 会议结束语</h3>
+            <p><strong>联合国秘书长代表（最后一次发言）：</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “各位代表，会议进行到今天，我不得不说一句可能在座各位都不愿听的话：<br /><br />
+                我们争论的这堆钴矿，只是地球已经枯竭的资源中，最后一块能吃的骨头。<br /><br />
+                这堆骨头啃完之后，我们还有什么？我们拿什么来维持我们的文明？<br /><br />
+                你们讨论的那些方案——多国部队、公平分配、国际托管——都很好。但在地球上，这些都只是缓兵之计。<br /><br />
+                真正的问题，不在刚果。不在地球。<br /><br />
+                真正的答案，在星空里。<br /><br />
+                散会。”
+            </blockquote>
+
+            <h3>六、 后续补充说明</h3>
+            <p><strong>（由联合国秘书长办公室于会议次日发布）</strong></p>
+            <p>2062年6月28日的安理会会议之后，刚果（金）基伍省的局势未能好转。相反，各方势力在安理会未能达成决议的“权力真空”中，更加肆无忌惮地展开了对剩余钴矿的争夺。</p>
+            <p><strong>2062年12月：</strong>基伍省第7号矿区发生大规模爆炸事故，据信为某派系在争夺矿脉时动用了炸药及违禁燃烧武器。事故造成约1700名矿工及当地居民死亡，其中约400人因矿区设施损毁导致被困地下，最终窒息身亡。</p>
+            <p><strong>2063年4月：</strong>刚果（金）政府宣布，基伍省最后一处经济可采钴矿脉已基本耗尽。剩余低品位矿石的开采成本，已远远超过其市场价值。这场持续了约两年的惨烈冲突，最终没有产生真正的胜利者。</p>
+
+            <h3>七、 档案附注</h3>
+            <p><strong>（由IMA档案管理员于2068年12月添加）</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <p>这份安理会会议记录，是地球资源冲突时代最具代表性的文件之一。它清晰地展现了人类在资源枯竭面前是如何陷入内耗、争吵、分裂和自相残杀的。</p>
+                <p>会后不到五年，这些当年在基伍省争夺钴矿的大国，最终都不得不将目光转向深空。因为地球上的最后一根骨头，已经被彻底啃干净了。</p>
+                <p>从某种意义上说，稀土战争是人类文明在地球上的最后一次挣扎，也是促使人类最终团结起来、走向星空的最后一记耳光。</p>
+                <p>它为IMA的诞生，提供了一个最沉重的理由：<strong>人类不能再在地球上自相残杀了。我们必须走出这颗星球，去猎取新的矿藏。并且，这一次，我们要团结起来。</strong></p>
+            </blockquote>
+
+            <div class="signature">
+                联合国安理会秘书处<br />
+                （签发日期：2062年7月15日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

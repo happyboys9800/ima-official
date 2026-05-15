@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2115-SIG-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《关于首次探测到太阳系外■■■■■■的绝密报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2115-SIG-001</div>
+            <div><strong>档案类型：</strong>绝密技术报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2115年7月15日</div>
+            <div><strong>发布机构：</strong>IMA 星际勘探总院 / 深空信号监测中心</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">关于首次探测到太阳系外异常信号的绝密报告</div>
+            <div class="doc-subtitle">文件编号：IMA/CLASSIFIED/2115/07/15/SIG-ALPHA</div>
+            <div class="doc-ref">致：IMA 寰宇总局理事会（仅限于主席及常务理事）</div>
+            <div class="doc-ref">发件人：深空信号监测中心 首席科学家 埃琳娜·沃罗诺娃</div>
+            <div class="doc-ref">主题：关于深空信号监测中心于2115年7月12日探测到一组来源不明的、疑似太阳系外人工信号的初步分析报告</div>
+
+            <h3>一、 检测概述</h3>
+            <p><strong>1.1 检测时间：</strong>2115年7月12日，格林威治标准时间 03:47:22</p>
+            <p><strong>1.2 检测地点：</strong>土星轨道深空信号监测中心（坐标：土星-拉格朗日L4点）</p>
+            <p><strong>1.3 检测设备：</strong>深空射电望远镜阵列（代号"天听-7"）</p>
+
+            <p><strong>1.4 信号特征（初步）：</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>参数</th><th>数值</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>频率</td><td><span class="redacted">████████</span> GHz</td><td>超出人类已知通信频段范围</td></tr>
+                    <tr><td>信号强度</td><td><span class="redacted">████████</span> dBm</td><td>极弱，但在背景噪声中具有高度的"非随机性"</td></tr>
+                    <tr><td>持续时间</td><td>约37秒</td><td>重复出现3次，间隔分别为12秒与18秒</td></tr>
+                    <tr><td>编码特征</td><td><span class="redacted">████████</span></td><td>信号中存在高度结构化的调制模式，无法被识别为任何已知的自然天体信号</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>1.5 信号来源方向：</strong>太阳系外，方向指向——<span class="redacted">████████</span></p>
+
+            <h3>二、 初步分析</h3>
+
+            <h4>2.1 信号的非随机性</h4>
+            <p>经过对信号的频谱分析与模式识别，监测中心确认：</p>
+            <ul>
+                <li>该信号在频率分布、时序间隔及相位调制上，均不符合任何已知的天然天体物理现象（如脉冲星、恒星耀斑、行星磁层辐射等）的典型特征；</li>
+                <li>信号中的模式调制呈现出高度规律性与重复性，在统计学上具有极高的"人工信号"特征；</li>
+                <li>与IMA历年保存的各类人类航天器信号数据库进行对比，未发现任何匹配。</li>
+            </ul>
+
+            <h4>2.2 来源方向推测</h4>
+            <p>信号来源方向经多站定位后推算，指向太阳系外的某一天区——<span class="redacted">【数据已涂黑】</span>。该天区尚未被人类探测器进行过任何深空探测。</p>
+
+            <h3>三、 初步结论</h3>
+
+            <h4>3.1 可能性评估</h4>
+            <p>监测中心就当前掌握的数据，对信号的可能来源进行了初步评估：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>可能性</th><th>概率估计</th><th>理由</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>自然天体现象</td><td>较低（约15%）</td><td>信号的调制模式与已知自然现象不符</td></tr>
+                    <tr><td>人类未知航天器或探测器信号</td><td>中等（约30%）</td><td>不排除在某次深空任务中，存在未公开的通信模块发出了该信号</td></tr>
+                    <tr><td>太阳系外人工信号</td><td>中等偏高（约45%）</td><td>信号的方向明确指向太阳系外，且信号模式高度结构化</td></tr>
+                    <tr><td>系统故障或误报</td><td>较低（约10%）</td><td>设备经过多次校准，且信号在三次重复中出现，故障概率较低</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>3.2 核心结论（暂定）</strong></p>
+            <p><strong>该信号目前无法被排除为"太阳系外人工信号"的可能性。</strong></p>
+
+            <h3>四、 安全与保密建议</h3>
+
+            <h4>4.1 保密等级</h4>
+            <p>鉴于该信号的潜在重大意义与可能带来的未知影响，监测中心建议：</p>
+            <ul>
+                <li>本报告列为<strong>"绝密"</strong>级别，仅限IMA寰宇总局理事会主席及常务理事查阅；</li>
+                <li>信号源坐标、信号参数的具体数值及详细分析数据，在本报告中进行涂黑处理，仅在必要时由主席授权调阅；</li>
+                <li>本报告不得以任何形式复制、摘录或向理事会以外的任何人员透露。</li>
+            </ul>
+
+            <h4>4.2 后续行动建议</h4>
+            <ol>
+                <li><strong>建立专项监测任务</strong>：指定"天听-7"阵列对该方向进行持续监测，记录任何重复信号或信号模式的演变；</li>
+                <li><strong>启动跨机构协调机制</strong>：与地球联合理事会下属的科学研究机构建立极少数人员之间的内部沟通渠道，以交换信息、同步判断；</li>
+                <li><strong>准备长期研究计划</strong>：在确认信号可持续接收到的情况下，考虑启动一项深空探测器研发计划，以探索该信号来源——但这将是一项耗时数十年、投入巨大的工程。</li>
+            </ol>
+
+            <div class="signature">
+                深空信号监测中心 首席科学家：<br />
+                （签字：埃琳娜·沃罗诺娃）<br />
+                签发日期：2115年7月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

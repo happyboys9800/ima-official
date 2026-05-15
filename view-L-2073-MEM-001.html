@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 L-2073-MEM-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《遇难矿工纪念宪章》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>L-2073-MEM-001</div>
+            <div><strong>档案类型：</strong>正式法规文本</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2073年10月17日</div>
+            <div><strong>发布机构：</strong>IMA 法规管控部 / 全局宣传部</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">遇难矿工纪念宪章</div>
+            <div class="doc-subtitle">（2073年10月17日经IMA寰宇总局理事会审议通过，自通过之日起施行）</div>
+            <div class="doc-ref">文件编号：IMA/LAW/2073/10/17/MEMORIAL</div>
+
+            <h3>序 言</h3>
+            <p><strong>我们，寰宇矿物资源联合开发局，以全人类之名，</strong></p>
+            <p><strong>深切缅怀</strong> 在“第一次太空淘金热”及大枯竭时代中，为人类文明开拓星际资源而献出生命的每一位矿工、工程师、技术人员及后勤人员；</p>
+            <p><strong>深切哀悼</strong> 希望谷惨案中遇难的1247名同胞，他们的牺牲唤醒了人类对深空秩序的渴望；</p>
+            <p><strong>深刻铭记</strong> 在人类走向星空的征途中，那些被遗忘的、被忽视的、被当作“消耗品”的劳动者，他们的鲜血浸透了小行星带的每一块岩石；</p>
+            <p><strong>鉴于此</strong>，为纪念遇难者，为警示后人，为守护人类文明的良知，兹制定本宪章。</p>
+
+            <h3>第一章 总则</h3>
+            <p><strong>第一条：宪章名称</strong></p>
+            <p>本宪章名称为《遇难矿工纪念宪章》，简称“纪念宪章”。</p>
+
+            <p><strong>第二条：立法目的</strong></p>
+            <p>本宪章的目的在于：</p>
+            <ul>
+                <li>以法律形式确立对深空作业遇难者的永久纪念制度；</li>
+                <li>建立统一的纪念设施、纪念仪式及纪念日体系；</li>
+                <li>确保遇难者的名字与事迹不被遗忘，成为人类文明走向星空的永恒警示；</li>
+                <li>弘扬“尊重生命、守护秩序、团结奋进”的IMA精神。</li>
+            </ul>
+
+            <p><strong>第四条：基本原则</strong></p>
+            <p>遇难矿工的纪念工作遵循以下基本原则：</p>
+            <ul>
+                <li><strong>庄重原则</strong>：一切纪念活动须以庄严、肃穆、尊重的态度进行；</li>
+                <li><strong>永久原则</strong>：纪念设施须永久维护，纪念活动须长期持续；</li>
+                <li><strong>公平原则</strong>：无论国籍、种族、性别、宗教信仰，所有遇难者一律平等对待；</li>
+                <li><strong>教育原则</strong>：纪念设施须兼具历史教育功能，警示后人勿忘历史教训。</li>
+            </ul>
+
+            <h3>第二章 纪念日体系</h3>
+            <p><strong>第五条：深空纪念日</strong></p>
+            <p>1. 确定每年 <strong>10月17日</strong> 为“深空纪念日”，亦称“希望谷纪念日”。</p>
+            <p>2. 深空纪念日旨在悼念所有在深空作业中因事故、冲突或恶劣工作条件而丧生的劳动者。</p>
+            <p>3. 深空纪念日不设庆祝活动，是IMA全机构唯一以“哀悼与反思”为主题的法定假日。</p>
+
+            <p><strong>第六条：纪念日活动内容</strong></p>
+            <p>每年10月17日，IMA须在当日组织以下纪念活动：</p>
+            <ul>
+                <li><strong>默哀仪式</strong>：于当地时间10:00整，全体人员默哀3分钟；</li>
+                <li><strong>降半旗</strong>：IMA总部、各矿区及太空设施须降半旗致哀；</li>
+                <li><strong>宣读遇难者名单</strong>：在总部及各主要矿区举行仪式，宣读迄今已知的全部遇难者姓名；</li>
+                <li><strong>点亮纪念灯</strong>：在希望谷烈士陵园及各区纪念设施中点亮纪念灯，象征生命之光的延续；</li>
+                <li><strong>历史教育课程</strong>：各作业点须在当日安排专门的“纪念日教育课程”，向全体员工讲解IMA成立前的历史及遇难者事迹。</li>
+            </ul>
+
+            <p><strong>第七条：停工规定</strong></p>
+            <p>1. 深空纪念日当日，除必要的生命维持系统、医疗设施及应急通讯外，其余作业须全面停工。</p>
+            <p>2. 因紧急抢险任务确需作业的，须经理事会特批，且须在次日安排同等时间的补休。</p>
+
+            <h3>第三章 纪念设施</h3>
+            <p><strong>第九条：希望谷烈士陵园</strong></p>
+            <p>1. 希望谷烈士陵园是IMA最高等级的纪念设施，位于谷神星希望谷矿区北侧高地。</p>
+            <p>2. 陵园内安葬着希望谷惨案中遇难的1247名矿工，以及后续在深空作业中遇难、经家属同意安葬于此的其他人员。</p>
+            <p>3. 陵园设以下设施：</p>
+            <ul>
+                <li>黑色玄武岩纪念碑：高5米，刻有1247名遇难者姓名；</li>
+                <li>纪念堂：内设遇难者照片墙、生平简介展板及历史档案陈列室；</li>
+                <li>纪念墙：用于铭刻后续追加的遇难者姓名；</li>
+                <li>纪念广场：可供百人以上的集体纪念活动使用。</li>
+            </ul>
+
+            <h3>第四章 遇难者档案</h3>
+            <p><strong>第十三条：中央遇难者数据库</strong></p>
+            <p>IMA须建立一个“中央遇难者数据库”，收录全部已知遇难者的身份信息、籍贯、生卒日期及死亡情况。数据库须永久保存，并每年更新一次。</p>
+
+            <p><strong>第十五条：遇难者家属联络制度</strong></p>
+            <p>IMA须建立并维护遇难者家属联络制度，确保遇难者家属能够及时获知遇难者的安葬情况、纪念活动信息及相关权利。</p>
+            <p>遇难者家属有权在深空纪念日或纪念周期间，免费申请前往希望谷烈士陵园凭吊。</p>
+
+            <h3>第五章 纪念教育</h3>
+            <p><strong>第十七条：历史教育课程</strong></p>
+            <p>IMA须将遇难矿工的历史纳入新员工入职培训的必修课程。该课程须包括：大枯竭时代的历史、太空淘金热的混乱与代价、希望谷惨案的真相以及纪念宪章的精神内核。</p>
+
+            <p><strong>第十八条：纪念出版物</strong></p>
+            <p>IMA全局宣传部须定期出版纪念出版物，包括但不限于：遇难者事迹汇编、纪念文集、影像资料集等。纪念出版物须在IMA各作业点的图书馆及公共阅览区免费提供。</p>
+
+            <h3>第六章 附则</h3>
+            <p><strong>第二十二条：解释权</strong></p>
+            <p>本宪章的解释权归IMA寰宇总局理事会。</p>
+
+            <p><strong>第二十三条：生效</strong></p>
+            <p>本宪章自通过之日起施行。</p>
+
+            <div class="signature">
+                IMA寰宇总局理事会主席：<br />
+                （签字：托马斯·米勒）<br />
+                IMA矿工权益保障办公室主任：<br />
+                （签字：玛丽亚·洛佩兹）<br />
+                IMA全局宣传部部长：<br />
+                （签字：张雅琴）<br />
+                签署日期：2073年10月17日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寰宇矿物资源联合开发局 IMA</title>
+<style>
+* {margin:0;padding:0;box-sizing:border-box;}
+body, html {font-family:"PingFang SC",sans-serif;background:#000;color:#fff;overflow-x:hidden;}
+a {color:inherit;text-decoration:none;}
+ul {list-style:none;}
+header{position:fixed;top:0;width:100%;height:70px;background:rgba(0,0,0,0.7);backdrop-filter:blur(5px);display:flex;align-items:center;justify-content:space-between;padding:0 40px;z-index:1000;}
+.logo{display:flex;align-items:center;cursor:pointer;transition:0.3s;}
+.logo img{height:50px;margin-right:10px;}
+.logo span{font-size:18px;font-weight:bold;letter-spacing:1px;}
+.logo:hover{transform:scale(1.05);}
+nav ul{display:flex;gap:20px;align-items:center;}
+nav ul li{cursor:pointer;transition:0.3s;color:#fff;}
+nav ul li:hover{color:#4A90E2;}
+#langSelect{padding:5px;border-radius:5px;background:#1A1F2B;border:2px solid #4A90E2;color:#E0E0E0;cursor:pointer;}
+.hero{height:100vh;background:url('hero-bg.png') no-repeat center/cover;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;position:relative;overflow:hidden;}
+.hero::after{content:"";position:absolute;top:0;left:0;width:100%;height:100%;background: rgba(0,0,0,0.5);}
+.hero-content{position:relative;z-index:1;}
+.hero-logo{font-size:60px;font-weight:bold;letter-spacing:5px;margin-bottom:20px;}
+.hero-tagline{font-size:24px;margin-bottom:30px;}
+.hero-buttons{display:flex;gap:20px;flex-wrap:wrap;justify-content:center;}
+.hero-buttons button{padding:12px 30px;font-size:16px;font-weight:bold;color:#E0E0E0;border:2px solid #4A90E2;background:#1A1F2B;cursor:pointer;transition:0.3s;border-radius:5px;}
+.hero-buttons button:hover{background:#4A90E2;color:#000;box-shadow:0 0 10px #4A90E2;}
+section{min-height:100vh;padding:100px 50px 50px 50px;background:#010101;}
+section h2{font-size:36px;margin-bottom:20px;border-bottom:2px solid #4A90E2;display:inline-block;padding-bottom:5px;}
+section p{font-size:18px;line-height:1.8;margin-bottom:20px;}
+
+/* ===== 编年史 - 居中竖线左右交替布局 ===== */
+.timeline{position:relative;margin:50px 0;max-width:1000px;margin-left:auto;margin-right:auto;}
+.timeline::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:4px;background:#4A90E2;transform:translateX(-50%);}
+.timeline-item{position:relative;width:48%;padding:20px;background:rgba(255,255,255,0.05);margin:30px 0;border-radius:8px;display:flex;align-items:center;}
+.timeline-item.left{left:0;text-align:left;border-right:4px solid #4A90E2;border-left:none;}
+.timeline-item.right{left:52%;text-align:left;border-left:4px solid #4A90E2;border-right:none;}
+.timeline-item .flex-row{display:flex;align-items:center;gap:20px;width:100%;}
+.timeline-item .text-content{flex:1;}
+.timeline-item .image-placeholder{flex:0 0 160px;height:100px;background:rgba(255,255,255,0.05);border:2px dashed #4A90E2;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;color:#666;text-align:center;padding:0 10px;transition:0.3s;cursor:pointer;}
+.timeline-item .image-placeholder:hover{background:rgba(74,144,226,0.1);border-color:#7ab7f7;box-shadow:0 0 15px rgba(74,144,226,0.1);}
+.timeline-item .image-placeholder img{width:100%;height:100%;object-fit:cover;border-radius:8px;}
+.timeline-item.left .flex-row{flex-direction:row;}
+.timeline-item.right .flex-row{flex-direction:row-reverse;}
+.timeline-item h3{font-size:20px;margin-bottom:8px;color:#4A90E2;}
+.timeline-item p{font-size:15px;line-height:1.6;margin-bottom:0;}
+
+/* ===== 图片放大模态框 ===== */
+.image-modal{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:10000;justify-content:center;align-items:center;cursor:pointer;}
+.image-modal.active{display:flex;}
+.image-modal img{max-width:90%;max-height:90%;object-fit:contain;border-radius:8px;border:2px solid #4A90E2;box-shadow:0 0 40px rgba(74,144,226,0.3);}
+.image-modal .placeholder-text{font-size:24px;color:#888;text-align:center;padding:20px;border:2px dashed #4A90E2;border-radius:10px;}
+.image-modal .close-hint{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#666;font-size:14px;}
+
+/* ===== 影音板块 ===== */
+#media{background:#010101;}
+.media-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;margin-top:30px;}
+.media-box{background:rgba(255,255,255,0.05);padding:20px;border-radius:10px;border:1px solid rgba(74,144,226,0.3);}
+.media-box h3{font-size:20px;margin-bottom:15px;color:#4A90E2;}
+.media-box .media-placeholder{width:100%;aspect-ratio:16/9;background:rgba(255,255,255,0.03);border:2px dashed #4A90E2;border-radius:8px;display:flex;align-items:center;justify-content:center;color:#666;font-size:14px;margin-bottom:10px;}
+.media-box video,.media-box audio{width:100%;border-radius:8px;background:#000;margin-top:8px;}
+.media-box audio{height:50px;}
+.media-box .hint{font-size:13px;color:#888;margin-top:5px;}
+
+@media (max-width: 768px) {
+  .media-grid{grid-template-columns:1fr;}
+}
+
+/* ===== 新闻、纪念、页脚等原有样式 ===== */
+.news-card{background:rgba(255,255,255,0.05);padding:20px;margin:20px 0;border-left:4px solid #4A90E2;}
+#memorial{background:#111;color:#E0E0E0;padding:80px 50px;text-align:center;position:relative;}
+#memorial .monument{max-width:600px;margin:0 auto;background:#1A1F2B;border:3px solid #4A90E2;border-radius:15px;padding:30px;box-shadow:0 0 30px rgba(74,144,226,0.6);}
+#footer-links{background:#010101;padding:50px;color:#E0E0E0;}
+#footer-links .link-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:center;}
+#footer-links .link-card{flex:1 1 200px;background:#1A1F2B;padding:20px;border-radius:10px;border:2px solid #4A90E2;cursor:pointer;transition:0.3s;}
+#footer-links .link-card:hover{box-shadow:0 0 15px #4A90E2;transform:translateY(-3px);}
+
+/* ===== 登录弹窗样式 ===== */
+#loginModal{display:none;position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;}
+#loginModal .modal-content{background:#111;padding:30px;border:2px solid #4A90E2;border-radius:10px;width:340px;text-align:center;}
+#loginModal input{width:90%;padding:10px;margin:10px 0;border:1px solid #4A90E2;border-radius:5px;background:#1A1F2B;color:#E0E0E0;}
+#loginModal .btn-group{display:flex;gap:10px;justify-content:center;margin-top:10px;}
+#loginModal .btn-group button{padding:8px 16px;border:2px solid #4A90E2;background:#1A1F2B;color:#E0E0E0;cursor:pointer;font-weight:bold;transition:0.3s;border-radius:5px;flex:1;}
+#loginModal .btn-group button:hover{background:#4A90E2;color:#000;box-shadow:0 0 10px #4A90E2;}
+#loginModal .btn-group .btn-register{border-color:#4A90E2;color:#4A90E2;}
+#loginModal .btn-group .btn-register:hover{background:#4A90E2;color:#000;}
+.agree-row{display:flex;align-items:center;justify-content:center;gap:6px;margin:15px 0 5px 0;font-size:13px;color:#aaa;}
+.agree-row input[type="checkbox"]{accent-color:#4A90E2;width:16px;height:16px;cursor:pointer;}
+.agree-row a{color:#4A90E2;text-decoration:underline;transition:0.2s;}
+.agree-row a:hover{color:#7ab7f7;}
+
+/* ===== 响应式 ===== */
+@media (max-width: 768px) {
+  .timeline-item{width:90%;left:5% !important;margin:20px 0;}
+  .timeline-item.right{left:5% !important;text-align:left;border-left:4px solid #4A90E2;border-right:none;}
+  .timeline-item.left .flex-row,.timeline-item.right .flex-row{flex-direction:column !important;}
+  .timeline-item .image-placeholder{width:100%;height:80px;flex:0 0 80px;}
+  .hero-logo{font-size:40px;}
+  .hero-tagline{font-size:18px;}
+  section{padding:80px 20px 30px 20px;}
+  header{padding:0 20px;}
+}
+@media (max-width: 640px) {
+  .timeline-item{width:92%;left:4% !important;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo" onclick="goHome()"><img src="logo.png" alt="IMA Logo"><span>IMA</span></div>
+  <nav>
+    <ul>
+      <li onclick="window.location.href='worldview.html'">世界观</li>
+      <li onclick="window.location.href='technology.html'">技术与装备</li>
+      <li onclick="scrollToSection('history')">IMA成立编年史</li>
+      <li onclick="scrollToSection('news')">新闻发布</li>
+      <li onclick="scrollToSection('media')">影音中心</li>
+      <li onclick="openLogin()">登录</li>
+      <li>
+        <select id="langSelect">
+          <option value="zh">中文</option>
+          <option value="en">English</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="ar">العربية</option>
+          <option value="ru">Русский</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-logo" data-translate="heroLogo">IMA</div>
+    <div class="hero-tagline" data-translate="heroTagline">为星海，为家园 | FOR THE STARS, FOR HOME</div>
+    <div class="hero-buttons">
+      <button data-translate="joinBtn" onclick="joinUs()">加入我们</button>
+    </div>
+  </div>
+</section>
+
+<section id="history">
+  <h2 data-translate="historyTitle">IMA成立编年史</h2>
+
+  <div class="timeline">
+    <!-- 1. 大枯竭时代：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2045-2068 大枯竭时代</h3>
+          <p>地球资源枯竭，能源危机与战争爆发。煤矿枯竭、石油停喷、稀土耗尽，全球电力系统瘫痪，超大城市夜间断电，饥荒与社会动荡加剧。</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 大枯竭时代 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. 太空淘金热：图片在左，文字在右 -->
+    <div class="timeline-item right">
+      <div class="flex-row">
+        <div class="image-placeholder" data-img-src="淘金热.png">
+          <img src="淘金热.png" alt="太空淘金热">
+        </div>
+        <div class="text-content">
+          <h3>2061-2068 混乱的太空淘金热</h3>
+          <p>私人公司、亡命之徒涌向谷神星寻找氦-3与稀有金属。无安全标准，矿船频繁相撞，盗采、走私、人口贩卖泛滥。矿工平均寿命仅 2.3 年。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. 谷神星惨案：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2067 谷神星惨案</h3>
+          <p>三大私人矿业公司为争夺主矿脉开战，爆炸、炸药和小型核武器齐发。1247 名矿工遇难，其中包括 327 名中国工人。幸存者口述：“我们不是来挖矿的，我们是来送死的。”</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 谷神星惨案 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. IMA成立：图片在左，文字在右 -->
+    <div class="timeline-item right">
+      <div class="flex-row">
+        <div class="image-placeholder" data-img-src="IMA成立.png">
+          <img src="IMA成立.png" alt="IMA成立">
+        </div>
+        <div class="text-content">
+          <h3>2068 IMA成立</h3>
+          <p>全球联合组织成立，统一太阳系资源开发秩序，收编所有私人矿业公司，制定“所有太阳系资源属于全人类”法规。局长宣告：“我们不是来征服星空的，我们是来赎罪的。”</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. 奠基阶段：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2068-2073 奠基阶段</h3>
+          <p>第一批员工来自幸存矿工、工程师和士兵。建立首个永久性基地“第一矿区”，制定星际作业安全法，矿工必须穿全封闭式外骨骼，工作时间 ≤8小时。</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 奠基阶段 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 6. 工业复苏：图片在左，文字在右 -->
+    <div class="timeline-item right">
+      <div class="flex-row">
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 工业复苏 · 图片占位符 ]</span>
+        </div>
+        <div class="text-content">
+          <h3>2075-2078 工业复苏</h3>
+          <p>自主建造采矿船“开拓者-1号”，首批氦-3运回地球，全球电价下降 90%，城市灯光重新亮起。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7. 秩序全面建立：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2090 秩序全面建立</h3>
+          <p>清剿盗采势力与太空海盗，建立航线网络和行业标准，资源按人口比例分配。IMA 被誉为“文明的血管”。</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 秩序全面建立 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 8. 大开拓时代：图片在左，文字在右 -->
+    <div class="timeline-item right">
+      <div class="flex-row">
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 大开拓时代 · 图片占位符 ]</span>
+        </div>
+        <div class="text-content">
+          <h3>2095-2120 大开拓时代</h3>
+          <p>小行星带开发，部署“噬星者”级母舰，工业基地扩展至72个，年开采矿石超1000亿吨。木星轨道能源工程启动，首批喷射熔炉空间站并网发电，进入无限能源时代。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 9. 文明运输线建立：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2112 文明运输线建立</h3>
+          <p>谷神星到地球建立星际干线运输通道，每天运送物资 &gt;1亿吨，被称为“金色河流”。拓荒者与百夫长机甲投入使用，保障矿区建设与安全。</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 文明运输线 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. 鼎盛时期：图片在左，文字在右 -->
+    <div class="timeline-item right">
+      <div class="flex-row">
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 鼎盛时期 · 图片占位符 ]</span>
+        </div>
+        <div class="text-content">
+          <h3>2120-2138 鼎盛时期</h3>
+          <p>IMA 管辖太阳系 95% 星域，员工 2700 万人，运营矿区、工业基地、能源站和太空港，掌握人类 99% 的矿产资源和 100% 聚变能源供应，资源公平分配，全太阳系医疗与教育体系覆盖。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 11. 2138年纪念：文字在左，图片在右 -->
+    <div class="timeline-item left">
+      <div class="flex-row">
+        <div class="text-content">
+          <h3>2138 年纪念</h3>
+          <p>前辈矿工王建国口述：“我们从黑暗中走来，用双手挖出文明的未来。不要忘记那1247个名字，不要忘记我们为什么出发。”</p>
+        </div>
+        <div class="image-placeholder" data-img-src="">
+          <span>[ 2138年纪念 · 图片占位符 ]</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="news">
+<h2 data-translate="newsTitle">新闻发布</h2>
+<div class="news-card"><strong>2138-05-15:</strong> <span data-translate="news1">谷神星新基地启用，扩展能源站建设。</span></div>
+<div class="news-card"><strong>2138-04-30:</strong> <span data-translate="news2">IMA 发布年度资源分配报告。</span></div>
+<div class="news-card"><strong>2138-03-20:</strong> <span data-translate="news3">拓荒者机甲新型号投入使用。</span></div>
+</section>
+
+<section id="media">
+  <h2>影音中心</h2>
+  <div class="media-grid">
+    <!-- 视频播放器 -->
+    <div class="media-box">
+      <h3>🎬 IMA 宣传片</h3>
+      <div class="media-placeholder">视频占位符 — 请上传 MP4 文件</div>
+      <video controls preload="metadata" poster="video-poster.png">
+        <source src="ima-promo.mp4" type="video/mp4">
+        您的浏览器不支持视频播放。
+      </video>
+      <div class="hint">点击播放/暂停 · 拖动进度条 · 右下角全屏 · 音量可调</div>
+    </div>
+    <!-- 音频播放器 -->
+    <div class="media-box">
+      <h3>🎵 IMA 主题曲</h3>
+      <div class="media-placeholder" style="aspect-ratio:auto;height:60px;">音频占位符 — 请上传 MP3 文件</div>
+      <audio controls preload="metadata">
+        <source src="ima-theme.mp3" type="audio/mpeg">
+        您的浏览器不支持音频播放。
+      </audio>
+      <div class="hint">点击播放/暂停 · 拖动进度条 · 调节音量</div>
+    </div>
+  </div>
+</section>
+
+<section id="memorial">
+  <div class="monument">
+    <h2 data-translate="memorialTitle">谷神星纪念</h2>
+    <p data-translate="memorialText">缅怀1247名遇难矿工，铭记人类深空探索历史</p>
+    <div id="countdown"></div>
+  </div>
+</section>
+
+<section id="footer-links">
+  <div class="link-grid">
+    <div class="link-card" onclick="window.open('', '_blank')">
+      <h3 data-translate="helpTitle">帮助中心</h3>
+      <p data-translate="helpText"></p>
+    </div>
+    <div class="link-card" onclick="window.open('', '_blank')">
+      <h3 data-translate="serviceTitle">合作 & 服务</h3>
+      <p data-translate="serviceText"></p>
+    </div>
+    <div class="link-card" onclick="window.open('', '_blank')">
+      <h3 data-translate="reportTitle">举报中心</h3>
+      <p data-translate="reportText"></p>
+    </div>
+    <div class="link-card" onclick="window.open('', '_blank')">
+      <h3 data-translate="aboutTitle">关于我们</h3>
+      <p data-translate="aboutText"></p>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:30px;">&copy; 2138 IMA INTERSTELLAR MINING AUTHORITY</p>
+</section>
+
+<!-- 图片放大模态框 -->
+<div class="image-modal" id="imageModal" onclick="closeImageModal()">
+  <div id="modalContent" style="display:flex;justify-content:center;align-items:center;width:100%;height:100%;">
+    <!-- 动态填充内容 -->
+  </div>
+  <div class="close-hint">点击任意位置关闭</div>
+</div>
+
+<!-- 登录弹窗 -->
+<div id="loginModal">
+  <div class="modal-content">
+    <h3 data-translate="loginTitle">登录 IMA 系统</h3>
+    <input type="text" id="username" placeholder="用户名">
+    <input type="password" id="password" placeholder="密码"><br>
+    <div class="agree-row">
+      <input type="checkbox" id="agreeCheckbox">
+      <label for="agreeCheckbox">
+        点击勾选即同意
+        <a href="#" onclick="window.open('privacy.html', '_blank')" style="color:#4A90E2; text-decoration:underline;">隐私政策</a>
+        及
+        <a href="#" onclick="window.open('terms.html', '_blank')" style="color:#4A90E2; text-decoration:underline;">用户协议</a>
+      </label>
+    </div>
+    <div class="btn-group">
+      <button onclick="login()" data-translate="loginBtnModal">登录</button>
+      <button class="btn-register" onclick="alert('注册功能开发中，敬请期待！')">注册</button>
+    </div>
+    <button onclick="closeLogin()" data-translate="cancelBtn" style="margin-top:6px;border:none;background:transparent;color:#888;cursor:pointer;font-size:12px;">取消</button>
+  </div>
+</div>
+
+<script>
+// 完整 translations 对象
+const translations={
+heroLogo:{zh:"IMA",en:"IMA",fr:"IMA",es:"IMA",ar:"IMA",ru:"IMA"},
+heroTagline:{zh:"为星海，为家园 | FOR THE STARS, FOR HOME",en:"For the stars, for home",fr:"Pour les étoiles, pour la maison",es:"Por las estrellas, por hogar",ar:"لنجوم، للمنزل",ru:"За звезды, за дом"},
+joinBtn:{zh:"加入我们",en:"Join Us",fr:"Rejoignez-nous",es:"Únete a nosotros",ar:"انضم إلينا",ru:"Присоединяйтесь"},
+historyTitle:{zh:"IMA成立编年史",en:"IMA History Timeline",fr:"Chronologie IMA",es:"Cronología de IMA",ar:"جدول تاريخ IMA",ru:"Хронология IMA"},
+newsTitle:{zh:"新闻发布",en:"News",fr:"Actualités",es:"Noticias",ar:"الأخبار",ru:"Новости"},
+news1:{zh:"谷神星新基地启用，扩展能源站建设。",en:"New Ceres base operational, energy station expanded.",fr:"Nouvelle base de Cérès opérationnelle, station énergétique étendue.",es:"Nueva base de Ceres operativa, estación energética expandida.",ar:"قاعدة سيريس الجديدة تعمل، توسيع محطة الطاقة.",ru:"Новая база на Церере введена в эксплуатацию, расширение энергетической станции."},
+news2:{zh:"IMA 发布年度资源分配报告。",en:"IMA releases annual resource distribution report.",fr:"IMA publie le rapport annuel de distribution des ressources.",es:"IMA publica el informe anual de distribución de recursos.",ar:"تصدر IMA تقرير توزيع الموارد السنوي.",ru:"IMA выпускает ежегодный отчет о распределении ресурсов."},
+news3:{zh:"拓荒者机甲新型号投入使用。",en:"New Pioneer mecha model deployed.",fr:"Nouveau modèle de mecha Pioneer déployé.",es:"Nuevo modelo de mecha Pioneer desplegado.",ar:"تم نشر نموذج ميكا بايونير الجديد.",ru:"Новая модель меха Пионер введена в эксплуатацию."},
+memorialTitle:{zh:"谷神星纪念",en:"Ceres Memorial",fr:"Mémorial de Cérès",es:"Memorial de Ceres",ar:"نصب تذكاري سيريس",ru:"Памятник Церере"},
+memorialText:{zh:"缅怀1247名遇难矿工，铭记人类深空探索历史",en:"Remembering 1247 miners, commemorating humanity's deep-space exploration history.",fr:"En mémoire de 1247 mineurs, commémorant l'histoire de l'exploration spatiale humaine.",es:"Recordando a 1247 mineros, conmemorando la historia de la exploración espacial humana.",ar:"تخليداً لذكرى 1247 عامل مناجم، إحياء لتاريخ استكشاف الفضاء العميق للبشرية.",ru:"В память о 1247 шахтёрах, чествуя историю освоения глубокого космоса человечеством."},
+loginTitle:{zh:"登录 IMA 系统",en:"Login to IMA System",fr:"Connexion au système IMA",es:"Iniciar sesión en el sistema IMA",ar:"تسجيل الدخول إلى نظام IMA",ru:"Вход в систему IMA"},
+loginBtnModal:{zh:"登录",en:"Login",fr:"Connexion",es:"Iniciar sesión",ar:"تسجيل الدخول",ru:"Войти"},
+cancelBtn:{zh:"取消",en:"Cancel",fr:"Annuler",es:"Cancelar",ar:"إلغاء",ru:"Отмена"}
+};
+
+// 语言切换
+document.getElementById("langSelect").addEventListener("change",function(){
+  const lang=this.value;
+  document.querySelectorAll("[data-translate]").forEach(el=>{
+    const key = el.dataset.translate;
+    if(translations[key] && translations[key][lang]) {
+      el.innerText = translations[key][lang];
+    }
+  });
+});
+
+// 页面滚动函数
+function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:"smooth"});}
+function goHome(){ scrollToSection('hero'); }
+function joinUs(){ window.location.href='careers.html'; }
+function openLogin(){
+  document.getElementById('loginModal').style.display='flex';
+  document.getElementById('agreeCheckbox').checked = false;
+}
+function closeLogin(){ document.getElementById('loginModal').style.display='none';}
+function login(){
+  const u=document.getElementById('username').value;
+  const p=document.getElementById('password').value;
+  const agree=document.getElementById('agreeCheckbox').checked;
+  if(!agree){
+    alert('请先勾选同意隐私政策及用户协议');
+    return;
+  }
+  if(u==='admin' && p==='123456'){
+    alert('登录成功！');
+    closeLogin();
+  } else {
+    alert('用户名或密码错误');
+  }
+}
+
+// 谷神星纪念倒计时
+function updateCountdown(){
+  const now = new Date();
+  let year = now.getFullYear();
+  let target = new Date(`${year}-10-17T00:00:00`);
+  if(now > target){ target = new Date(`${year+1}-10-17T00:00:00`); }
+  const diff = target - now;
+  const d = Math.floor(diff/1000/60/60/24);
+  const h = Math.floor(diff/1000/60/60%24);
+  const m = Math.floor(diff/1000/60%60);
+  const s = Math.floor(diff/1000%60);
+  document.getElementById('countdown').innerText=`倒计时: ${d}天 ${h}时 ${m}分 ${s}秒`;
+}
+setInterval(updateCountdown,1000);
+updateCountdown();
+
+// ===== 图片放大功能 =====
+function setupImageModal() {
+  const modal = document.getElementById('imageModal');
+  const modalContent = document.getElementById('modalContent');
+
+  document.querySelectorAll('.image-placeholder').forEach(el => {
+    el.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // 检查内部是否有图片
+      const img = this.querySelector('img');
+      if (img) {
+        const clone = img.cloneNode(true);
+        clone.style.width = 'auto';
+        clone.style.height = 'auto';
+        clone.style.maxWidth = '90%';
+        clone.style.maxHeight = '90%';
+        clone.style.objectFit = 'contain';
+        clone.style.borderRadius = '8px';
+        clone.style.border = '2px solid #4A90E2';
+        clone.style.boxShadow = '0 0 40px rgba(74,144,226,0.3)';
+        modalContent.innerHTML = '';
+        modalContent.appendChild(clone);
+      } else {
+        const text = this.querySelector('span') ? this.querySelector('span').textContent : '图片待上传';
+        modalContent.innerHTML = `<div class="placeholder-text">${text}</div>`;
+      }
+      modal.classList.add('active');
+    });
+  });
+}
+
+function closeImageModal() {
+  document.getElementById('imageModal').classList.remove('active');
+}
+
+// 页面加载完成后初始化图片放大功能
+document.addEventListener('DOMContentLoaded', setupImageModal);
+</script>
+
+</body>
+</html>

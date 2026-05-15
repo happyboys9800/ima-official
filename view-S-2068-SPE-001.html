@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 S-2068-SPE-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《第一任局长托马斯·米勒就职演说》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>S-2068-SPE-001</div>
+            <div><strong>档案类型：</strong>官方演说记录</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年10月21日</div>
+            <div><strong>发布机构：</strong>IMA 全局宣传部</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">在废墟上建立秩序</div>
+            <div class="doc-subtitle">——IMA第一任局长托马斯·米勒就职演说</div>
+            <div class="doc-ref">（2068年10月21日，瑞士日内瓦，IMA总部礼堂）</div>
+            <div class="doc-ref">演说时长：约28分钟</div>
+
+            <h3>各位地球联合理事会的代表、各位成员国元首、各位IMA同仁：</h3>
+
+            <p><strong>四天前</strong>，我站在谷神星的希望谷。我站在一片被爆炸和火焰撕裂过的土地上，脚下是那些为人类文明献出生命的矿工的安息之地。</p>
+
+            <p>那是一块黑色的石碑。上面刻着1247个名字。</p>
+
+            <p>我站在那里，听着风声。只有风声。没有机器轰鸣，没有矿工的笑声。只有一片死寂。</p>
+
+            <p>那一刻，我意识到：这座石碑，不是一个结束。它是一个开始。</p>
+
+            <h3>一、 我们从哪里来</h3>
+            <p>公元2047年，人类耗尽了地球上最后一座浅层煤矿。</p>
+            <p>公元2055年，全球三大稀土矿同时归零。</p>
+            <p>公元2062年，我们为争夺地球上最后一块可挖的骨头——刚果的钴矿——自相残杀。</p>
+            <p>公元2061年，谷神星的矿藏被发现。但那不是救赎，那是新的深渊。我们像一群饿疯了的野兽一样扑向星空，在无边的黑暗里互相撕咬、互相残杀。</p>
+            <p><strong>1247条人命。</strong>这就是我们为之付出的代价。</p>
+
+            <h3>二、 我们是谁</h3>
+            <p><strong>今天，我们站在这里。我们是同一群人，但我们已经不再一样。</strong></p>
+            <p>我们是那些曾经在太空淘金热中幸存下来的矿工、工程师和士兵。我们是那些曾经眼睁睁看着同伴死去的人。我们是那些曾经在绝望中发誓“不再让这一切重演”的人。</p>
+            <p><strong>我们坐在这里，不是为了统治星空。我们坐在这个位置上，是为了赎罪。</strong></p>
+            <p>但我们不仅仅是为了赎罪。</p>
+            <p><strong>我们是为了建设。</strong></p>
+            <p>建设一个让矿工不必在黑暗中死去的秩序；建设一个让资源能够公平分配的制度；建设一个让全人类都能从星空中获益的文明。</p>
+
+            <h3>三、 我们的使命</h3>
+            <p>IMA的使命，从来不是为了开采更多的矿石。我们开采的不是冰冷的矿石，我们开采的是——<strong>人类的未来</strong>。</p>
+            <p>是地球上一百四十亿人的温饱；是每一个孩子眼里的星光；是一个不再为资源而战的世界。</p>
+            <p><strong>我们为星海而战，更是为家园而战。</strong></p>
+
+            <h3>四、 我们的基石</h3>
+            <p>我今天站在这里，承诺将用我的一切来守护IMA的四大基石：</p>
+
+            <h4>第一，安全。</h4>
+            <p>我们的矿工不是消耗品。他们是妻子和丈夫，是父亲和母亲，是父母的心肝宝贝，是孩子眼中不可替代的巨人。我们将为他们制定有史以来最严苛的安全标准。我承诺，任何不将矿工生命放在首位的管理者，都将被我亲手赶出IMA的大门。</p>
+
+            <h4>第二，公平。</h4>
+            <p>太阳系的每一颗矿石，都属于全人类。它不属于任何一个国家，不属于任何一个财团，不属于任何一个特权阶级。它将根据地球联合理事会确定的人口比例，被公平地分配到每一个需要它的人手中。我们不是来制造新的贵族的，我们是来服务全体人类的。</p>
+
+            <h4>第三，秩序。</h4>
+            <p>我们将终结太空淘金热。终结小行星带中的血腥，终结矿工被当作“会呼吸的钻头”的恐怖时代。太空中将第一次拥有法律，拥有执法者，拥有每一个生命都必须被尊重的尊严。</p>
+
+            <h4>第四，希望。</h4>
+            <p>我们在这个最黑暗的时刻聚在一起。但即使在黑暗中，我们依然选择看见光明。我们选择相信，人类可以走向星空而不忘记人性的底色；我们选择相信，在废墟之上，一座新的、更美好的文明正在拔地而起。</p>
+
+            <h3>五、 一个誓言</h3>
+            <p>我要在这里，对你们每一个人，对地球上每一个正在收听这场广播的人，发誓：</p>
+            <p><strong>我将永远不会忘记希望谷。</strong></p>
+            <p><strong>我将永远不会忘记那些在黑暗中呼喊着“救救我”的矿工。</strong></p>
+            <p><strong>我将永远不会忘记，那些被贪婪吞噬的、被制度抛弃的、被暴力毁灭的生命。</strong></p>
+            <p><strong>我将用我的全部生命，去防止这一切再次发生。</strong></p>
+
+            <h3>六、 结语</h3>
+            <p>58年前，第一批矿工在谷神星的土地上插下一块木牌，上面写着：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <strong>“这里是最后的希望。”</strong>
+            </blockquote>
+            <p>今天，我们站在他们的肩膀上。</p>
+            <p>我们已经站在了那块木牌被插下的地方。我们已经站在了那1247个名字的旁边。我们已经站在了一个新时代的门槛上。</p>
+            <p><strong>我们需要做的，不是为过去哀悼，而是为未来铺路。</strong></p>
+            <p>只要我们记住：我们开采的不是冰冷的矿石，而是人类的未来。只要我们记住：我们的每一个行动，都是为了守护140亿人的温饱、孩子的笑容、母亲的安心。</p>
+            <p><strong>只要我们不忘记这一切，就没有任何黑暗，能够熄灭我们前进的火焰。</strong></p>
+            <p>谢谢你们。</p>
+            <p><strong>我是托马斯·米勒，我是你们的第一任局长，我也是你们中的一员。</strong></p>
+            <p><strong>让我们一起去建设那个值得人类为之奋斗的未来。</strong></p>
+            <p><strong>为星海，为家园。</strong></p>
+            <p>谢谢大家。</p>
+
+            <div class="signature">
+                IMA第一任局长<br />
+                托马斯·米勒<br />
+                （签字日期：2068年10月21日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

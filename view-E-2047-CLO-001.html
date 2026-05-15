@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2047-CLO-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《关于全球最后一座大型浅层煤矿关闭的特别观察报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2047-CLO-001</div>
+            <div><strong>档案类型：</strong>闭矿记录 / 联合国观察员报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2047年10月17日</div>
+            <div><strong>发布机构：</strong>联合国环境规划署（UNEP）驻大同观察员办公室</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">关于全球最后一座大型浅层煤矿关闭的特别观察报告</div>
+            <div class="doc-subtitle">文件编号：UNEP/DA/2047/10/17/OBS</div>
+            <div class="doc-ref">致：联合国环境规划署总部（内罗毕）</div>
+            <div class="doc-ref">事由：就中国山西省大同煤矿正式闭矿仪式，提交观察报告</div>
+
+            <h3>一、 事件概述</h3>
+            <p>2047年10月17日上午9时整，全球最后一座具有经济可采价值的大型浅层煤矿——中国山西省大同煤矿——正式宣布关闭。</p>
+            <p>至此，这座自20世纪初即开始大规模开采、在21世纪中叶仍维持着中国北方近30%电力供应的巨型煤矿，完成了它最后的使命。</p>
+            <p>联合国环境规划署驻大同观察员办公室依约派员出席了闭矿仪式，并记录了这一具有象征意义的历史时刻。</p>
+
+            <h3>二、 现场记录</h3>
+
+            <h4>2.1 矿区现状</h4>
+            <p>大同煤矿的露天采掘区已呈现出一种几何学意义上的荒凉。深度超过400米的矿坑如同大地上的一处巨型伤疤，坑壁裸露着黄褐色的岩层，底部仅剩一层薄薄的、不再具有经济开采价值的煤屑。</p>
+            <p>自2044年以来，该矿区的日开采量已从巅峰时期的5万吨下降至不足200吨，且均为低热值、高灰分的劣质煤。根据地质部门最终核算，剩余可采储量已不足15万吨，仅为矿区总储量的0.3%，且开采成本已超过煤炭本身的市场价值。</p>
+
+            <h4>2.2 闭矿仪式</h4>
+            <p>闭矿仪式在矿区主广场举行。出席者包括：大同市市长、山西省能源厅代表、矿区最后一批在岗矿工代表、联合国观察员等共计约200人。</p>
+            <p>仪式主要内容包括：</p>
+            <ul>
+                <li>降下矿区标志性的“大同煤矿”红旗，并将其移交至当地工业博物馆作为历史文物保存。</li>
+                <li>宣读由国务院能源局签发的《闭矿令》，正式注销该矿区的采矿许可证。</li>
+                <li>由最后一批在岗矿工代表——一个工龄超过40年的老矿工——将最后一铲煤，倒入一辆锈迹斑斑的矿车中。这铲煤将被送入新建的“中国煤炭工业博物馆”，作为那个时代的最后见证。</li>
+            </ul>
+
+            <h4>2.3 致辞摘要</h4>
+            <p>大同市市长在致辞中说：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “这座煤矿，养活了这座城市三代人。它的煤，点亮了半个中国的灯。今天，它熄灭了。不是因为技术，不是因为经营，而是因为——地球上，已经没有可以轻易挖到的煤了。”
+            </blockquote>
+            <p>矿区矿工代表在致辞中说：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我爷爷在这里挖煤，我父亲在这里挖煤，我也在这里挖煤。今天，是我最后一次下井。不是因为我们不想干了，是因为……下面真的什么都没有了。”
+            </blockquote>
+
+            <h3>三、 数据回溯</h3>
+            <p>为呈现大同煤矿的完整生命轨迹，观察员办公室整理了以下关键数据：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>年份</th><th>年产量（万吨）</th><th>职工人数</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1925年（开矿初期）</td><td>约50</td><td>约1,200</td><td>手动采掘，产量极低</td></tr>
+                    <tr><td>1980年（改革开放初期）</td><td>约1,800</td><td>约35,000</td><td>机械化改造基本完成</td></tr>
+                    <tr><td>2010年（巅峰时期）</td><td>约5,200</td><td>约42,000</td><td>全球煤炭需求达到峰值</td></tr>
+                    <tr><td>2030年（资源预警期）</td><td>约3,500</td><td>约31,000</td><td>高品位矿层逐渐耗尽</td></tr>
+                    <tr><td>2040年（枯竭加速期）</td><td>约800</td><td>约15,000</td><td>开采成本急剧上升</td></tr>
+                    <tr><td>2046年（最后一年）</td><td>约60</td><td>约600</td><td>仅余少量维护性开采</td></tr>
+                </tbody>
+            </table>
+            <p>这组数据清晰地展示了这座巨型煤矿从诞生、壮大、巅峰，到衰竭、消亡的全过程。它是人类工业文明的一个缩影。</p>
+
+            <h3>四、 全球背景分析</h3>
+            <p>大同煤矿的关闭，并非孤立事件，而是一个时代的终结信号：</p>
+
+            <h4>4.1 全球煤炭工业的终结</h4>
+            <p>2045年，全球煤炭总产量已不足2010年峰值的7%。除大同煤矿外，剩余的主要矿区——如美国的阿巴拉契亚矿区、俄罗斯的库兹巴斯矿区、印度的贾里亚矿区——也均已进入“经济采掘寿命”的尾声，预计在未来5年内全部关闭。</p>
+
+            <h4>4.2 从“煤炭时代”到“后化石能源时代”</h4>
+            <p>大同煤矿的关闭，在人类社会史上具有里程碑意义。它标志着：</p>
+            <ul>
+                <li><strong>“煤炭时代”的正式终结</strong>——这是人类自18世纪工业革命以来，第一次完全失去一种主要能源来源。</li>
+                <li><strong>“后化石能源时代”的不可逆转的降临</strong>——随着煤炭的消失，石油和天然气的枯竭也只是时间问题。</li>
+            </ul>
+
+            <h4>4.3 气候意义</h4>
+            <p>讽刺的是，大同煤矿的关闭，是全球碳排放量的一个重大转折点。2047年，全球能源相关的二氧化碳排放量预计将降至约180亿吨，约为2010年水平的50%。然而，这种下降并非因为全球气候治理的成功，而是因为——人类已经没有足够的化石燃料可以燃烧了。</p>
+
+            <h3>五、 观察员评论</h3>
+            <p>联合国环境规划署驻大同观察员在此提交以下个人评论：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <p>这不是一场庆祝，也不是一场哀悼。这是一场告别。</p>
+                <p>当我站在那个巨大的矿坑边缘，看着底部的煤屑在夕阳下泛着最后一点暗淡的光，我意识到：这不仅仅是一座煤矿的熄灭，这是一个时代的终结。</p>
+                <p>这个时代，以蒸汽机的轰鸣开始，以矿工汗水的咸味为底色，以数百亿吨的煤炭为燃料，将人类文明推向了从未有过的高度。</p>
+                <p>现在，燃料耗尽了。引擎熄灭了。</p>
+                <p>人类站在一个前所未有的路口：前方是未知的深空与可能的新矿藏，后方是已经挖空的地球。</p>
+                <p>而我们，必须做出选择。</p>
+            </blockquote>
+
+            <h3>六、 附件清单</h3>
+            <ol>
+                <li>附件A：大同煤矿闭矿令正式文本（中文原件扫描件）</li>
+                <li>附件B：大同煤矿最后十年产量及成本变化统计表</li>
+                <li>附件C：闭矿仪式现场照片集（共计12张）</li>
+                <li>附件D：联合国环境规划署署长关于大同煤矿关闭的声明</li>
+            </ol>
+
+            <div class="signature">
+                观察员签名：<br />
+                （签字：联合国环境规划署驻大同观察员 安德烈·科瓦连科）<br />
+                签发日期：2047年10月17日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

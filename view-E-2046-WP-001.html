@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2046-WP-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《地球资源全面枯竭危机预警白皮书》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2046-WP-001</div>
+            <div><strong>档案类型：</strong>危机预警报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2046年12月15日</div>
+            <div><strong>发布机构：</strong>联合国环境规划署（UNEP）</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">地球资源全面枯竭危机预警白皮书</div>
+            <div class="doc-subtitle">文件编号：UNEP/GC/2046/12/15</div>
+            <div class="doc-ref">致：联合国秘书长、联合国大会、联合国安理会、全体成员国政府</div>
+            <div class="doc-ref">事由：就全球不可再生工业矿产及能源储备进入全面枯竭临界点，提请全球关注并启动紧急应对程序</div>
+
+            <h3>一、 引言</h3>
+            <p><strong>1.1</strong> 本白皮书系联合国环境规划署（UNEP）根据全球地质普查数据库（2040-2046年度）的最终分析结果，联合国际能源署（IEA）、国际地质科学联盟（IUGS）共同编写。</p>
+            <p><strong>1.2</strong> 本文件的发布目的，是向联合国各成员国及全球公众，如实通报地球不可再生资源储备的当前状况，并就其可能引发的全球性经济、社会及安全后果，提出紧急预警。</p>
+            <p><strong>1.3</strong> 本文件不包含具体政策建议或行动方案，其唯一使命是：揭示事实，唤起行动。</p>
+
+            <h3>二、 核心事实：关键资源储备状况</h3>
+            <p><strong>2.1</strong> 根据现有地质数据，地球表层可经济开采的矿产资源已进入不可逆转的枯竭期。在过去200年间，人类消耗了地球46亿年地质演化所积累的约97%的工业矿产储量。</p>
+
+            <p><strong>2.2</strong> 主要资源储备现状如下：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>资源类型</th><th>经济可采储量剩余年限（预计）</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>煤炭（高品位）</td><td>约1年</td><td>全球最后一座大型浅层煤矿预计于2047年10月关闭</td></tr>
+                    <tr><td>常规石油</td><td>约5年</td><td>中东主要油田已进入采掘末期</td></tr>
+                    <tr><td>天然气</td><td>约12年</td><td>产量拐点已过，呈持续下降趋势</td></tr>
+                    <tr><td>铁矿石（高品位）</td><td>约17年</td><td>全球钢铁产能将在2050年后遭遇根本性瓶颈</td></tr>
+                    <tr><td>铜</td><td>约14年</td><td>电力及通讯基础设施面临重大威胁</td></tr>
+                    <tr><td>锂</td><td>约6年</td><td>电动汽车及储能产业将在2052年前后基本停摆</td></tr>
+                    <tr><td>钴</td><td>约8年</td><td>高温合金及电池工业面临不可逆的原料短缺</td></tr>
+                    <tr><td>稀土元素（轻稀土）</td><td>约9年</td><td>全球电子、激光、航空工业将遭受毁灭性打击</td></tr>
+                    <tr><td>稀土元素（重稀土）</td><td>约7年</td><td>军工及高端制造领域面临原料断供风险</td></tr>
+                </tbody>
+            </table>
+
+            <p><strong>2.3</strong> 全球三大稀土主产区——中国白云鄂博、美国芒廷帕斯、澳大利亚奥林匹克坝——综合数据显示，其经济可采储量将在2055年前后全部归零。</p>
+
+            <h3>三、 社会经济后果预测</h3>
+            <p><strong>3.1</strong> 上述资源的枯竭，将不是渐进式的衰退，而是阶梯式的崩塌。根据现有模型，以下后果在未来20年内将逐步显现：</p>
+
+            <h4>3.1.1 能源供应崩溃（预计2048-2053年）</h4>
+            <ul>
+                <li>全球电力价格预计将在现有基础上上涨300-400倍。</li>
+                <li>超过90%的电动汽车及储能设备将因电池原料（锂、钴）枯竭而无法运转。</li>
+                <li>全球航空燃料供应将急剧萎缩，至2053年，民用航空将基本停航。</li>
+            </ul>
+
+            <h4>3.1.2 工业生产体系瓦解（预计2055-2065年）</h4>
+            <ul>
+                <li>全球钢铁产量预计将下降70%以上，大规模基础设施建设将全面停滞。</li>
+                <li>全球半导体产业将因稀土短缺而断裂，芯片产能可能倒退至2000年前的水平。</li>
+                <li>航天工业面临最严峻的挑战：运载火箭所需的关键合金材料、高能推进剂、电子元器件等，预计在2058年前后全部断供。</li>
+            </ul>
+
+            <h4>3.1.3 社会稳定与文明安全（长期趋势）</h4>
+            <ul>
+                <li>在资源急剧短缺的背景下，全球粮食生产、医疗系统、通讯网络、交通设施将逐级失能。</li>
+                <li>多份独立研究报告指出，若不采取有效措施，人类文明水平可能在50年内倒退至19世纪甚至更早的工业化前状态。</li>
+            </ul>
+
+            <h3>四、 全球紧急状态预警</h3>
+            <p><strong>4.1</strong> 联合国环境规划署依据《联合国宪章》及现行国际环境协定，在此正式发出“全球资源紧急状态预警”。该预警级别等同于《联合国气候变化框架公约》中的最高警报等级。</p>
+
+            <p><strong>4.2</strong> 本预警的效力在于：</p>
+            <ul>
+                <li>提醒所有成员国政府，当前资源枯竭状况已不再是“远期风险”，而是“正在发生的危机”。</li>
+                <li>呼吁各国立即启动国家层面的资源安全评估与应急准备。</li>
+                <li>提请联合国大会及安理会就本预警所揭示的全球性挑战，尽快进行紧急磋商。</li>
+            </ul>
+
+            <p><strong>4.3</strong> 联合国环境规划署强调，本预警的发布本身不构成任何强制性行动指令，其唯一宗旨是：促使全球决策者正视即将到来的崩溃，在崩溃到来之前，形成必要的共识与协调机制。</p>
+
+            <h3>五、 呼吁</h3>
+            <p><strong>5.1</strong> 联合国环境规划署在此郑重呼吁：</p>
+
+            <h4>5.1.1 呼吁全球各国政府：</h4>
+            <ul>
+                <li>立即对国家资源储备进行全面审计，并建立资源使用紧急管制机制。</li>
+                <li>停止一切非必要的、高消耗的、以不可再生资源为基础的工业和消费活动。</li>
+                <li>将资源安全议题提升至与国家安全、经济安全同等重要的地位。</li>
+            </ul>
+
+            <h4>5.1.2 呼吁联合国大会及安理会：</h4>
+            <ul>
+                <li>尽快就本白皮书所揭示的全球资源枯竭危机召开紧急会议，讨论建立全球协调机制的必要性与可行性。</li>
+                <li>考虑成立特别委员会或临时工作组，对危机的发展态势进行持续监测与评估。</li>
+            </ul>
+
+            <h4>5.1.3 呼吁全球公众：</h4>
+            <ul>
+                <li>清醒认识当前人类文明所处的资源困境，理解即将到来的严峻挑战。</li>
+                <li>积极参与节约资源、循环利用、减少浪费的社会行动。</li>
+                <li>支持和配合各级政府在资源管理方面的必要措施。</li>
+            </ul>
+
+            <h3>六、 最后陈述</h3>
+            <p><strong>6.1</strong> 本白皮书所陈述的事实，是基于现有科学数据和模型所能得出的最可靠判断。这些数据经过了联合国环境规划署、国际能源署、国际地质科学联盟三方的交叉核验。</p>
+            <p><strong>6.2</strong> 本白皮书不包含任何政策建议、行动方案或技术路线图。它的唯一使命，是在人类文明的转折点上，发出清晰、真实、毫不含糊的警告。</p>
+            <p><strong>6.3</strong> 人类是否能够度过这场资源崩溃的危机，取决于下一步的集体行动。但无论如何，正视事实，是所有行动的前提。</p>
+
+            <div class="signature">
+                签署人：<br />
+                联合国环境规划署（UNEP）署长<br />
+                （签字日期：2046年12月15日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2068-SEC-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《第4127次安理会会议纪要（关于成立IMA的决议）》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2068-SEC-001</div>
+            <div><strong>档案类型：</strong>联合国安理会会议纪要</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2068年3月15日</div>
+            <div><strong>发布机构：</strong>联合国安理会秘书处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">联合国安理会第4127次会议纪要</div>
+            <div class="doc-subtitle">关于成立寰宇矿物资源联合开发局（IMA）的决议</div>
+            <div class="doc-ref">会议日期：2068年3月15日</div>
+            <div class="doc-ref">会议地点：纽约联合国总部，安理会会议厅</div>
+
+            <h3>一、 会议开幕与议程说明</h3>
+            <p><strong>09:00</strong></p>
+            <p>联合国秘书长宣布会议开幕。他首先宣读了“希望谷惨案”独立调查委员会最终报告的摘要，并强调：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “这份报告所记录的事实，是人类文明在深空探索历程中最黑暗的一页。1247名矿工，在距离地球约3亿公里的谷神星上，死于同胞的贪婪与暴力。这不是战争，不是天灾，这是一场由制度性失能所导致的屠杀。
+                <br /><br />
+                如果我们继续沿用现有的混乱模式，深空将变成一片没有法律、没有道德、没有底线的‘西部荒原’。文明的下一站，将是毁灭。
+                <br /><br />
+                今天，我们在此讨论的，不是‘是否要改变’，而是‘如何改变’。”
+            </blockquote>
+
+            <h3>二、 五大常任理事国代表发言</h3>
+
+            <h4>2.1 华夏人民共和国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我国对希望谷惨案的遇难者表示最深切的哀悼。这1247名矿工中，有327名是我国公民。他们的死亡，是一场本可以避免的悲剧。
+                <br /><br />
+                惨案的根本原因，并非某一公司的贪婪，而是整个‘太空淘金热’模式的系统性缺陷。在缺乏统一监管、统一标准、统一执法的情况下，深空作业已演变为一场‘强者为王、弱者为饵’的丛林游戏。
+                <br /><br />
+                我国提议：在联合国框架下，建立一个统一的、具有强制执法权的全球性星际资源开发机构。该机构应当：接管目前所有私人矿业公司的资产与人员；统一制定深空作业的安全标准与劳动法规；对全太阳系的矿产资源进行统一勘探、开发与分配；拥有独立的武装安保力量，以维护深空秩序。
+                <br /><br />
+                这个机构的名称，我们建议定为：<strong>寰宇矿物资源联合开发局</strong>。”
+            </blockquote>
+
+            <h4>2.2 美利坚合众国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我国对希望谷惨案中的遇难者表示哀悼。我们也承认，当前深空开发的混乱局面，已经到了必须采取果断行动的时刻。
+                <br /><br />
+                然而，建立一个全球性机构，并非易事。我们需要在‘效率’与‘公平’之间找到平衡。一个过于庞大、权限过高的机构，可能会成为新的权力垄断者。
+                <br /><br />
+                我们支持成立一个统一机构的基本方向，但建议其治理结构应符合以下原则：所有成员国应在机构中享有与其实力相匹配的发言权；机构的预算应由各成员国按比例分摊；机构的武装力量应当受到严格限制，不得成为任何国家或个人谋取私利的工具。
+                <br /><br />
+                此外，我们建议该机构的启动资金，应通过‘收购现有私人公司资产’的方式进行筹集。”
+            </blockquote>
+
+            <h4>2.3 俄罗斯联邦代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我们早已警告过：地球上的资源争夺会蔓延至太空。我们曾提议，在2062年稀土战争期间，就建立一个联合太空部队。但那时，没有人听得进去。
+                <br /><br />
+                现在，1247条人命换来的，是一份共识。虽然这份共识来得太晚，但至少它来了。
+                <br /><br />
+                我国支持成立寰宇矿物资源联合开发局。我们建议：该机构的决策权，应赋予‘地球联合理事会’；该机构的武装力量，应称为‘星际联合守备部队’；该机构的资源分配，应遵循‘按人口比例公平分配’的原则。
+                <br /><br />
+                我们必须记住：我们不能让谷神星上的血白流。”
+            </blockquote>
+
+            <h4>2.4 法兰西共和国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我国支持成立一个统一的星际资源管理机构。这不仅是对希望谷惨案的回应，更是对全人类未来的负责。
+                <br /><br />
+                我们注意到，华夏人民共和国代表提出了‘寰宇矿物资源联合开发局’这一名称。我们认为，这是一个恰当的名称，它传达了一个清晰的信号：这个机构的存在，不是为了统治，而是为了服务。
+                <br /><br />
+                但我们也要提出一个重要的议题：该机构的启动，需要大量的资金、技术和人才。我们建议，除了五常及各大财团之外，也应邀请‘全球科研机构联盟’和‘发展中国家航天合作组织’加入创始成员行列。
+                <br /><br />
+                最后，我们希望该机构的章程中，明确规定‘地外资源属于全人类共同所有’的原则。”
+            </blockquote>
+
+            <h4>2.5 联合王国代表</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我国在此表示，完全支持成立寰宇矿物资源联合开发局。希望谷惨案告诉我们，如果我们继续任由私人资本在太空中为所欲为，下一个‘希望谷’将发生在更远的星空，且将夺走更多的生命。
+                <br /><br />
+                我们提出两点意见：第一，该机构应当尽快建立一套‘星际作业安全标准’；第二，该机构应当设置一个‘矿工权益保障办公室’，专门受理矿工的投诉、申诉与维权请求。”
+            </blockquote>
+
+            <h3>三、 决议草案表决</h3>
+            <p><strong>18:00</strong></p>
+            <p>会议进入决议表决阶段。秘书处根据各方讨论意见，起草了 <strong>《关于成立寰宇矿物资源联合开发局（IMA）的决议草案》</strong>。</p>
+
+            <p>决议草案的核心条款包括：</p>
+            <ul>
+                <li><strong>第一条：</strong>解散所有在太阳系范围内运营的私人矿业公司。</li>
+                <li><strong>第二条：</strong>成立“寰宇矿物资源联合开发局”，作为全太阳系唯一的官方资源开发与管理机构。</li>
+                <li><strong>第三条：</strong>该机构由地球联合理事会管辖，五大常任理事国拥有平等表决权。</li>
+                <li><strong>第四条：</strong>所有地外资源，属于“全人类共同所有”，任何个人、企业或国家不得私自占有。</li>
+                <li><strong>第五条：</strong>各创始成员须在2068年9月1日前，完成对私人公司的资产收购与新机构的注资工作。</li>
+                <li><strong>第六条：</strong>该机构须于2068年10月1日前完成组建，并正式挂牌运作。</li>
+            </ul>
+
+            <p><strong>表决结果：</strong></p>
+            <ul>
+                <li>赞成：15票（包括全部五大常任理事国及所有非常任理事国）</li>
+                <li>反对：0票</li>
+                <li>弃权：0票</li>
+            </ul>
+            <p><strong>决议草案获得一致通过。</strong></p>
+
+            <h3>四、 闭幕致辞</h3>
+            <p><strong>18:30</strong></p>
+            <p>联合国秘书长在闭幕致辞中说道：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “今天，是联合国历史上，乃至整个人类文明历史上，具有里程碑意义的一天。
+                <br /><br />
+                我们通过了决议，决定成立一个统一的、代表全人类利益的星际资源开发机构。这个决定，是基于1247条生命的代价。
+                <br /><br />
+                但我希望，在未来的某一天，当我们的后代站在谷神星的土地上，看着那些正在矿井中辛勤工作的矿工时，他们能够记住：今天，我们做出了一个正确的选择。我们选择了秩序，而不是混乱；我们选择了团结，而不是撕裂；我们选择了生命，而不是利润。
+                <br /><br />
+                我在此宣布：<strong>寰宇矿物资源联合开发局（IMA）正式进入组建阶段。</strong>它的诞生，将标志着人类文明‘大枯竭时代’的终结，和‘星际秩序时代’的开启。
+                <br /><br />
+                愿我们不负历史。”
+            </blockquote>
+
+            <div class="signature">
+                联合国安理会秘书处<br />
+                记录人：（签字：安理会秘书处 首席记录员）<br />
+                审核人：（签字：安理会主席 法兰西共和国代表）<br />
+                签发日期：2068年3月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

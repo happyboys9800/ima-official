@@ -1,0 +1,1500 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+        }
+
+        /* ===== 头部 ===== */
+        header {
+            padding: 18px 30px;
+            background: rgba(17, 17, 17, 0.88);
+            border-bottom: 2px solid #4A90E2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(8px);
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+        header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            color: #fff;
+            margin: 0;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .header-right a {
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .header-right a:hover {
+            color: #7ab7f7;
+        }
+        #langSelect {
+            padding: 4px 10px;
+            border-radius: 5px;
+            background: #1A1F2B;
+            border: 2px solid #4A90E2;
+            color: #e0e0e0;
+            cursor: pointer;
+            font-size: 13px;
+        }
+
+        /* ===== 登录状态 ===== */
+        .auth-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            color: #4A90E2;
+            cursor: pointer;
+            padding: 4px 12px;
+            border: 1px solid #4A90E2;
+            border-radius: 20px;
+            background: rgba(74, 144, 226, 0.12);
+            transition: 0.25s;
+        }
+        .auth-status:hover {
+            background: rgba(74, 144, 226, 0.25);
+        }
+        .auth-status .badge {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 4px;
+        }
+        .badge.off {
+            background: #ff6b6b;
+        }
+        .badge.on {
+            background: #51cf66;
+        }
+
+        /* ===== 主体容器 ===== */
+        .container {
+            max-width: 1080px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        /* ===== 时代区块 ===== */
+        .era-section {
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            margin-bottom: 18px;
+            border: 1px solid rgba(74, 144, 226, 0.25);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+        .era-section:hover {
+            border-color: rgba(74, 144, 226, 0.6);
+        }
+
+        /* ===== 时代标题 ===== */
+        .era-header {
+            padding: 18px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: background 0.25s;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .era-header:hover {
+            background: rgba(74, 144, 226, 0.08);
+        }
+        .era-header-left {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .era-toggle {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #4A90E2;
+            transition: transform 0.3s;
+            flex-shrink: 0;
+        }
+        .era-toggle.open {
+            transform: rotate(90deg);
+        }
+        .era-header h2 {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0;
+            color: #fff;
+            border-bottom: none;
+            padding-bottom: 0;
+            letter-spacing: 1px;
+        }
+        .era-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 13px;
+            color: #888;
+        }
+        .era-meta .count {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .era-meta .secret-badge {
+            background: rgba(255, 70, 70, 0.18);
+            color: #ff6b6b;
+            padding: 2px 12px;
+            border-radius: 12px;
+            font-size: 12px;
+            border: 1px solid rgba(255, 70, 70, 0.25);
+        }
+
+        /* ===== 时代内容 ===== */
+        .era-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+            padding: 0 28px;
+        }
+        .era-content.open {
+            max-height: 6000px;
+            padding: 0 28px 28px 28px;
+        }
+
+        /* ===== 表格 ===== */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        th,
+        td {
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        th {
+            background: rgba(74, 144, 226, 0.12);
+            color: #4A90E2;
+            font-weight: 500;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+        tr:nth-child(even) {
+            background: rgba(255, 255, 255, 0.03);
+        }
+        tr:hover {
+            background: rgba(74, 144, 226, 0.07);
+        }
+        .td-id {
+            font-family: "Courier New", monospace;
+            font-size: 12px;
+            color: #aaa;
+            width: 90px;
+        }
+        .td-title {
+            font-weight: 400;
+            cursor: pointer;
+            color: #4A90E2;
+            transition: 0.2s;
+        }
+        .td-title:hover {
+            color: #7ab7f7;
+            text-decoration: underline;
+        }
+        .td-title a {
+            color: inherit;
+            text-decoration: none;
+        }
+        .td-title a:hover {
+            color: #7ab7f7;
+            text-decoration: underline;
+        }
+        .td-type {
+            font-size: 12px;
+            color: #aaa;
+            width: 100px;
+        }
+
+        /* ===== 锁定行 ===== */
+        tr.locked {
+            opacity: 0.6;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        tr.locked:hover {
+            opacity: 0.85;
+        }
+        tr.locked .td-title .lock-icon {
+            display: inline-block;
+            margin-left: 8px;
+            font-size: 15px;
+            color: #ff6b6b;
+        }
+        tr.locked .td-title .lock-label {
+            font-size: 11px;
+            color: #ff6b6b;
+            margin-left: 6px;
+            background: rgba(255, 70, 70, 0.12);
+            padding: 0 8px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 70, 70, 0.2);
+        }
+        tr.locked .td-title a {
+            pointer-events: none;
+        }
+        tr.unlocked {
+            opacity: 1 !important;
+            cursor: default !important;
+        }
+        tr.unlocked .td-title .lock-icon,
+        tr.unlocked .td-title .lock-label {
+            display: none !important;
+        }
+        tr.unlocked .td-title a {
+            pointer-events: auto;
+        }
+
+        /* ===== 页脚统计 ===== */
+        .footer-stats {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 12px;
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            font-size: 14px;
+            color: #888;
+        }
+        .footer-stats strong {
+            color: #4A90E2;
+        }
+        .footer-stats .secret-count {
+            color: #ff6b6b;
+        }
+
+        /* ===== 登录模态框 ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(6px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
+        .modal-overlay.active {
+            display: flex;
+        }
+        .modal-box {
+            background: #1A1F2B;
+            border: 1px solid #4A90E2;
+            border-radius: 16px;
+            padding: 40px 44px;
+            max-width: 420px;
+            width: 90%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+            animation: modalIn 0.3s ease;
+        }
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: scale(0.94) translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1) translateY(0);
+            }
+        }
+        .modal-box h3 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        .modal-box p {
+            color: #aaa;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .modal-box label {
+            display: block;
+            font-size: 13px;
+            color: #ccc;
+            margin-bottom: 4px;
+        }
+        .modal-box input {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #0d0f14;
+            color: #fff;
+            font-size: 14px;
+            margin-bottom: 16px;
+            transition: 0.2s;
+        }
+        .modal-box input:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+        .modal-box .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 8px;
+        }
+        .modal-box .btn-row button {
+            padding: 8px 26px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .btn-login {
+            background: #4A90E2;
+            color: #fff;
+        }
+        .btn-login:hover {
+            background: #5fa0f0;
+        }
+        .btn-cancel {
+            background: transparent;
+            color: #888;
+            border: 1px solid #444 !important;
+        }
+        .btn-cancel:hover {
+            color: #fff;
+            border-color: #666 !important;
+        }
+        .modal-error {
+            color: #ff6b6b;
+            font-size: 13px;
+            margin-top: -8px;
+            margin-bottom: 12px;
+            display: none;
+        }
+        .modal-error.show {
+            display: block;
+        }
+
+        /* ===== 上传模态框 ===== */
+        #uploadModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: auto;
+            z-index: 2000;
+            padding: 40px 20px;
+        }
+        #uploadModal.active {
+            display: flex;
+        }
+        .upload-box {
+            background: #1A1F2B;
+            border: 2px solid #4A90E2;
+            border-radius: 16px;
+            padding: 40px 48px;
+            max-width: 800px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+            animation: modalIn 0.3s ease;
+            margin: auto;
+        }
+        .upload-box h3 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+        }
+        .upload-box .sub {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 24px;
+        }
+        .upload-box .form-group {
+            margin-bottom: 20px;
+        }
+        .upload-box .form-group label {
+            display: block;
+            font-size: 14px;
+            color: #ccc;
+            margin-bottom: 6px;
+            font-weight: 500;
+        }
+        .upload-box .form-group label .required {
+            color: #ff6b6b;
+            margin-left: 4px;
+        }
+        .upload-box .form-group input,
+        .upload-box .form-group select,
+        .upload-box .form-group textarea {
+            width: 100%;
+            padding: 10px 14px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #0d0f14;
+            color: #fff;
+            font-size: 14px;
+            transition: 0.2s;
+        }
+        .upload-box .form-group input:focus,
+        .upload-box .form-group select:focus,
+        .upload-box .form-group textarea:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+        }
+        .upload-box .form-group textarea {
+            min-height: 200px;
+            resize: vertical;
+            font-family: inherit;
+            line-height: 1.8;
+        }
+        .upload-box .form-group .hint {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        .upload-box .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .upload-box .btn-row {
+            display: flex;
+            gap: 12px;
+            justify-content: flex-end;
+            margin-top: 24px;
+            border-top: 1px solid rgba(74, 144, 226, 0.15);
+            padding-top: 20px;
+        }
+        .upload-box .btn-row button {
+            padding: 10px 30px;
+            border-radius: 6px;
+            border: none;
+            font-size: 14px;
+            cursor: pointer;
+            transition: 0.2s;
+            font-weight: 600;
+        }
+        .btn-upload-submit {
+            background: #4A90E2;
+            color: #fff;
+        }
+        .btn-upload-submit:hover {
+            background: #5fa0f0;
+            box-shadow: 0 0 15px rgba(74, 144, 226, 0.3);
+        }
+        .btn-upload-cancel {
+            background: transparent;
+            color: #888;
+            border: 1px solid #444 !important;
+        }
+        .btn-upload-cancel:hover {
+            color: #fff;
+            border-color: #666 !important;
+        }
+        .upload-box .validation-error {
+            background: rgba(255, 70, 70, 0.1);
+            border: 1px solid rgba(255, 70, 70, 0.2);
+            border-radius: 6px;
+            padding: 12px 16px;
+            color: #ff6b6b;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .upload-box .validation-error.show {
+            display: block;
+        }
+        .upload-box .success-msg {
+            background: rgba(74, 144, 226, 0.1);
+            border: 1px solid rgba(74, 144, 226, 0.2);
+            border-radius: 6px;
+            padding: 12px 16px;
+            color: #4A90E2;
+            font-size: 14px;
+            margin-bottom: 16px;
+            display: none;
+        }
+        .upload-box .success-msg.show {
+            display: block;
+        }
+        .upload-box .template-preview {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px dashed rgba(74, 144, 226, 0.2);
+            border-radius: 6px;
+            padding: 16px;
+            margin-bottom: 16px;
+            font-size: 13px;
+            color: #888;
+            line-height: 1.6;
+        }
+        .upload-box .template-preview strong {
+            color: #ccc;
+        }
+
+        @media (max-width: 640px) {
+            .upload-box {
+                padding: 24px 16px;
+            }
+            .upload-box .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== 上传入口按钮 ===== */
+        .upload-entry {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 20px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.25s;
+            font-weight: 500;
+        }
+        .upload-entry:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+            box-shadow: 0 0 15px rgba(74, 144, 226, 0.15);
+        }
+        .upload-entry .icon {
+            font-size: 16px;
+        }
+
+        @media (max-width: 640px) {
+            header {
+                padding: 12px 16px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 8px;
+            }
+            header h1 {
+                font-size: 18px;
+                text-align: center;
+            }
+            .header-right {
+                justify-content: center;
+            }
+            .era-header {
+                padding: 14px 16px;
+            }
+            .era-header h2 {
+                font-size: 15px;
+            }
+            .era-content.open {
+                padding: 0 14px 18px 14px;
+            }
+            .era-content {
+                padding: 0 14px;
+            }
+            th,
+            td {
+                padding: 6px 8px;
+                font-size: 12px;
+            }
+            .td-id {
+                font-size: 10px;
+                width: 60px;
+            }
+            .td-type {
+                font-size: 10px;
+                width: 70px;
+            }
+            .modal-box {
+                padding: 28px 20px;
+            }
+            .footer-stats {
+                font-size: 12px;
+                padding: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ===== 头部 ===== -->
+    <header>
+        <a href="index.html" style="color:inherit; text-decoration:none; display:flex; align-items:center;">
+            <h1 data-translate="pageTitle" style="margin:0; font-size:22px; font-weight:600; letter-spacing:2px; color:#fff;">IMA 世界观档案</h1>
+        </a>
+        <div class="header-right">
+            <span class="upload-entry" onclick="openUpload()">
+                <span class="icon">✎</span> 上传档案
+            </span>
+            <span class="auth-status" id="authStatus" onclick="openLogin()">
+                <span class="badge off" id="authBadge"></span>
+                <span id="authLabel">未登录</span>
+            </span>
+            <select id="langSelect">
+                <option value="zh">中文</option>
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <option value="es">Español</option>
+                <option value="ar">العربية</option>
+                <option value="ru">Русский</option>
+            </select>
+        </div>
+    </header>
+
+    <!-- ===== 主体容器 ===== -->
+    <div class="container" id="appContainer">
+        <!-- 由 JavaScript 动态生成 -->
+    </div>
+
+    <!-- ===== 登录模态框 ===== -->
+    <div class="modal-overlay" id="loginModal">
+        <div class="modal-box">
+            <h3>🔐 授权访问</h3>
+            <p>请输入您的凭证以查看机密档案</p>
+            <div class="modal-error" id="loginError">凭证无效，请重试</div>
+            <label for="loginUser">用户名</label>
+            <input type="text" id="loginUser" placeholder="用户名" autocomplete="off" />
+            <label for="loginPass">密码</label>
+            <input type="password" id="loginPass" placeholder="密码" autocomplete="off" />
+            <div class="btn-row">
+                <button class="btn-cancel" onclick="closeLogin()">取消</button>
+                <button class="btn-login" onclick="doLogin()">登录</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== 上传模态框 ===== -->
+    <div id="uploadModal">
+        <div class="upload-box">
+            <h3>✎ 上传档案</h3>
+            <p class="sub">请按照下方统一模板填写，红色标记为必填项</p>
+
+            <div class="template-preview">
+                <strong>📋 统一模板格式要求：</strong><br />
+                ① 标题：须以《》包裹，如《地球资源全面枯竭危机预警白皮书》<br />
+                ② 正文：须包含至少3个以“###”开头的章节标题<br />
+                ③ 档案类型：从下拉列表中选择<br />
+                ④ 保密级别：从下拉列表中选择<br />
+                ⑤ 所属时代：从下拉列表中选择
+            </div>
+
+            <div class="validation-error" id="uploadError"></div>
+            <div class="success-msg" id="uploadSuccess"></div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>档案标题 <span class="required">*</span></label>
+                    <input type="text" id="uploadTitle" placeholder="例：《地球资源全面枯竭危机预警白皮书》" />
+                </div>
+                <div class="form-group">
+                    <label>档案编号 <span style="color:#666;font-weight:400;">（选填）</span></label>
+                    <input type="text" id="uploadId" placeholder="例：E-2046-WP-001（留空自动生成）" />
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>档案类型 <span class="required">*</span></label>
+                    <select id="uploadType">
+                        <option value="">请选择档案类型</option>
+                        <option value="危机预警报告">危机预警报告</option>
+                        <option value="紧急状态通报">紧急状态通报</option>
+                        <option value="闭矿记录">闭矿记录</option>
+                        <option value="联合国大会决议">联合国大会决议</option>
+                        <option value="新闻报道">新闻报道</option>
+                        <option value="安理会会议记录">安理会会议记录</option>
+                        <option value="资源交付报告">资源交付报告</option>
+                        <option value="事故调查报告">事故调查报告</option>
+                        <option value="惨案调查报告">惨案调查报告</option>
+                        <option value="官方演说">官方演说</option>
+                        <option value="正式法规">正式法规</option>
+                        <option value="工程立项报告">工程立项报告</option>
+                        <option value="工程竣工报告">工程竣工报告</option>
+                        <option value="行动任务报告">行动任务报告</option>
+                        <option value="内部情报报告">内部情报报告</option>
+                        <option value="绝密通讯记录">绝密通讯记录</option>
+                        <option value="绝密决议">绝密决议</option>
+                        <option value="绝密文件">绝密文件</option>
+                        <option value="其他">其他</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>保密级别 <span class="required">*</span></label>
+                    <select id="uploadSecurity">
+                        <option value="">请选择保密级别</option>
+                        <option value="public">公开档案</option>
+                        <option value="confidential">机密档案</option>
+                        <option value="secret">绝密档案</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label>所属时代 <span class="required">*</span></label>
+                    <select id="uploadEra">
+                        <option value="">请选择所属时代</option>
+                        <option value="1">大枯竭时代 (2045-2068)</option>
+                        <option value="2">IMA成立与奠基时代 (2068-2106)</option>
+                        <option value="3">扩张与裂痕时代 (2106-2118)</option>
+                        <option value="4">平衡与裂缝时代 (2118-2138)</option>
+                        <option value="5">深空掌舵时代 (2138- )</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>发布机构 <span style="color:#666;font-weight:400;">（选填）</span></label>
+                    <input type="text" id="uploadPublisher" placeholder="例：联合国环境规划署（UNEP）" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>正文内容 <span class="required">*</span></label>
+                <textarea id="uploadContent" placeholder="请按照统一模板撰写正文，使用 Markdown 格式。至少包含3个以 '###' 开头的章节标题。"></textarea>
+                <div class="hint">至少包含3个以 "###" 开头的章节标题（如：### 引言）</div>
+            </div>
+
+            <div class="btn-row">
+                <button class="btn-upload-cancel" onclick="closeUpload()">取消</button>
+                <button class="btn-upload-submit" onclick="submitUpload()">提交档案</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================================
+        //  1. 档案数据（42份硬编码）
+        // ============================================================
+        const LOCAL_ARCHIVES = [{
+            era: 1,
+            id: 'E-2046-WP-001',
+            title: '《地球资源全面枯竭危机预警白皮书》',
+            type: '危机预警报告',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2047-GRI-003',
+            title: '《关于全球基础工业矿产及能源资源枯竭的紧急状态通报》',
+            type: '紧急状态通报',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2047-CLO-001',
+            title: '《关于全球最后一座大型浅层煤矿关闭的特别观察报告》',
+            type: '闭矿记录',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2048-DEC-001',
+            title: '《第73/42号决议——关于启动"星际资源探索与开发联合行动纲领"的决议案》',
+            type: '联合国大会决议',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2061-NEW-001',
+            title: '《震惊！谷神星发现太阳系最大复合矿脉！》',
+            type: '新闻报道',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2062-SEC-001',
+            title: '《第3892次安理会闭门会议摘要（稀土战争爆发）》',
+            type: '绝密会议记录',
+            security: 'secret',
+            redacted: '《第3892次安理会闭门会议摘要（■■■■■■■■）》'
+        }, {
+            era: 1,
+            id: 'E-2062-WAR-001',
+            title: '《第3947次紧急会议记录摘要（关于刚果钴矿冲突）》',
+            type: '安理会会议记录',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'O-2063-DEL-001',
+            title: '《关于谷神星首批矿产资源运抵地球的正式报告》',
+            type: '资源交付报告',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2065-ACC-001',
+            title: '《"拓荒者-7号"矿井爆炸事故调查报告》',
+            type: '事故调查报告',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2067-INQ-001',
+            title: '《关于"希望谷惨案"的独立调查委员会最终报告》',
+            type: '惨案调查报告',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'E-2068-SEC-001',
+            title: '《第4127次安理会会议纪要（关于成立IMA的决议）》',
+            type: '安理会会议纪要',
+            security: 'public'
+        }, {
+            era: 1,
+            id: 'F-2068-CHA-001',
+            title: '《寰宇矿物资源联合开发局组织宪章签署记录》',
+            type: '宪章签署记录',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'F-2068-CHA-002',
+            title: '《寰宇矿物资源联合开发局组织宪章》全文',
+            type: '组织宪章',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'O-2068-MIS-001',
+            title: '《重返希望谷行动报告》',
+            type: '行动任务报告',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'S-2068-SPE-001',
+            title: '《第一任局长托马斯·米勒就职演说》',
+            type: '官方演说',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'L-2073-LAB-001',
+            title: '《星际劳工权益保障法》',
+            type: '正式法规',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'L-2073-MEM-001',
+            title: '《遇难矿工纪念宪章》',
+            type: '正式法规',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'L-2073-SAF-001',
+            title: '《星际作业安全法》',
+            type: '正式法规',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'L-2085-COL-001',
+            title: '《深空殖民定居管理条例》',
+            type: '正式法规',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'L-2087-MIG-001',
+            title: '《地外人口迁移法案》',
+            type: '正式法规',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'T-2095-ENG-001',
+            title: '《"噬星者"级采矿母舰立项报告》',
+            type: '工程立项报告',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'O-2099-MIS-001',
+            title: '《"噬星者-1号"首航任务报告》',
+            type: '行动任务报告',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'T-2103-ENG-001',
+            title: '《"普罗米修斯计划"立项书》',
+            type: '工程立项报告',
+            security: 'public'
+        }, {
+            era: 2,
+            id: 'B-2106-ENG-001',
+            title: '《普罗米修斯计划一期工程竣工简报》',
+            type: '工程竣工简报',
+            security: 'public'
+        }, {
+            era: 3,
+            id: 'S-2106-SPE-001',
+            title: '《第二任局长陈世杰就职演说》',
+            type: '官方演说',
+            security: 'public'
+        }, {
+            era: 3,
+            id: 'L-2107-CIT-001',
+            title: '《深空公民身份认定实施细则》',
+            type: '法规实施细则',
+            security: 'public'
+        }, {
+            era: 3,
+            id: 'O-2108-SET-001',
+            title: '《火星第二定居点"新黎明城"落成报告》',
+            type: '定居点落成报告',
+            security: 'public'
+        }, {
+            era: 3,
+            id: 'O-2110-POP-001',
+            title: '《深空定居点人口突破3000万报告》',
+            type: '人口统计报告',
+            security: 'public'
+        }, {
+            era: 3,
+            id: 'C-2112-INT-001',
+            title: '《关于深空出生一代员工政治倾向与派系动态的内部情报报告》',
+            type: '内部情报报告',
+            security: 'confidential',
+            redacted: '《关于深空出生一代员工■■■■■■与■■■■■■的内部情报报告》'
+        }, {
+            era: 3,
+            id: 'C-2115-SIG-001',
+            title: '《关于首次探测到太阳系外异常信号的绝密报告》',
+            type: '绝密技术报告',
+            security: 'secret',
+            redacted: '《关于首次探测到太阳系外■■■■■■的绝密报告》'
+        }, {
+            era: 3,
+            id: 'D-2122-PRO-001',
+            title: '《关于启动"天籁"深空探测项目的绝密决议》',
+            type: '绝密决议',
+            security: 'secret',
+            redacted: '《关于启动"■■■■"深空探测项目的绝密决议》'
+        }, {
+            era: 3,
+            id: 'C-2130-COM-001',
+            title: '《深空自治派加密群组"第三星"对话记录》',
+            type: '绝密通讯记录',
+            security: 'secret',
+            redacted: '《深空自治派■■■■■■"■■■■"对话记录》'
+        }, {
+            era: 4,
+            id: 'S-2118-SPE-001',
+            title: '《第三任局长刘远征就职演说》',
+            type: '官方演说',
+            security: 'public'
+        }, {
+            era: 4,
+            id: 'O-2120-SET-001',
+            title: '《火星第三定居点"深红城"落成报告》',
+            type: '定居点落成报告',
+            security: 'public'
+        }, {
+            era: 4,
+            id: 'O-2122-LOG-001',
+            title: '《"星际干线运输通道"全线贯通报告》',
+            type: '重大工程竣工报告',
+            security: 'public'
+        }, {
+            era: 4,
+            id: 'C-2133-COM-002',
+            title: '《深空自治派"环形山"会议纪要》',
+            type: '绝密会议纪要',
+            security: 'secret',
+            redacted: '《深空自治派"■■■■"会议纪要》'
+        }, {
+            era: 4,
+            id: 'O-2138-ENG-001',
+            title: '《普罗米修斯计划全面竣工报告》',
+            type: '重大工程竣工报告',
+            security: 'public'
+        }, {
+            era: 4,
+            id: 'C-2142-COM-003',
+            title: '《局长办公室加密备忘录——关于当前局势的评估》',
+            type: '绝密备忘录',
+            security: 'secret',
+            redacted: '《局长办公室加密备忘录——关于■■■■■■的评估》'
+        }, {
+            era: 5,
+            id: 'S-2138-SPE-001',
+            title: '《第四任局长周明远就职演说》',
+            type: '官方演说',
+            security: 'public'
+        }, {
+            era: 5,
+            id: 'C-2142-COM-004',
+            title: '《深空自治派"破冰"会议纪要》',
+            type: '绝密会议纪要',
+            security: 'secret',
+            redacted: '《深空自治派"■■■■"会议纪要》'
+        }, {
+            era: 5,
+            id: 'C-2143-COM-005',
+            title: '《深空自治派与"局内人"加密通讯》',
+            type: '绝密通讯记录',
+            security: 'secret',
+            redacted: '《深空自治派与"■■■■"加密通讯》'
+        }, {
+            era: 5,
+            id: 'C-2143-COM-006',
+            title: '《深空自治派工作进展报告（资源分配委员会阶段成果）》',
+            type: '绝密通讯记录',
+            security: 'secret',
+            redacted: '《深空自治派工作进展报告（■■■■■■■■阶段成果）》'
+        }, {
+            era: 5,
+            id: 'C-2145-COM-007',
+            title: '《"星海宪章"草案——深空自治纲领全文》',
+            type: '绝密文件',
+            security: 'secret',
+            redacted: '《"■■■■■■"草案——深空自治纲领全文》'
+        }];
+
+        // ============================================================
+        //  2. 登录状态
+        // ============================================================
+        let isAuthenticated = false;
+
+        function getAuth() {
+            const saved = sessionStorage.getItem('ima_auth');
+            return saved === 'true';
+        }
+
+        function setAuth(val) {
+            isAuthenticated = val;
+            sessionStorage.setItem('ima_auth', val ? 'true' : 'false');
+            updateAuthUI();
+            unlockRows();
+        }
+
+        function updateAuthUI() {
+            const badge = document.getElementById('authBadge');
+            const label = document.getElementById('authLabel');
+            const status = document.getElementById('authStatus');
+            if (isAuthenticated) {
+                badge.className = 'badge on';
+                label.textContent = '已登录';
+                status.style.borderColor = '#51cf66';
+            } else {
+                badge.className = 'badge off';
+                label.textContent = '未登录';
+                status.style.borderColor = '#4A90E2';
+            }
+        }
+
+        function openLogin() {
+            document.getElementById('loginModal').classList.add('active');
+            document.getElementById('loginUser').value = '';
+            document.getElementById('loginPass').value = '';
+            document.getElementById('loginError').classList.remove('show');
+            document.getElementById('loginUser').focus();
+        }
+
+        function closeLogin() {
+            document.getElementById('loginModal').classList.remove('active');
+        }
+
+        function doLogin() {
+            const user = document.getElementById('loginUser').value.trim();
+            const pass = document.getElementById('loginPass').value.trim();
+            if (user === 'admin' && pass === 'ima2138') {
+                setAuth(true);
+                closeLogin();
+            } else {
+                document.getElementById('loginError').classList.add('show');
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' && document.getElementById('loginModal').classList.contains('active')) {
+                doLogin();
+            }
+        });
+
+        // ============================================================
+        //  3. 渲染主页面（数据源可扩展）
+        // ============================================================
+        const ERA_NAMES = {
+            1: '前传：大枯竭时代 (2045-2068)',
+            2: 'IMA成立与奠基时代 (2068-2106) —— 第一任局长托马斯·米勒',
+            3: '扩张与裂痕时代 (2106-2118) —— 第二任局长陈世杰',
+            4: '平衡与裂缝时代 (2118-2138) —— 第三任局长刘远征',
+            5: '深空掌舵时代 (2138- ) —— 第四任局长周明远'
+        };
+
+        function getDisplayTitle(item) {
+            if (item.security === 'public') return item.title;
+            if (isAuthenticated) return item.title;
+            return item.redacted || item.title;
+        }
+
+        function buildPage(archives) {
+            const container = document.getElementById('appContainer');
+            container.innerHTML = '';
+
+            // 如果未传入数据，使用本地硬编码档案
+            const data = archives || LOCAL_ARCHIVES;
+
+            for (let e = 1; e <= 5; e++) {
+                const items = data.filter(a => a.era === e);
+                const secretCount = items.filter(a => a.security === 'secret' || a.security === 'confidential').length;
+
+                const section = document.createElement('div');
+                section.className = 'era-section';
+
+                const header = document.createElement('div');
+                header.className = 'era-header';
+                header.setAttribute('data-era', e);
+                header.innerHTML = `
+              <div class="era-header-left">
+                <span class="era-toggle">▶</span>
+                <h2>${ERA_NAMES[e]}</h2>
+              </div>
+              <div class="era-meta">
+                <span class="count">${items.length} 份档案</span>
+                ${secretCount > 0 ? `<span class="secret-badge">🔒 ${secretCount} 份受限</span>` : ''}
+              </div>
+            `;
+
+                const content = document.createElement('div');
+                content.className = 'era-content';
+                content.id = 'eraContent' + e;
+
+                const table = document.createElement('table');
+                const thead = document.createElement('thead');
+                thead.innerHTML = `<tr><th style="width:90px;">编号</th><th>标题</th><th style="width:100px;">类型</th></tr>`;
+                table.appendChild(thead);
+
+                const tbody = document.createElement('tbody');
+                items.forEach(item => {
+                    const tr = document.createElement('tr');
+                    const isLocked = (item.security === 'secret' || item.security === 'confidential');
+                    tr.setAttribute('data-security', item.security);
+                    tr.setAttribute('data-id', item.id);
+
+                    const displayTitle = getDisplayTitle(item);
+                    let titleHtml = displayTitle;
+                    if (isLocked && !isAuthenticated) {
+                        tr.classList.add('locked');
+                        titleHtml +=
+                            ` <span class="lock-icon">🔒</span><span class="lock-label">${item.security === 'secret' ? '绝密' : '机密'}</span>`;
+                    }
+
+                    const tdId = document.createElement('td');
+                    tdId.className = 'td-id';
+                    tdId.textContent = item.id;
+
+                    const tdTitle = document.createElement('td');
+                    tdTitle.className = 'td-title';
+
+                    const link = document.createElement('a');
+                    link.href = `view-${item.id}.html`;
+                    link.textContent = displayTitle;
+
+                    if (isLocked && !isAuthenticated) {
+                        link.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            openLogin();
+                        });
+                        tdTitle.appendChild(link);
+                        const lockSpan = document.createElement('span');
+                        lockSpan.innerHTML =
+                            ` <span class="lock-icon">🔒</span><span class="lock-label">${item.security === 'secret' ? '绝密' : '机密'}</span>`;
+                        tdTitle.appendChild(lockSpan);
+                    } else {
+                        tdTitle.appendChild(link);
+                    }
+
+                    const tdType = document.createElement('td');
+                    tdType.className = 'td-type';
+                    tdType.textContent = item.type;
+
+                    tr.appendChild(tdId);
+                    tr.appendChild(tdTitle);
+                    tr.appendChild(tdType);
+
+                    if (isLocked && !isAuthenticated) {
+                        tr.addEventListener('click', function(e) {
+                            if (e.target.tagName !== 'A') {
+                                openLogin();
+                            }
+                        });
+                    }
+
+                    tbody.appendChild(tr);
+                });
+                table.appendChild(tbody);
+                content.appendChild(table);
+
+                section.appendChild(header);
+                section.appendChild(content);
+                container.appendChild(section);
+
+                header.addEventListener('click', function() {
+                    const contentEl = document.getElementById('eraContent' + e);
+                    const toggle = this.querySelector('.era-toggle');
+                    contentEl.classList.toggle('open');
+                    toggle.classList.toggle('open');
+                });
+            }
+
+            unlockRows();
+            updateAuthUI();
+        }
+
+        // ============================================================
+        //  4. 解锁 / 锁定 行
+        // ============================================================
+        function unlockRows() {
+            const allRows = document.querySelectorAll('tr[data-security]');
+            allRows.forEach(tr => {
+                const sec = tr.getAttribute('data-security');
+                if (sec === 'secret' || sec === 'confidential') {
+                    if (isAuthenticated) {
+                        tr.classList.remove('locked');
+                        tr.classList.add('unlocked');
+                        const titleCell = tr.querySelector('.td-title');
+                        if (titleCell) {
+                            const lockEl = titleCell.querySelector('.lock-icon');
+                            const labelEl = titleCell.querySelector('.lock-label');
+                            if (lockEl) lockEl.remove();
+                            if (labelEl) labelEl.remove();
+                            const link = titleCell.querySelector('a');
+                            if (link) {
+                                link.style.pointerEvents = 'auto';
+                                const id = tr.getAttribute('data-id');
+                                const item = LOCAL_ARCHIVES.find(a => a.id === id);
+                                if (item) {
+                                    link.textContent = item.title;
+                                }
+                            }
+                        }
+                    } else {
+                        tr.classList.add('locked');
+                        tr.classList.remove('unlocked');
+                        const titleCell = tr.querySelector('.td-title');
+                        if (titleCell) {
+                            const id = tr.getAttribute('data-id');
+                            const item = LOCAL_ARCHIVES.find(a => a.id === id);
+                            if (item) {
+                                const link = titleCell.querySelector('a');
+                                if (link) {
+                                    link.style.pointerEvents = 'none';
+                                    link.textContent = item.redacted || item.title;
+                                    if (!titleCell.innerHTML.includes('lock-icon')) {
+                                        const lockSpan = document.createElement('span');
+                                        lockSpan.innerHTML =
+                                            ` <span class="lock-icon">🔒</span><span class="lock-label">${item.security === 'secret' ? '绝密' : '机密'}</span>`;
+                                        titleCell.appendChild(lockSpan);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // ============================================================
+        //  5. 多语言
+        // ============================================================
+        const translations = {
+            pageTitle: { zh: 'IMA 世界观档案', en: 'IMA Worldview Archives', fr: 'Archives du Monde IMA', es: 'Archivo del Mundo IMA',
+                ar: 'أرشيف العالم IMA', ru: 'Архив Мира IMA' }
+        };
+
+        document.getElementById('langSelect').addEventListener('change', function() {
+            const lang = this.value;
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.dataset.translate;
+                if (translations[key] && translations[key][lang]) {
+                    el.innerText = translations[key][lang];
+                }
+            });
+        });
+
+        // ============================================================
+        //  6. 上传档案相关
+        // ============================================================
+        function openUpload() {
+            document.getElementById('uploadModal').classList.add('active');
+            document.getElementById('uploadError').classList.remove('show');
+            document.getElementById('uploadSuccess').classList.remove('show');
+            document.getElementById('uploadTitle').value = '';
+            document.getElementById('uploadId').value = '';
+            document.getElementById('uploadType').value = '';
+            document.getElementById('uploadSecurity').value = '';
+            document.getElementById('uploadEra').value = '';
+            document.getElementById('uploadPublisher').value = '';
+            document.getElementById('uploadContent').value = '';
+        }
+
+        function closeUpload() {
+            document.getElementById('uploadModal').classList.remove('active');
+        }
+
+        function submitUpload() {
+            const title = document.getElementById('uploadTitle').value.trim();
+            const id = document.getElementById('uploadId').value.trim();
+            const type = document.getElementById('uploadType').value;
+            const security = document.getElementById('uploadSecurity').value;
+            const era = document.getElementById('uploadEra').value;
+            const publisher = document.getElementById('uploadPublisher').value.trim();
+            const content = document.getElementById('uploadContent').value;
+
+            const errorEl = document.getElementById('uploadError');
+            const successEl = document.getElementById('uploadSuccess');
+            errorEl.classList.remove('show');
+            successEl.classList.remove('show');
+
+            if (!title) {
+                errorEl.textContent = '❌ 请填写档案标题。';
+                errorEl.classList.add('show');
+                return;
+            }
+            if (!/^《.+》$/.test(title)) {
+                errorEl.textContent = '❌ 标题须以《》包裹，例如《地球资源全面枯竭危机预警白皮书》。';
+                errorEl.classList.add('show');
+                return;
+            }
+            if (!type) {
+                errorEl.textContent = '❌ 请选择档案类型。';
+                errorEl.classList.add('show');
+                return;
+            }
+            if (!security) {
+                errorEl.textContent = '❌ 请选择保密级别。';
+                errorEl.classList.add('show');
+                return;
+            }
+            if (!era) {
+                errorEl.textContent = '❌ 请选择所属时代。';
+                errorEl.classList.add('show');
+                return;
+            }
+            if (!content) {
+                errorEl.textContent = '❌ 请填写正文内容。';
+                errorEl.classList.add('show');
+                return;
+            }
+
+            const lines = content.split('\n');
+            const headingCount = lines.filter(line => line.trim().startsWith('###')).length;
+            if (headingCount < 3) {
+                errorEl.textContent = `❌ 正文中至少需要3个以 "###" 开头的章节标题（当前仅 ${headingCount} 个）。`;
+                errorEl.classList.add('show');
+                return;
+            }
+
+            const eraText = ERA_NAMES[era] || '未知时代';
+            let finalId = id;
+            if (!finalId) {
+                const eraPrefix = `U-${era}`;
+                const ts = Date.now().toString(36).toUpperCase();
+                finalId = `${eraPrefix}-${ts}`;
+            }
+
+            const payload = {
+                id: finalId,
+                title: title,
+                type: type,
+                security: security,
+                era: era,
+                eraText: eraText,
+                publisher: publisher || '未署名',
+                content: content,
+                submittedAt: new Date().toISOString()
+            };
+
+            console.log('📤 提交档案数据：', payload);
+
+            // ===== 后端接口占位符 =====
+            // 请将以下 URL 替换为真实的后端接口地址
+            const API_ENDPOINT = '/api/archive/upload';
+
+            fetch(API_ENDPOINT, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(payload)
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`服务器响应异常 (HTTP ${response.status})`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('✅ 上传成功，服务器响应：', data);
+                    successEl.textContent = `✅ 档案 "${title}" 提交成功！编号：${finalId}，已归类至「${eraText}」`;
+                    successEl.classList.add('show');
+                    setTimeout(() => {
+                        closeUpload();
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error('❌ 上传失败：', err);
+                    errorEl.textContent = `❌ 提交失败：${err.message}。请检查网络或联系管理员。`;
+                    errorEl.classList.add('show');
+                });
+        }
+
+        // ============================================================
+        //  7. 初始化
+        // ============================================================
+        isAuthenticated = getAuth();
+        // 使用本地硬编码档案渲染页面
+        buildPage(LOCAL_ARCHIVES);
+        if (isAuthenticated) {
+            unlockRows();
+            updateAuthUI();
+        }
+
+        window.openLogin = openLogin;
+        window.closeLogin = closeLogin;
+        window.doLogin = doLogin;
+        window.openUpload = openUpload;
+        window.closeUpload = closeUpload;
+        window.submitUpload = submitUpload;
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2065-ACC-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《“拓荒者-7号”矿井爆炸事故调查报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2065-ACC-001</div>
+            <div><strong>档案类型：</strong>事故调查报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2065年11月2日</div>
+            <div><strong>发布机构：</strong>“深空重工”公司 安全调查委员会</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">“拓荒者-7号”矿井爆炸事故调查报告</div>
+            <div class="doc-subtitle">文件编号：DS-SAF/2065/11/02/INV-FINAL</div>
+            <div class="doc-ref">收件人：深空重工公司 董事会</div>
+            <div class="doc-ref">发件人：安全调查委员会 主席 埃琳娜·沃罗诺娃</div>
+
+            <h3>一、 事故概述</h3>
+            <p><strong>1.1 事故时间：</strong>2065年9月14日，谷神星当地时间 03:17</p>
+            <p><strong>1.2 事故地点：</strong>谷神星“拓荒者-7号”矿井，位于“希望谷”矿区东南边缘</p>
+            <p><strong>1.3 事故类型：</strong>矿井内部氢气积聚引发的连环爆炸</p>
+            <p><strong>1.4 死亡人数：</strong>87人确认死亡，另有12人失踪（推定死亡）</p>
+            <p><strong>1.5 受伤人数：</strong>34人（其中19人重伤，包括严重烧伤、爆炸冲击伤及减压病）</p>
+            <p><strong>1.6 财产损失：</strong>矿井主体结构完全损毁，周边约300米范围内的地表设施被爆炸波及，总损失估值约2.7亿新联合国元</p>
+
+            <h3>二、 事故背景</h3>
+            <p>“拓荒者-7号”矿井系深空重工公司于2064年8月在谷神星“希望谷”矿区设立的第四个采矿作业点。该矿井主要用于开采浅层氦-3及铂族金属。</p>
+            <p>自2061年“星途探索”公司泄露谷神星矿藏信息以来，超过3000家私人公司、120万亡命之徒涌入小行星带及谷神星轨道，形成了人类历史上规模最大、最混乱、最野蛮的资源掠夺潮。</p>
+            <p>深空重工公司是其中规模较大的参与者之一，拥有约2000名员工，在谷神星表面运营着7座矿井，总资产估值约30亿新联合国元。</p>
+            <p>“拓荒者-7号”矿井自投产以来，始终处于“高负荷、低维护”的运营状态。其安全设备由购自二手市场的廉价设备拼凑而成，且缺乏合格的安全监管人员。这是本次事故发生的深层背景。</p>
+
+            <h3>三、 事故经过</h3>
+            <p><strong>（根据幸存者证言及现场残骸还原）</strong></p>
+
+            <h4>3.1 爆炸前夜</h4>
+            <p>2065年9月13日，矿井进行常规的开采作业。当日，矿井内部的氢气浓度监测系统曾两次发出“超标预警”，但被当班主管以“设备误报”为由，予以忽略，并下令继续作业。</p>
+            <p>幸存者、当班技术员 马克·张 在事后证言中说道：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “那天下午，我的监测仪读数已经到了3.2%，超过安全阈值两倍。我向主管报告，他骂我‘在浪费时间’，说公司没有钱停矿检修。他说：‘谷神星上每一分钟都是钱，你们要是停矿，就从工资里扣。’”
+            </blockquote>
+
+            <h4>3.2 爆炸时刻</h4>
+            <p>2065年9月14日，03:17。矿井内部的一台老旧的采矿切割机发生机械故障，产生的高温火花引燃了已经在矿井中层积聚数小时的氢气。</p>
+            <p>爆炸首先发生在中层作业面，并迅速沿着矿井的通风管道和运输巷道，向上下两层蔓延。整个爆炸过程持续了约8秒。</p>
+            <p>幸存者、当班矿工 彼得·李 在事后证言中说道：</p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我听到一声巨响，接着是连续的回声。然后有一股热浪从巷道的深处冲过来，像一堵墙一样。我被掀飞了，撞到了墙壁上。等我醒来的时候，到处都是烟和火，还有人在惨叫。我旁边的一个同事，半边脸已经被烧没了。”
+            </blockquote>
+
+            <h4>3.3 救援过程</h4>
+            <p>事故发生后，深空重工公司并未立即组织有效的救援行动。公司管理层在经过近2小时的内部讨论后，才派遣了一支由15人组成的、未经专业训练的“应急小组”进入矿井。</p>
+            <p><strong>在救援过程中，另外3人因吸入有毒气体和暴露于高浓度粉尘环境而死亡。</strong>此外，由于公司未能妥善保存矿井结构图，救援人员在事发后48小时内仍未能找到矿井的完整内部通道布局，导致救援进度被严重拖延。</p>
+            <p>最终，此次事故被确认造成<strong>87人死亡，12人失踪</strong>。</p>
+
+            <h3>四、 事故原因分析</h3>
+            <p>安全调查委员会经现场勘察、设备检测、人员问询及资料调阅后，认定本次事故的主要原因如下：</p>
+
+            <h4>4.1 直接原因</h4>
+            <ul>
+                <li><strong>氢气浓度超标：</strong>矿井内部氢气浓度长期处于安全阈值以上，但未得到有效监测与处理。</li>
+                <li><strong>设备故障：</strong>引爆火花的切割机系购自二手市场的报废设备，缺乏定期维护与安全检测。</li>
+            </ul>
+
+            <h4>4.2 间接原因</h4>
+            <ul>
+                <li><strong>安全监管缺失：</strong>矿井未配备专业的专职安全员，安全监管工作由当班主管兼任。当班主管不具备相关专业资质。</li>
+                <li><strong>安全管理体系失效：</strong>公司安全管理制度形同虚设。在爆炸前24小时内，氢气浓度监测系统曾两次发出预警，均被忽略。</li>
+                <li><strong>管理不当：</strong>公司管理层为节约成本、追求产量，长期忽视安全投入，甚至鼓励“无视安全规定”的作业行为。</li>
+            </ul>
+
+            <h4>4.3 根本原因</h4>
+            <p><strong>公司文化：</strong>深空重工公司的管理层及核心股东，将矿工视为“消耗品”。一份泄露的董事会内部文件中写道：“在谷神星，矿工的平均寿命只有2.3年。与其花大价钱去改善安全设施，不如再运一批新的矿工上来。后者更便宜。”</p>
+
+            <h3>五、 责任认定</h3>
+            <table class="data-table">
+                <thead>
+                    <tr><th>责任方</th><th>责任认定</th><th>处罚建议</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>深空重工公司 董事会</td><td>对企业安全管理体系的系统性失职负有首要责任</td><td>建议提起刑事指控，对董事会全体成员处以最高级别的罚款及监禁</td></tr>
+                    <tr><td>深空重工公司 谷神星事业部 总经理</td><td>对矿区安全管理的全面失职负有直接管理责任</td><td>建议提起刑事指控，追究其误杀罪责任</td></tr>
+                    <tr><td>“拓荒者-7号”矿井 当班主管</td><td>忽视安全预警，并命令工人继续作业，对事故的发生负有直接责任</td><td>建议提起刑事指控，追究其过失致人死亡罪责任</td></tr>
+                    <tr><td>全球性监管体系缺失</td><td>地球联合理事会及联合国未能建立一套有效的、适用于深空作业的强制性安全标准</td><td>责任确认，但无处罚对象，建议提交联合国讨论</td></tr>
+                </tbody>
+            </table>
+
+            <h3>六、 对行业的普遍性反思</h3>
+            <p>“拓荒者-7号”矿井爆炸事故，并非孤立事件。</p>
+            <p>调查委员会在梳理公开资料后发现，自2061年谷神星矿藏被发现以来，在短短四年间，太空淘金热已经造成了大量的人员伤亡：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>事故类型</th><th>估计死亡人数</th><th>备注</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>矿井爆炸（可统计）</td><td>约1,200人</td><td>仅统计了已报告的较大事故，实际数字可能更高</td></tr>
+                    <tr><td>矿船相撞事故</td><td>约3,800人</td><td>小行星带航线混乱，缺乏交通管制规则</td></tr>
+                    <tr><td>暴力冲突（公司间火并）</td><td>约2,100人</td><td>公司间为争夺矿脉，动用炸药及武器的事件时有发生</td></tr>
+                    <tr><td>生命维持系统失效</td><td>约4,500人</td><td>廉价、改装、报废的太空设备普遍存在</td></tr>
+                    <tr><td>总计（保守估计）</td><td>约11,600人</td><td>仅含已记录可查证数据，实际数字可能超过20,000人</td></tr>
+                </tbody>
+            </table>
+            <p>这些数字，是第一次太空淘金热的代价。它们为人类文明敲响了警钟：<strong>如果继续以“法外之地”的方式开发太空，太空将会变成一座更大的“基伍省”。</strong></p>
+
+            <h3>七、 调查委员会建议</h3>
+            <p>针对本次事故暴露出的普遍性问题，安全调查委员会提出以下建议：</p>
+            <ol>
+                <li>呼吁联合国尽快建立一套强制性的“深空作业安全标准”：包括但不限于矿井通风标准、有害气体监测规范、机械设备安全认证标准及应急响应程序。</li>
+                <li>呼吁建立“深空作业安全监管机构”：该机构应当拥有对私人公司深空作业点的独立检查权、事故调查权及处罚权。</li>
+                <li>呼吁停止将矿工作为“一次性消耗品”的做法：应建立最低限度的劳务权益保障体系，包括但不限于工作时间限制、医疗救助保障及死亡赔偿标准。</li>
+            </ol>
+
+            <h3>八、 调查委员会最终意见</h3>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                <p>我们将这份报告提交给深空重工公司董事会，同时也以副本形式抄送联合国秘书长办公室。</p>
+                <p>但我们并不奢望本次报告能够带来任何立竿见影的改变。在当前的“淘金热”氛围下，各家公司的唯一目标，就是尽可能快地从谷神星挖走尽可能多的矿石。安全，在利润面前，不值一提。</p>
+                <p>但我们仍要记录下这一切。因为历史将会记住：<strong>在人类文明离开地球，走向星星的第一步上，我们踩过了多少具尸体。</strong></p>
+            </blockquote>
+
+            <div class="signature">
+                安全调查委员会主席：<br />
+                （签字：埃琳娜·沃罗诺娃）<br />
+                调查委员会成员：<br />
+                （签字：A. 陈，J. 马塔，S. 格林，R. 辛格）<br />
+                签发日期：2065年11月2日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

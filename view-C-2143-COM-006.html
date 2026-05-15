@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2143-COM-006 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空自治派工作进展报告（■■■■■■■■阶段成果）》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2143-COM-006</div>
+            <div><strong>档案类型：</strong>内部通讯记录（截获/解密）</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2143年11月3日（截获时间）</div>
+            <div><strong>发布机构：</strong>内部安全监察局 通讯监控处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空自治派核心协调小组工作进展报告</div>
+            <div class="doc-subtitle">—— 关于资源分配评估委员会阶段成果的加密通讯</div>
+            <div class="doc-ref">通讯类型：加密信息，通过物理介质传输（数据芯片）</div>
+
+            <h3>收发方信息</h3>
+            <ul>
+                <li><strong>发件人：</strong>"谷神星"刘远航（谷神星第一矿区副主管）</li>
+                <li><strong>收件人：</strong>"木卫二"林小禾（木卫二前哨站设施管理部主任）</li>
+                <li><strong>抄送：</strong>"桥梁"【加密代号，指向局长办公室】</li>
+                <li><strong>传输路径：</strong>谷神星 → 木卫二前哨站 → 物理交接</li>
+            </ul>
+
+            <div class="footnote" style="margin-bottom:20px;">
+                <strong>说明：</strong>以下为解密后的完整信息。
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#4A90E2;">
+                <p><strong>标题：资源分配评估委员会第一阶段工作简报</strong></p>
+                <p><strong>报告时间：</strong>2143年10月28日</p>
+
+                <h4>一、 委员会工作概况</h4>
+                <p>资源分配评估委员会自2143年4月正式启动以来，已召开全体会议7次，专题小组会议14次。</p>
+                <p>委员会由以下成员组成：</p>
+                <ul>
+                    <li>地球派代表：5人（含副主席1人）</li>
+                    <li>深空定居点技术官僚代表：5人（含主席1人——赵晚舟）</li>
+                    <li>地球联合理事会委派观察员：3人</li>
+                    <li>专家顾问组：7人（其中4人来自深空）</li>
+                </ul>
+
+                <h4>二、 第一阶段核心成果</h4>
+                <p>根据委员会第一阶段的讨论，赵晚舟团队提交了《深空定居点经济产出与资源消耗对比报告（2133-2142）》。该报告的核心数据如下：</p>
+                <table class="data-table">
+                    <thead>
+                        <tr><th>指标</th><th>2133年</th><th>2142年</th><th>变化</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>深空定居点人口</td><td>5,200万</td><td>8,700万</td><td>+67%</td></tr>
+                        <tr><td>深空能源产出占比</td><td>68%</td><td>74%</td><td>+6个百分点</td></tr>
+                        <tr><td>深空矿石产出占比</td><td>72%</td><td>78%</td><td>+6个百分点</td></tr>
+                        <tr><td>深空获得的资源分配占比</td><td>28%</td><td>30%</td><td>+2个百分点</td></tr>
+                        <tr><td>深空人均资源消费量（对比地球人均）</td><td>42%</td><td>38%</td><td>-4个百分点</td></tr>
+                    </tbody>
+                </table>
+
+                <h4>三、 数据揭示的核心矛盾</h4>
+                <p>报告在结论部分明确指出：</p>
+                <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                    "深空定居点的人口增长率、经济产出增长率与资源分配增长率之间存在显著的不匹配。深空定居点以全太阳系约8%的人口，贡献了约74%的能源产出与78%的矿石产出，但其获得的资源分配份额仅为30%。深空人均资源消费量仅为地球人均消费量的38%，且这一比例仍在持续缩小。"
+                </blockquote>
+
+                <h4>四、 地球派代表的初步回应</h4>
+                <p>在报告提交后的专题讨论中，地球派代表做出如下回应：</p>
+                <ol>
+                    <li>承认"深空经济产出与资源分配之间的不匹配"是客观存在的事实；</li>
+                    <li>不否认"现有分配机制需要进行结构性调整"的必要性；</li>
+                    <li>提出两个前提条件：
+                        <ul>
+                            <li>任何调整不得导致地球居民的"实质性生活水平下降"；</li>
+                            <li>调整方案必须经过至少两年的"试点验证期"，方可正式实施。</li>
+                        </ul>
+                    </li>
+                </ol>
+
+                <h4>五、 赵晚舟的回应</h4>
+                <p>赵晚舟在委员会会议上的发言摘要：</p>
+                <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                    "我们愿意接受这两项前提条件。我们提出调整方案的目的，不是为了剥夺地球居民的资源，而是为了让资源分配机制更加公平、更加可持续。如果试点验证能够证明——调整后的分配机制可以同时提高深空的经济产出能力，同时又不对地球居民的生活水平造成冲击——那么我相信，各方都可以接受这个结果。"
+                </blockquote>
+
+                <h4>六、 委员会下一步工作计划</h4>
+                <ul>
+                    <li><strong>2143年12月：</strong>完成第二阶段报告——深空定居点"自给能力"评估；</li>
+                    <li><strong>2144年2月：</strong>完成第三阶段报告——资源分配调整试点方案初步设计；</li>
+                    <li><strong>2144年4月：</strong>向IMA理事会提交正式建议报告。</li>
+                </ul>
+
+                <h4>七、 "木卫二"的补充批注</h4>
+                <p>（林小禾在收到信息后的手写批注）</p>
+                <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                    "进展顺利。赵晚舟的表现超出预期。报告中的数据没有夸大，但也没有提及一个关键事实——深空的实际经济产出，在官方统计中被低估了约12%，因为我们有一部分产能用于定居点内部自循环系统建设，未计入全球统计口径。这部分'黑账'将在未来两年内成为我们的主要谈判筹码。<br /><br />
+                    '那个人'的消息确认：他将在明年4月的理事会会议前，与委员会中的地球派核心代表进行一次'私人会晤'，为后续提案铺平道路。"
+                </blockquote>
+            </div>
+
+            <div class="signature">
+                内部安全监察局 通讯监控处<br />
+                （解密日期：2143年11月3日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

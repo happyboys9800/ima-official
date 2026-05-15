@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 E-2062-SEC-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《第3892次安理会闭门会议摘要（■■■■■■■■）》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>E-2062-SEC-001</div>
+            <div><strong>档案类型：</strong>联合国安理会绝密会议记录</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2062年4月22日</div>
+            <div><strong>发布机构：</strong>联合国安理会秘书处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">联合国安理会第3892次闭门会议摘要</div>
+            <div class="doc-subtitle">（解禁版）</div>
+            <div class="doc-ref">议题：关于刚果（金）基伍省最后一处经济可采钴矿脉的争夺态势及区域冲突升级对策</div>
+
+            <h3>1. 会议背景</h3>
+            <p>自2055年全球三大稀土矿枯竭后，高强度、高熔点的特种合金材料（用于超音速飞行器、聚变反应堆、高能电池）生产已严重依赖钴、镍等关键金属。刚果（金）基伍省作为全球最后一座拥有中型品位钴矿脉的区域，已成为各大国争夺的焦点。在此地，民间私人武装与“矿业公司私人安保部队”已持续交火达18个月。</p>
+
+            <h3>2. 秘书记录（部分节选）</h3>
+
+            <h4>联合国秘书长代表开场发言：</h4>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “……我刚刚收到的最新战报，基伍省的‘阴影部队’（注：经认定为某南方财团的雇佣兵组织）已于3小时前对联合国监督的‘最后希望矿区’发起突袭。当地维和部队被迫撤离。这场冲突已导致超过270万平民流离失所，死亡人数……（停顿）据非官方统计，已超过27万。”
+            </blockquote>
+
+            <h4>五大常任理事国代表发言（节选）：</h4>
+
+            <p><strong>华夏人民共和国代表：</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我方在此严正声明，资源不是某一国家或财团的私产。我们反对任何形式的武力占领。地球上的争端已经够多了，绝不能将此无序引向太空。如果无法遏止当前的混乱，人类将没有未来。”
+            </blockquote>
+
+            <p><strong>美利坚合众国代表：</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “我们支持建立一个由联合国主导的国际资源托管机制，但目前全球的太空工业化能力严重不足。我们呼吁各成员国……至少在此次危机结束前，维持现有的私人航天探索框架。”
+            </blockquote>
+
+            <p><strong>俄罗斯联邦代表：</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “在座各位都在为最后一撮矿石争吵，但星空已经向我们敞开了大门。我提议：立即启动‘星际资源勘探的全面军事化保卫’，派遣联合太空部队进入小行星带，确保我们未来的资源安全。”
+            </blockquote>
+
+            <h3>3. 机密附件：前线情报官绝密电报</h3>
+            <p><strong>（来自刚果前线，2062年4月20日，凌晨 02:15）</strong></p>
+            <blockquote style="border-left: 3px solid #4A90E2; padding-left: 16px; margin: 12px 0; color: #ccc; font-style: italic;">
+                “……基伍省已成为人间炼狱。没人是为了生存而战斗，他们是为了抢夺<span class="redacted">████████</span>的碎片。昨天，我看到在矿区外围，一个十二岁的孩子因为捡了一块废弃的锂电池，被两个不同派别的武装人员同时开枪射杀。他们甚至不是为了钴矿，只是为了那块锂。<br /><br />这里没有正义，没有规则。这里只有暴力。如果这种情况蔓延到太空，我们……（信号中断）”
+            </blockquote>
+
+            <h3>4. 会议结论（未完）</h3>
+            <p>会议未达成任何实际决议。各国代表在私人武装介入问题上争吵不休。由于缺乏统一的资源开发框架和执法机构，联合国的权威遭到严重削弱。此会议后6个月，刚果矿脉被彻底采空，交战各方最终在废墟上签署了一份血腥的停火协议，但基伍省的经济和生态已遭毁灭性破坏。</p>
+
+            <div class="signature">
+                联合国安理会秘书处<br />
+                （签发日期：2062年4月22日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

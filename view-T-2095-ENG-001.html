@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 T-2095-ENG-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 16px 0 24px 0;
+            font-size: 14px;
+        }
+        .archive-body .data-table th,
+        .archive-body .data-table td {
+            border: 1px solid rgba(74, 144, 226, 0.15);
+            padding: 10px 14px;
+            text-align: left;
+            vertical-align: middle;
+        }
+        .archive-body .data-table th {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《"噬星者"级采矿母舰立项报告》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>T-2095-ENG-001</div>
+            <div><strong>档案类型：</strong>重大工程立项报告</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2095年3月15日</div>
+            <div><strong>发布机构：</strong>IMA 星际重工工程部</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">"噬星者"级采矿母舰立项报告</div>
+            <div class="doc-subtitle">文件编号：IMA/ENG/2095/03/15/STAR-EATER</div>
+            <div class="doc-ref">致：IMA 寰宇总局理事会</div>
+            <div class="doc-ref">发件人：星际重工工程部 总工程师 张韵秋</div>
+            <div class="doc-ref">事由：关于"噬星者"级采矿母舰研发项目的立项申请与可行性论证</div>
+
+            <h3>一、 项目背景与需求</h3>
+
+            <h4>1.1 当前的深空采矿瓶颈</h4>
+            <p>自IMA成立以来，深空开采已取得显著进展。至2094年底，IMA已在主小行星带建立了47个大型采矿基地，年开采总量达到约3亿吨。然而，随着易开采矿脉的逐渐减少，传统的"固定基地+穿梭运输"模式正面临以下瓶颈：</p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>瓶颈</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>运输成本过高</td><td>矿石从开采点运输至冶炼厂，平均需要3次轨道转移，运输成本占总成本的45%以上</td></tr>
+                    <tr><td>作业效率受限</td><td>固定基地无法快速转移至新矿脉，对新矿脉的反应周期长达6-12个月</td></tr>
+                    <tr><td>安全风险集中</td><td>大量小型运输船在小行星带中穿梭，碰撞与海盗袭击风险居高不下</td></tr>
+                    <tr><td>人力需求巨大</td><td>现有模式需要大量人员在深空中长期驻留，人力成本与保障压力巨大</td></tr>
+                </tbody>
+            </table>
+
+            <h4>1.2 技术突破的可能性</h4>
+            <p>自2090年以来，IMA在以下领域取得了关键性技术突破：</p>
+            <ul>
+                <li>大规模核聚变推进系统：推力提升至传统化学推进的200倍，可支撑重型舰船的深空机动；</li>
+                <li>自动化采矿机器人：可在无人工干预的情况下完成小行星表面的钻探、破碎与初步分选；</li>
+                <li>舰载矿物精炼系统：在实验环境中，已实现小型化精炼设备对矿石的初步提纯；</li>
+                <li>舰载生态循环系统：已具备满足500人长期驻留的自给式生命维持能力。</li>
+            </ul>
+            <p>上述技术突破，使得"将整个采矿、冶炼、运输系统整合于一艘大型母舰之上"的构想，具备了技术可行性。</p>
+
+            <h3>二、 项目概述</h3>
+            <p><strong>2.1 项目名称</strong></p>
+            <p>"噬星者"级采矿母舰（代号：S-01），英文名称为"Star-Eater" class Mining Mothership。</p>
+
+            <p><strong>2.2 项目目标</strong></p>
+            <p>研发并建造一种具有以下能力的大型深空采矿母舰：</p>
+            <ul>
+                <li>能够自主捕获、吞噬直径不超过500米的小行星；</li>
+                <li>在舰体内部完成全部开采、破碎、分选、冶炼及精炼流程；</li>
+                <li>产出高纯度金属锭、稀土氧化物及氦-3浓缩物；</li>
+                <li>具备在深空中长期独立作业的能力（续航时间不低于2年）。</li>
+            </ul>
+
+            <p><strong>2.3 核心设计指标</strong></p>
+            <table class="data-table">
+                <thead>
+                    <tr><th>指标项目</th><th>目标参数</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>舰体全长</td><td>约3公里</td></tr>
+                    <tr><td>满载排水量</td><td>约250万吨</td></tr>
+                    <tr><td>核心人员编制</td><td>约800-1200人</td></tr>
+                    <tr><td>小行星处理能力</td><td>单次吞噬直径不超过500米的小行星，处理周期约7-10天</td></tr>
+                    <tr><td>精炼产物</td><td>铁、镍、铂族金属、稀土氧化物、氦-3浓缩物</td></tr>
+                    <tr><td>自持力</td><td>2年（以标准补给计算）</td></tr>
+                    <tr><td>最大航速</td><td>0.05倍光速（巡航速度）</td></tr>
+                    <tr><td>推进系统</td><td>氦-3核聚变推进器</td></tr>
+                </tbody>
+            </table>
+
+            <h3>三、 技术方案</h3>
+
+            <h4>3.1 舰体结构设计</h4>
+            <p>"噬星者"级采矿母舰采用"中轴式+模块化"结构，分为以下主要功能区：</p>
+            <ul>
+                <li><strong>前段处理区</strong>（舰首）：捕获小行星、破碎、初步分选。设有一个直径500米的"捕获口"，配备重型机械臂与等离子切割装置。</li>
+                <li><strong>中段精炼区</strong>（舰体中部）：矿石破碎、研磨、化学浸出、高温冶炼、电解提纯。配备完整的矿物精炼流水线。</li>
+                <li><strong>后段能源与推进区</strong>（舰尾）：氦-3聚变反应堆、推进器、能源分配系统。</li>
+                <li><strong>生活区</strong>（舰体上层）：舰员生活、医疗、娱乐、教育设施，具备完整的生态循环系统。</li>
+                <li><strong>指挥与通讯区</strong>（舰体上层前部）：舰桥、通讯中心、数据处理中心。</li>
+            </ul>
+
+            <h3>四、 项目预算与工期</h3>
+
+            <h4>4.1 预算估计</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>项目</th><th>预估费用（亿新联合国元）</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>研发与设计</td><td>120</td></tr>
+                    <tr><td>舰体建造与组装</td><td>450</td></tr>
+                    <tr><td>核心系统集成（精炼、推进、生态）</td><td>280</td></tr>
+                    <tr><td>自动化系统与人工智能控制</td><td>90</td></tr>
+                    <tr><td>测试与验证</td><td>60</td></tr>
+                    <tr><td>应急预备金</td><td>100</td></tr>
+                    <tr><td><strong>合计</strong></td><td><strong>1,100</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h4>4.2 工期安排</h4>
+            <table class="data-table">
+                <thead>
+                    <tr><th>阶段</th><th>时间</th><th>说明</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>详细设计</td><td>2095年4月 - 2096年3月</td><td>完成全部技术图纸与工艺文件</td></tr>
+                    <tr><td>关键部件制造</td><td>2096年4月 - 2097年6月</td><td>模块化制造，在木星轨道造船厂完成</td></tr>
+                    <tr><td>舰体组装</td><td>2097年7月 - 2098年9月</td><td>在木星轨道造船厂完成总装</td></tr>
+                    <tr><td>系统调试</td><td>2098年10月 - 2099年3月</td><td>各项系统的独立测试与联调</td></tr>
+                    <tr><td>试航</td><td>2099年4月 - 2099年9月</td><td>在木星轨道及小行星带进行实际作业测试</td></tr>
+                    <tr><td>正式交付</td><td>2099年10月</td><td>交付IMA深空开采总局，投入运营</td></tr>
+                </tbody>
+            </table>
+
+            <h3>五、 预期收益与战略意义</h3>
+
+            <h4>5.1 经济效益</h4>
+            <p>以首艘"噬星者"级母舰计算，其年处理小行星能力约为30-40颗（以直径300米的标准小行星计算），年产出矿石总量约为2000万吨。以2094年深空矿石价格估算，年总产值约为300亿新联合国元。</p>
+            <p>扣除运营成本（约100亿），年净利润约200亿。在不考虑技术迭代及后续舰船成本降低的情况下，首艘母舰的静态投资回收期约为5.5年。</p>
+
+            <h4>5.2 战略意义</h4>
+            <ul>
+                <li>实现小行星带的全域覆盖：母舰具备高度机动性，可将采矿范围从固定基地周边扩展至整个小行星带，显著提升资源获取能力。</li>
+                <li>降低人员伤亡风险：母舰的自动化程度极高，核心危险作业可由机器人完成，大幅减少深空人员暴露于危险环境的时间。</li>
+                <li>确立IMA的技术与工业领导地位：该项目一旦成功，将成为人类深空工业史上最具标志性的工程成就。</li>
+                <li>为外太阳系开拓奠定基础：母舰的核心技术可直接应用于未来向外太阳系的扩张。</li>
+            </ul>
+
+            <h3>六、 结论与建议</h3>
+
+            <h4>6.1 结论</h4>
+            <p>经过全面技术评估与可行性论证，项目团队认为：</p>
+            <ul>
+                <li>"噬星者"级采矿母舰项目在技术上具备可行性，核心关键技术已完成实验验证；</li>
+                <li>项目具备显著的经济效益与战略价值，投资回报期处于合理范围内；</li>
+                <li>项目的成功将极大提升IMA在小行星带的资源开发能力。</li>
+            </ul>
+
+            <h4>6.2 建议</h4>
+            <p>项目团队建议：</p>
+            <ul>
+                <li>批准"噬星者"级采矿母舰项目正式立项；</li>
+                <li>首艘母舰的建造作为"旗舰工程"，由IMA星际重工工程部直接组织实施；</li>
+                <li>项目经费分阶段拨付，首期拨款不低于总预算的30%（约330亿新联合国元）。</li>
+            </ul>
+
+            <div class="signature">
+                项目负责人：<br />
+                （签字：张韵秋，IMA星际重工工程部 总工程师）<br />
+                技术审核人：<br />
+                （签字：安德烈·科瓦连科，IMA深空开采总局 局长）<br />
+                财务审核人：<br />
+                （签字：詹姆斯·沃克，IMA财务部 部长）<br />
+                理事会审批意见：<br />
+                同意立项。项目作为IMA下一阶段核心工程，由星际重工工程部组织实施。资金分阶段拨付，每阶段提交审查报告后方可拨付下一阶段经费。<br />
+                （签字：托马斯·米勒，IMA寰宇总局理事会主席）<br />
+                签发日期：2095年3月20日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2143-COM-005 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body .dialog-block {
+            margin: 16px 0;
+            padding: 12px 16px;
+            background: rgba(74, 144, 226, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid #4A90E2;
+        }
+        .archive-body .dialog-block .speaker {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .archive-body .dialog-block .speaker::after {
+            content: "：";
+        }
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空自治派与"■■■■"加密通讯》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2143-COM-005</div>
+            <div><strong>档案类型：</strong>内部通讯记录（截获/解密）</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2143年1月17日（截获时间）</div>
+            <div><strong>发布机构：</strong>内部安全监察局 通讯监控处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空自治派与"局内人"加密通讯</div>
+            <div class="doc-subtitle">—— 内部安全监察局截获单次加密短信</div>
+            <div class="doc-ref">通讯类型：单次加密短信，通过物理介质传输（数据芯片）</div>
+
+            <h3>收发方信息</h3>
+            <ul>
+                <li><strong>发件人：</strong>"深红城"赵晚舟（深红城科研中心主任）</li>
+                <li><strong>收件人：</strong>"桥梁"【加密代号，未解密】</li>
+                <li><strong>传输路径：</strong>火星深红城 → 谷神星中转站 → 木卫二前哨站 → 物理交接</li>
+            </ul>
+
+            <div class="footnote" style="margin-bottom:20px;">
+                <strong>说明：</strong>以下为解密后的完整信息。
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#4A90E2;">
+                <p>我已收到"那个人"的确认。他说："方向正确，节奏放慢。"</p>
+                <p>"那个人"认为，委员会的工作应当在第一年保持技术性讨论，不涉及任何政治性议题。我们的数据报告应当以"优化效率"为核心论点，而非"权利主张"。</p>
+                <p>他建议我们在以下三个方向上做准备：</p>
+                <ol>
+                    <li>准备一份"深空定居点经济产出与资源消耗对比报告"，数据周期覆盖过去十年，作为委员会讨论的基础材料；</li>
+                    <li>在委员会正式启动前，先与部分地球派代表进行一对一的非正式接触，建立"技术官僚层面"的信任关系；</li>
+                    <li>在合适的时候，由"他"亲自出面提出"深空定居点管理委员会的自治权限扩展试点方案"，作为第一阶段的正式提案。</li>
+                </ol>
+                <p>他说："我们不需要在第一步就走到终点。只需要确保我们走得比对手更远、更稳、更有条理。"</p>
+                <p>他还说："七十年了。一个文明不会在七十年内完成转型。但我希望——在我的任期结束时，我们能完成第一阶段的转型。"</p>
+                <p>以上为全部内容。</p>
+            </div>
+
+            <h3>档案附注</h3>
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>本通讯记录由内部安全监察局在2143年1月17日通过物理介质截获，经技术手段还原后解密。</p>
+                <p><strong>"那个人"</strong>这一代号，在深空自治派的内部通讯中多次出现。结合上下文语境与通讯路径，内部安全监察局高度怀疑——此代号指向的是<strong>IMA第四任局长周明远本人</strong>。</p>
+                <p>若此推论成立，则意味着第四任局长周明远并非"中立派"，而是深空自治派在IMA体系内的最高隐蔽支持者。他在公开场合的所有"中性表态"，均属于战术性掩饰。</p>
+                <p>此推论目前缺乏直接证据，已列入"高度可疑"级别观察名单。</p>
+            </div>
+
+            <div class="signature">
+                内部安全监察局 通讯监控处<br />
+                （解密日期：2143年1月17日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

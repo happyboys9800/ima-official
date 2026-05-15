@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2133-COM-002 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body .dialog-block {
+            margin: 16px 0;
+            padding: 12px 16px;
+            background: rgba(74, 144, 226, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid #4A90E2;
+        }
+        .archive-body .dialog-block .speaker {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .archive-body .dialog-block .speaker::after {
+            content: "：";
+        }
+        .archive-body .dialog-block .timestamp {
+            font-size: 12px;
+            color: #888;
+            margin-left: 12px;
+        }
+        .archive-body .redacted {
+            background: rgba(0, 0, 0, 0.8);
+            color: #555;
+            padding: 0 4px;
+            border-radius: 3px;
+            font-family: "Courier New", monospace;
+            letter-spacing: 2px;
+            user-select: none;
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空自治派"■■■■"会议纪要》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2133-COM-002</div>
+            <div><strong>档案类型：</strong>内部通讯记录（截获/解密）</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2133年8月19日（截获时间） / 2135年11月2日（解密时间）</div>
+            <div><strong>发布机构：</strong>内部安全监察局 通讯监控处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空自治派"环形山"会议纪要</div>
+            <div class="doc-subtitle">—— 内部安全监察局截获会议录音记录</div>
+            <div class="doc-ref">会议代号："环形山"会议（Crater Meeting）</div>
+            <div class="doc-ref">会议时间：2133年4月12日，火星当地时间 14:00 - 17:30</div>
+            <div class="doc-ref">会议地点：火星"深红城"，峡谷底部第7号生态舱，私人会议室</div>
+
+            <h3>参会人员（以代号标识）：</h3>
+            <ul>
+                <li><strong>"谷神星"</strong>：刘远航，谷神星第一矿区副主管</li>
+                <li><strong>"木卫二"</strong>：林小禾，木卫二前哨站设施管理部主任</li>
+                <li><strong>"土卫六"</strong>：江海，土卫六新城副执行长官</li>
+                <li><strong>"曙光城"</strong>：陈昭阳，火星曙光城管理委员会干事</li>
+                <li><strong>"深红城"</strong>：赵晚舟，深红城科研中心主任</li>
+                <li><strong>"新黎明城"</strong>：周远（新增成员），新黎明城管理委员会执行干事，39岁，深空出生（月球）</li>
+            </ul>
+
+            <p><strong>会议性质：</strong>线下闭门会议</p>
+            <p><strong>记录方式：</strong>音频录音（由参会者自行录制，后经技术手段恢复）</p>
+
+            <div class="footnote" style="margin-bottom:20px;">
+                <strong>说明：</strong>以下为会议录音转录稿，内容经过整理与删节。
+            </div>
+
+            <h3>开场</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>人都到了。确认一下——本会议室由我亲自安排，没有外部监听设备。周远是新加入的，我已经向他说明过情况。大家同意他加入吗？</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（全体同意）</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>好。那我们就开始。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>这两年里，"星海宪章"的初稿已经完成了一部分。我那边的法律团队把它整理成了三个章节——第一章是"治理结构"，第二章是"资源自主权"，第三章是"文化认同权"。目前还在补充"深空公民权利清单"的部分。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>我也看了初稿。结构上没问题，但有一个核心问题：我们如何向地球派解释，这份"宪章"不是分裂文件？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>我已经想到一个框架：我们称之为"补充性自治框架"。它不是推翻现有的IMA治理体系，而是补充现有的体系在深空治理方面的空缺。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>对。目前的IMA宪章对"深空定居点内部治理"没有任何规定——这是我们的灰色地带。我们填补这个空白，不触及宪章的核心原则。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">新黎明城</span>
+                <p>我有一个问题。如果我们真的建立了一套独立的深空治理体系，那终极目标是什么？深空完全自治？还是某种联邦式的双层治理体系？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>我认为，我们的目标是"双层联邦制"——深空事务归深空管，地球事务归地球管，IMA保留最高协调权。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>说得具体点。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>具体点：资源分配权归深空。安全标准归IMA。文化政策归深空。外交权归地球。经济政策归深空。军事力量归IMA。这是一种"职能分权"的模式。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>这个框架，在地球派那边能接受吗？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>不指望他们全盘接受。但我们可以先推"资源自主权"这一项。只要这一项突破，剩下的都是时间问题。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>还有一件事。在敲定"星海宪章"细节之前，我们需要估算——如果深空在资源分配上获得自主权——地球那边的供应链会受到多大影响？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>我已经算过。以现在的产能结构，如果深空保留10%的自主分配权，地球那边的供应量会减少约3%，但可以由木星喷射熔炉的供应量补充。如果我们保留20%的自主权，地球供应量将减少约7%，可以通过增加火星及土星定居点的产能来补偿。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">新黎明城</span>
+                <p>我建议先从8%开始，试运行五年，再逐步扩大到15%。这样地球那边不会感到太大的冲击。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>我同意。"温水煮青蛙"式的推进。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>另外还有一个问题。IMA里有一些深空出生的技术官僚，在技术体系内并没有明确的政治立场。我们是否应该尝试"争取"他们？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>我已经接触过一部分人。在谷神星和木卫二的技术部门里，至少有7个人对深空自治的理念持"同情但不愿公开表态"的立场。这部分人，可以慢慢争取。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>但有一个明确的原则：一切在宪章框架内推进。不要过早暴露。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>明白。所以接下来，我们分一下任务——</p>
+            </div>
+
+            <h3>任务分配</h3>
+            <ul>
+                <li><strong>谷神星</strong>：继续完成"星海宪章"第三、第四章的起草。</li>
+                <li><strong>木卫二</strong>：与木星区域的技术官僚建立联系，形成一个小范围的"支持者网络"。</li>
+                <li><strong>土卫六</strong>：负责与土星区域定居点管理委员会沟通，评估他们对我们立场的支持度。</li>
+                <li><strong>曙光城</strong>：准备一份针对地球派的"温和版论证报告"，用技术数据和效率分析，论证深空自治对全太阳系的收益。</li>
+                <li><strong>深红城</strong>：搜集并整理一份完整的深空生产效率数据，用于支撑上述报告。</li>
+                <li><strong>新黎明城</strong>：作为协调联系人，负责各区域之间的信息同步。</li>
+            </ul>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>我们的目标是——在刘远征局长任期内，完成一份成熟的"自治框架"草案。不是把他当作对手，而是把他当作"一个可以争取的中间人"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>同意。刘远征的地球人身份对我们来说是个障碍，但他也不是地球派的。他是平衡派。如果他看到我们的方案是理性的、可实施的，他至少不会直接阻止。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>那就这么办吧。半年后，我们在土卫六碰面，再开一次协调会。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">新黎明城</span>
+                <p>好。散会。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（会议录音结束）</p>
+            </div>
+
+            <h3>档案附注</h3>
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>本会议纪要由内部安全监察局在2133年8月通过技术手段从深红城第7号生态舱的残余音频数据中恢复。由于原始录音被部分删除，会议后半段的讨论内容未能完整复原。</p>
+                <p>据推测，会议后半段还讨论了以下内容：</p>
+                <ul>
+                    <li>"星海宪章"的部分条款草案</li>
+                    <li>各区域深空自治派支持者名单</li>
+                    <li>应对刘远征局长的沟通策略</li>
+                </ul>
+                <p>本纪要在2135年11月2日解密后，被列入IMA内部安全监察局"高优先级观察名单"。</p>
+            </div>
+
+            <div class="signature">
+                内部安全监察局 通讯监控处<br />
+                （解密日期：2135年11月2日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

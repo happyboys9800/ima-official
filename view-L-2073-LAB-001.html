@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 L-2073-LAB-001 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(74, 144, 226, 0.2);
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            color: #4A90E2;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+            .archive-body .data-table {
+                font-size: 12px;
+            }
+            .archive-body .data-table th,
+            .archive-body .data-table td {
+                padding: 6px 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《星际劳工权益保障法》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>L-2073-LAB-001</div>
+            <div><strong>档案类型：</strong>正式法规文本</div>
+            <div><strong>保密级别：</strong><span class="security-tag">公开档案（历史资料）</span></div>
+            <div><strong>发布时间：</strong>2073年3月15日</div>
+            <div><strong>发布机构：</strong>IMA 法规管控部 / 矿工权益保障办公室</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">星际劳工权益保障法</div>
+            <div class="doc-subtitle">（2073年3月15日经IMA寰宇总局理事会审议通过，自2073年4月1日起施行）</div>
+            <div class="doc-ref">文件编号：IMA/LAW/2073/03/15/LABOR</div>
+
+            <h3>前 言</h3>
+            <p><strong>鉴于</strong>，在“第一次太空淘金热”期间，深空作业人员长期处于无保障、无尊严、无安全的状态，平均寿命仅2.3年，大量矿工因缺乏基本劳动保护而死亡、伤残或终身丧失劳动能力；</p>
+            <p><strong>鉴于</strong>，希望谷惨案暴露出的根本问题之一，是劳工权益的全面丧失。矿工被当作“会呼吸的钻头”，被计入运营成本，被遗弃于灾难现场；</p>
+            <p><strong>鉴于</strong>，寰宇矿物资源联合开发局（IMA）以“为星海，为家园”为宗旨，有责任建立一套完整的、具有强制力的星际劳工权益保障体系；</p>
+            <p><strong>兹制定本法。</strong></p>
+
+            <h3>第一章 总则</h3>
+            <p><strong>第一条：立法目的</strong></p>
+            <p>本法的目的在于，确立深空作业人员的基本劳动权益，建立安全、公平、有尊严的星际劳动秩序，防止劳工剥削与权益侵害，保障每一位深空劳动者的生命安全与人格尊严。</p>
+
+            <p><strong>第二条：适用范围</strong></p>
+            <p>1. 本法适用于所有在IMA管辖范围内从事深空作业的人员，包括但不限于：采矿工人、工程技术人员、运输船员、基地建设人员、设备维护人员及其他经IMA认定的相关工种。</p>
+            <p>2. 本法亦适用于在IMA管辖范围内从事临时性作业或短期劳务合同的非正式雇员。</p>
+            <p>3. 无论国籍、种族、性别、宗教信仰，均适用本法。</p>
+
+            <p><strong>第三条：基本权益</strong></p>
+            <p>深空作业人员依法享有以下基本权益：</p>
+            <ul>
+                <li>生命安全权；</li>
+                <li>劳动报酬权；</li>
+                <li>休息与休假权；</li>
+                <li>职业健康权；</li>
+                <li>平等就业权；</li>
+                <li>职业培训权；</li>
+                <li>工会组织与集体谈判权；</li>
+                <li>受到侵害时的申诉与救济权。</li>
+            </ul>
+
+            <h3>第二章 劳动时间与休息休假</h3>
+            <p><strong>第五条：标准工时</strong></p>
+            <p>1. 深空作业人员的标准每日工作时间为8小时，每周工作时间为48小时。</p>
+            <p>2. 每日工作时间包括必要的工作准备、设备检查、安全确认及交接班时间。</p>
+            <p>3. 超过标准工时的，视为加班。</p>
+
+            <p><strong>第六条：加班限制</strong></p>
+            <p>1. 每日加班时间不得超过2小时。</p>
+            <p>2. 每月累计加班时间不得超过40小时。</p>
+            <p>3. 特殊作业需要加班的，须经作业点负责人及当班安全监督员双重批准，且须征得本人同意。</p>
+
+            <p><strong>第七条：休息与休假</strong></p>
+            <p>1. 每连续工作20天，须安排至少48小时的连续休息时间。</p>
+            <p>2. 每连续工作90天，须安排至少7天的连续休息时间。</p>
+            <p>3. 每工作满一年，须安排至少30天的带薪年休假。</p>
+
+            <h3>第三章 劳动报酬与福利</h3>
+            <p><strong>第十条：同工同酬原则</strong></p>
+            <p>IMA实行全球统一的薪酬标准，不分国籍、种族、性别、岗位，同工同酬。</p>
+
+            <p><strong>第十一条：薪酬构成</strong></p>
+            <p>深空作业人员的薪酬由以下部分构成：</p>
+            <ul>
+                <li><strong>基础工资</strong>：保障基本生活需求，不低于地球联合理事会确定的最低生活保障线。</li>
+                <li><strong>岗位津贴</strong>：根据作业危险程度、技术要求及工作年限确定。</li>
+                <li><strong>绩效奖金</strong>：根据个人工作表现及作业点完成情况发放。</li>
+                <li><strong>艰苦作业补贴</strong>：适用于在极端环境（真空、低重力、高辐射、极端温差）下作业的人员。</li>
+            </ul>
+
+            <h3>第四章 职业健康与安全保障</h3>
+            <p><strong>第十六条：健康监护</strong></p>
+            <p>1. 深空作业人员须进行定期体检，包括但不限于：常规体检、心理评估、辐射暴露记录及职业病筛查。</p>
+            <p>2. 体检周期不超过6个月。</p>
+            <p>3. 体检结果须以书面形式告知本人，并严格保密。</p>
+
+            <p><strong>第十八条：心理健康保障</strong></p>
+            <p>1. 深空作业环境具有高隔离、高强度、高压力的特点。IMA须为所有深空作业人员提供心理咨询服务。</p>
+            <p>2. 心理咨询服务为免费服务，不得计入个人病历，且不得作为裁员或降职的理由。</p>
+
+            <h3>第五章 工会组织与集体谈判权</h3>
+            <p><strong>第二十条：工会组织</strong></p>
+            <p>1. 所有深空作业人员享有依法组织或参加工会的权利。</p>
+            <p>2. IMA不得以任何理由阻碍或干涉工会活动。</p>
+
+            <p><strong>第二十一条：集体谈判权</strong></p>
+            <p>1. 工会代表有权代表全体深空作业人员，就薪酬、工时、安全标准、福利待遇等事项，与IMA管理层进行集体谈判。</p>
+            <p>2. 集体谈判每年度至少进行1次。</p>
+
+            <h3>第六章 申诉与救济</h3>
+            <p><strong>第二十三条：申诉机制</strong></p>
+            <p>1. 深空作业人员认为自身权益受到侵害时，有权通过以下途径申诉：</p>
+            <ul>
+                <li>向作业点安全监督员或矿工权益保障办公室特派专员投诉；</li>
+                <li>向矿工权益保障办公室提交书面申诉材料；</li>
+                <li>向IMA内部审计与监察部提交检举报告。</li>
+            </ul>
+            <p>2. 任何投诉或申诉，IMA须在接收后48小时内启动调查程序。</p>
+
+            <h3>第七章 特殊保障</h3>
+            <p><strong>第二十六条：女工保护</strong></p>
+            <p>1. 禁止以任何理由对女性深空作业人员进行歧视。</p>
+            <p>2. 妊娠期及哺乳期女性，须调离涉及高辐射、有害气体或高强度体力劳动的岗位。</p>
+            <p>3. 产假不少于120天，产假期间薪酬照发。</p>
+
+            <p><strong>第二十七条：未成年人保护</strong></p>
+            <p>1. 禁止录用18周岁以下人员从事深空作业。</p>
+            <p>2. 禁止以任何形式安排18周岁以下人员进入深空作业区域。</p>
+
+            <h3>第八章 附则</h3>
+            <p><strong>第三十一条：生效与废止</strong></p>
+            <p>1. 本法自2073年4月1日起施行。</p>
+            <p>2. 此前发布的与本法规相抵触的文件，自本法施行之日起废止。</p>
+
+            <div class="signature">
+                IMA寰宇总局理事会主席：<br />
+                （签字：托马斯·米勒）<br />
+                IMA矿工权益保障办公室主任：<br />
+                （签字：玛丽亚·洛佩兹）<br />
+                签署日期：2073年3月15日
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>

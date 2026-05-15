@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>档案 C-2142-COM-004 | IMA 世界观档案</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #000 url('aca7373c-f42e-479d-bd2a-c836d5b59368.png') no-repeat center/cover;
+            background-attachment: fixed;
+            background-size: cover;
+            color: #e0e0e0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .view-container {
+            max-width: 960px;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            border-radius: 16px;
+            border: 1px solid rgba(74, 144, 226, 0.3);
+            padding: 40px 48px;
+            position: relative;
+            margin: 20px auto;
+        }
+
+        .view-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 16px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+            padding-bottom: 20px;
+        }
+        .view-header h1 {
+            font-size: 24px;
+            font-weight: 500;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+        .back-btn {
+            display: inline-block;
+            padding: 8px 22px;
+            background: rgba(74, 144, 226, 0.15);
+            border: 1px solid #4A90E2;
+            border-radius: 30px;
+            color: #4A90E2;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.25s;
+            cursor: pointer;
+        }
+        .back-btn:hover {
+            background: rgba(74, 144, 226, 0.25);
+            color: #7ab7f7;
+        }
+
+        .meta-box {
+            background: rgba(74, 144, 226, 0.06);
+            border-left: 4px solid #4A90E2;
+            padding: 16px 24px;
+            border-radius: 6px;
+            margin-bottom: 28px;
+            font-size: 14px;
+            line-height: 1.8;
+            color: #ccc;
+        }
+        .meta-box strong {
+            color: #fff;
+            font-weight: 500;
+        }
+        .meta-box .security-tag {
+            display: inline-block;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            background: rgba(255, 70, 70, 0.2);
+            border: 1px solid rgba(255, 70, 70, 0.3);
+            color: #ff6b6b;
+        }
+
+        .archive-body {
+            line-height: 1.9;
+            color: #ddd;
+            font-size: 16px;
+        }
+        .archive-body .doc-title {
+            text-align: center;
+            font-size: 26px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+        .archive-body .doc-subtitle {
+            text-align: center;
+            font-size: 16px;
+            color: #888;
+            margin-bottom: 30px;
+        }
+        .archive-body .doc-ref {
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 20px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.1);
+            padding-bottom: 12px;
+        }
+        .archive-body .doc-ref strong {
+            color: #eee;
+        }
+
+        .archive-body h3 {
+            font-size: 18px;
+            font-weight: 600;
+            color: #4A90E2;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            border-left: 4px solid #4A90E2;
+            padding-left: 14px;
+        }
+        .archive-body h3:first-of-type {
+            margin-top: 0;
+        }
+        .archive-body h4 {
+            font-size: 16px;
+            font-weight: 500;
+            color: #7ab7f7;
+            margin-top: 20px;
+            margin-bottom: 6px;
+        }
+        .archive-body p {
+            margin-bottom: 12px;
+        }
+        .archive-body ul {
+            padding-left: 24px;
+            margin-bottom: 16px;
+        }
+        .archive-body ul li {
+            margin-bottom: 6px;
+        }
+
+        .archive-body .dialog-block {
+            margin: 16px 0;
+            padding: 12px 16px;
+            background: rgba(74, 144, 226, 0.05);
+            border-radius: 6px;
+            border-left: 3px solid #4A90E2;
+        }
+        .archive-body .dialog-block .speaker {
+            color: #4A90E2;
+            font-weight: 600;
+        }
+        .archive-body .dialog-block .speaker::after {
+            content: "：";
+        }
+
+        .archive-body .signature {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            text-align: right;
+            font-size: 15px;
+            color: #ccc;
+        }
+        .archive-body .footnote {
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid rgba(74, 144, 226, 0.1);
+            margin-top: 20px;
+            padding-top: 16px;
+        }
+
+        @media (max-width: 600px) {
+            .view-container {
+                padding: 20px 16px;
+            }
+            .view-header h1 {
+                font-size: 18px;
+            }
+            .meta-box {
+                padding: 12px 16px;
+                font-size: 12px;
+            }
+            .archive-body {
+                font-size: 14px;
+            }
+            .archive-body .doc-title {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="view-container">
+        <!-- 返回按钮 -->
+        <div class="view-header">
+            <h1>《深空自治派"■■■■"会议纪要》</h1>
+            <a href="index.html" class="back-btn">← 返回档案列表</a>
+        </div>
+
+        <!-- 元数据 -->
+        <div class="meta-box">
+            <div><strong>档案编号：</strong>C-2142-COM-004</div>
+            <div><strong>档案类型：</strong>内部通讯记录（截获/解密）</div>
+            <div><strong>保密级别：</strong><span class="security-tag">🔒 绝密</span></div>
+            <div><strong>发布时间：</strong>2142年9月8日（截获时间）</div>
+            <div><strong>发布机构：</strong>内部安全监察局 通讯监控处</div>
+            <div style="margin-top:6px; font-size:13px; color:#666;">寰宇矿物资源联合开发局（IMA）官方档案馆</div>
+        </div>
+
+        <!-- 正文 -->
+        <div class="archive-body">
+            <div class="doc-title">深空自治派"破冰"会议纪要</div>
+            <div class="doc-subtitle">—— 内部安全监察局截获会议录音记录</div>
+            <div class="doc-ref">会议代号："破冰"会议（Icebreaking Meeting）</div>
+            <div class="doc-ref">会议时间：2142年9月5日，木星当地时间 18:00 - 21:30</div>
+            <div class="doc-ref">会议地点：木卫二前哨站，第4号生态舱，底层维护通道（未登记区域）</div>
+
+            <h3>参会人员（以代号标识）：</h3>
+            <ul>
+                <li><strong>"谷神星"</strong>：刘远航，谷神星第一矿区副主管</li>
+                <li><strong>"木卫二"</strong>：林小禾，木卫二前哨站设施管理部主任</li>
+                <li><strong>"土卫六"</strong>：江海，土卫六新城副执行长官</li>
+                <li><strong>"曙光城"</strong>：陈昭阳，火星曙光城管理委员会干事</li>
+                <li><strong>"深红城"</strong>：赵晚舟，深红城科研中心主任</li>
+                <li><strong>"新黎明城"</strong>：周远，新黎明城管理委员会执行干事</li>
+                <li><strong>"木卫三"</strong>：韩冰（新增成员），木卫三前哨站首席工程师，42岁，深空出生（月球）</li>
+            </ul>
+
+            <p><strong>会议性质：</strong>线下闭门会议</p>
+            <p><strong>记录方式：</strong>音频录音（由参会者自行录制，后经内部安全监察局技术手段恢复）</p>
+
+            <div class="footnote" style="margin-bottom:20px;">
+                <strong>说明：</strong>以下为会议录音转录稿，内容经过整理与删节。
+            </div>
+
+            <h3>开场</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>人都到了。韩冰是新加入的，我已经向他说明过情况。大家同意他加入吗？</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（全体同意）</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>好。那就开始。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>我先说一个消息。内部安全监察局那边，有人在密切关注我们的活动。我确认了至少三个ID在监控我们之前的通讯渠道。我们之前用过的那个加密群组，已经不安全了。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>我已经把所有的离线数据转移到了物理存储设备上。建议所有人也这么做。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>我已经处理完毕。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>我也一样。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>那就好。接下来——我们谈一谈"那件事"。</p>
+            </div>
+
+            <h3>核心议题：关于"星海宪章"的进展</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>先汇报一下"星海宪章"的起草进度。目前已完成七个章节，包括：总纲、治理结构、资源自主权、文化认同权、深空公民权利清单、深空定居点管理框架、以及深空-地球关系框架。还剩两个章节：深空司法体系与应急状态下权力移交条款，预计明年三月前完成。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>我有一个问题。我们写了这么多，地球派会接受吗？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>不会。但这不是给他们看的。这是给我们自己看的。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>什么意思？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>意思是，我们需要一份"内部文件"来统一我们的立场。有了这份文件，我们就有了方向，有了边界，有了底线。我们不需要跟地球派商量。只需要在合适的时候，向他们展示"我们已经准备好了"。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">新黎明城</span>
+                <p>但这个"合适的时候"是什么时候？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>当我们的筹码足够多的时候。</p>
+            </div>
+
+            <h3>核心议题：关于"筹码"的讨论</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>我们现在的筹码有几个：第一，深空产能占全太阳系的70%。第二，能源供应由木星的喷射熔炉控制。第三，星际干线运输通道的运营权在深空定居点手中。第四，深空公民人口已超过2200万，且仍在快速增长。这些筹码加起来，足以让我们在谈判桌上获得一席之地。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫三</span>
+                <p>我补充一点。木卫三前哨站有一个深空通信中继站，负责木星区域与柯伊伯带之间的数据中转。如果我们在关键时刻切断这个中继站，地球那边的高层通讯会受到严重干扰。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>你是说……我们可以把通信中继站当作筹码？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫三</span>
+                <p>我不是说我们会这么做。我是说，我们有能力这么做。能力本身，就是一种筹码。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>我不同意这个思路。通信中继站是IMA的核心基础设施，不是深空自治派的筹码。如果我们真的动用了这种手段，那就不是在谈判，而是在分裂。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>我同意深红城的观点。我们的立场是"自治"，不是"分裂"。使用极端手段会让我们失去所有正当性。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>同意。但木卫三说的"能力"本身，我们应当保留。这不是用来使用的，而是用来保护自己的。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（全体同意）</p>
+            </div>
+
+            <h3>核心议题：关于"资源分配评估委员会"的应对策略</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>还有一个问题。周明远局长在就职演说中承诺要成立"资源分配评估委员会"。据我所知，这个委员会正在组建中，预计年底前启动。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">新黎明城</span>
+                <p>我们的策略是什么？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>参与。我们必须派人进去。不是以"深空自治派"的身份，而是以"深空定居点技术官僚"的身份。我们需要有人在那个委员会里，确保我们的数据被准确呈现，确保我们的诉求被真实转达。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>我推荐三个人选。赵晚舟去最合适，她在深红城科研中心工作，身份够中立。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">深红城</span>
+                <p>我可以去。但我需要一份完整的数据报告来支撑我们的论点。我会在三个月内完成。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>那我去联系这个委员会的实际召集人，确保我们的人能够顺利进入候选人名单。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">曙光城</span>
+                <p>还有一件事。我们要不要在这个委员会的讨论中，公开提出"深空自主分配权"？</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>不。第一年不提。先建立信任，先建立数据基础，先让地球派的人相信我们是"技术官僚"而不是"政治派系"。然后在第二年适当的时候，提出一个温和的调整方案。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>同意。温水煮青蛙。</p>
+            </div>
+
+            <h3>核心议题：关于"后续行动"</h3>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>最后一项。我们讨论一下后续的行动节奏。</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">木卫二</span>
+                <p>我认为我们的重点应该放在以下几个方面：</p>
+                <ol>
+                    <li>继续完善"星海宪章"的起草工作，保持文件的保密性；</li>
+                    <li>在"资源分配评估委员会"中建立稳定的代表席位；</li>
+                    <li>继续巩固各区域之间的联系网络，但保持低频率、高安全性的沟通；</li>
+                    <li>延迟一切可能引起公开冲突的行动，直到委员会的工作取得实质进展。</li>
+                </ol>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">谷神星</span>
+                <p>有没有人对此有不同的想法？</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（全体无异议）</p>
+            </div>
+
+            <div class="dialog-block">
+                <span class="speaker">土卫六</span>
+                <p>那就按这个方向执行。下次会议——暂定六个月后，在土卫六新城召开。具体时间地点另行通知。</p>
+            </div>
+
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>（会议结束）</p>
+            </div>
+
+            <h3>档案附注</h3>
+            <div class="dialog-block" style="border-left-color:#888; color:#888; font-style:italic;">
+                <p>这是内部安全监察局截获的第二份深空自治派核心会议录音，也是内容最为详尽的一份。</p>
+                <p>从录音中可以看出，深空自治派在保持"不公开挑衅"的前提下，正在系统性地推进以下工作：</p>
+                <ul>
+                    <li><strong>组织化：</strong>核心协调小组的成员已扩展至七人，覆盖火星、谷神星、木星卫星及土星卫星等主要区域；</li>
+                    <li><strong>制度化：</strong>通过参与"资源分配评估委员会"的方式，将诉求纳入制度化的表达渠道；</li>
+                    <li><strong>能力储备：</strong>保留了对部分关键基础设施的潜在控制能力，作为一种"防御性筹码"。</li>
+                </ul>
+                <p>本纪要在解密后被列入内部安全监察局"最高优先级观察名单"。监察局建议：在适当的时机，对核心成员中的一至两人进行"温和接触"，以试探其立场是否具有弹性。</p>
+            </div>
+
+            <div class="signature">
+                内部安全监察局 通讯监控处<br />
+                （解密日期：2142年9月8日）
+            </div>
+
+            <div class="footnote">【档案结束】</div>
+        </div>
+    </div>
+
+</body>
+</html>
